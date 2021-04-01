@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
 const Banner = ({ title, subtitle }) => {
+
     return (
         <section className="page-title-banner">
             <div className="container">
@@ -26,5 +27,7 @@ Banner.propTypes = {
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string.isRequired,
 };
+
+
 
 export default Banner;

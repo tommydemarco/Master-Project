@@ -1,27 +1,29 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import Link from "next/link";
-import { connect } from 'react-redux';
-import { removeItem, addQuantity, subtractQuantity } from '../../store/actions/cartActions';
+import { connect } from "react-redux";
+import {
+    removeItem,
+    addQuantity,
+    subtractQuantity,
+} from "../../store/actions/cartActions";
 
 class CartBody extends Component {
-
     handleRemove = (id) => {
         this.props.removeItem(id);
-    }
+    };
     //to add the quantity
-    handleAddQuantity = (id)=>{
+    handleAddQuantity = (id) => {
         this.props.addQuantity(id);
-    }
+    };
     //to substruct from the quantity
-    handleSubtractQuantity = (id)=>{
+    handleSubtractQuantity = (id) => {
         this.props.subtractQuantity(id);
-    }
+    };
 
     render() {
-        let cartItems = this.props.products.length ?
-        (
+        let cartItems = this.props.products.length ? (
             this.props.products.map((data, idx) => {
-                return(
+                return (
                     <tr key={idx}>
                         <td className="product-thumbnail">
                             <a href="/#">
@@ -41,24 +43,28 @@ class CartBody extends Component {
 
                         <td className="product-quantity">
                             <div className="input-counter">
-                                <span 
+                                <span
                                     className="minus-btn"
-                                    onClick={()=>{this.handleSubtractQuantity(data.id)}}
+                                    onClick={() => {
+                                        this.handleSubtractQuantity(data.id);
+                                    }}
                                 >
                                     <i className="icofont-minus"></i>
                                 </span>
-                                <input 
-                                    type="text" 
-                                    className="form-control" 
-                                    value={data.quantity} 
-                                    min="1" 
-                                    max={10} 
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={data.quantity}
+                                    min="1"
+                                    max={10}
                                     readOnly={true}
-                                    onChange={e => (e)}
+                                    onChange={(e) => e}
                                 />
-                                <span 
+                                <span
                                     className="plus-btn"
-                                    onClick={()=>{this.handleAddQuantity(data.id)}}
+                                    onClick={() => {
+                                        this.handleAddQuantity(data.id);
+                                    }}
                                 >
                                     <i className="icofont-plus"></i>
                                 </span>
@@ -66,22 +72,27 @@ class CartBody extends Component {
                         </td>
 
                         <td className="product-subtotal">
-                            <span className="subtotal-amount">${data.price * data.quantity}</span>
+                            <span className="subtotal-amount">
+                                ${data.price * data.quantity}
+                            </span>
                         </td>
 
                         <td className="product-remove">
                             <Link href="/#">
                                 <a
-                                    onClick={(e)=>{e.preventDefault();this.handleRemove(data.id)}}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        this.handleRemove(data.id);
+                                    }}
                                 >
                                     <i className="icofont-ui-delete"></i>
                                 </a>
                             </Link>
                         </td>
                     </tr>
-                )
+                );
             })
-        ): (
+        ) : (
             <tr>
                 <td className="product-thumbnail" colspan="6">
                     <p>Empty.</p>
@@ -107,11 +118,7 @@ class CartBody extends Component {
                                             </tr>
                                         </thead>
 
-                                        <tbody>
-
-                                            {cartItems}
-
-                                        </tbody>
+                                        <tbody>{cartItems}</tbody>
                                     </table>
                                 </div>
 
@@ -119,27 +126,44 @@ class CartBody extends Component {
                                     <div className="row h-100 justify-content-center align-items-center">
                                         <div className="col-lg-5 col-md-5">
                                             <div className="coupon-box">
-                                                <input type="text" className="form-control" placeholder="Coupon Code" />
-                                                <button type="submit">Apply Coupon Code</button>
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    placeholder="Coupon Code"
+                                                />
+                                                <button type="submit">
+                                                    Apply Coupon Code
+                                                </button>
                                             </div>
                                         </div>
- 
+
                                         <div className="col-lg-7 col-md-7">
                                             <div className="cart-totals">
                                                 <h3>Cart Totals</h3>
 
                                                 <ul>
-                                                    <li>Subtotal: <span>${this.props.total}</span></li>
-                                                    <li>Total: <span>${this.props.total}</span></li>
+                                                    <li>
+                                                        Subtotal:{" "}
+                                                        <span>
+                                                            ${this.props.total}
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        Total:{" "}
+                                                        <span>
+                                                            ${this.props.total}
+                                                        </span>
+                                                    </li>
                                                 </ul>
                                                 <Link href="/checkout">
-                                                    <a className="btn btn-primary">Proceed to Checkout</a>
+                                                    <a className="btn btn-primary">
+                                                        Proceed to Checkout
+                                                    </a>
                                                 </Link>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                
                             </form>
                         </div>
                     </div>
@@ -151,20 +175,23 @@ class CartBody extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.addedItems,
-        total: state.total
-    }
-}
+        products: state.cart.addedItems,
+        total: state.cart.total,
+    };
+};
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        removeItem: (id) => {dispatch(removeItem(id))},
-        addQuantity: (id) => {dispatch(addQuantity(id))},
-        subtractQuantity: (id) => {dispatch(subtractQuantity(id))}
-    }
-}
+        removeItem: (id) => {
+            dispatch(removeItem(id));
+        },
+        addQuantity: (id) => {
+            dispatch(addQuantity(id));
+        },
+        subtractQuantity: (id) => {
+            dispatch(subtractQuantity(id));
+        },
+    };
+};
 
-export default connect(
-    mapStateToProps, 
-    mapDispatchToProps
-)(CartBody)
+export default connect(mapStateToProps, mapDispatchToProps)(CartBody);

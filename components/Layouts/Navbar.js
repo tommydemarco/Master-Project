@@ -443,7 +443,7 @@ const Navbar = ({ products, router, noBanner }) => {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.addedItems,
+        products: state.cart.addedItems,
     };
 };
 

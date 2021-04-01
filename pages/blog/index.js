@@ -1,12 +1,19 @@
 import BlogCard from "../../components/BlogCard";
 
-const Blog = () => {
+import { connect } from "react-redux";
+import { setBannerText } from "../../store/actions/bannerActions";
+import { useBannerUpdate } from "../../utils/hooks";
+
+const Blog = ({ setBannerText }) => {
+    const bannerText = {
+        title: "Blog",
+        subtitle:
+            "Browse through our latest posts to find cool Javascript news",
+    };
+    useBannerUpdate(setBannerText, bannerText);
+
     return (
         <React.Fragment>
-            {/* <Banner
-                title="Blog"
-                subtitle="Browse through our latest posts to find cool Javascript news"
-            /> */}
             <section className="blog-area blog-section ptb-100">
                 <div className="container">
                     <div className="row">
@@ -328,4 +335,10 @@ const Blog = () => {
     );
 };
 
-export default Blog;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setBannerText: (bannerText) => dispatch(setBannerText(bannerText)),
+    };
+};
+
+export default connect(null, mapDispatchToProps)(Blog);

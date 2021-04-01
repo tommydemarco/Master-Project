@@ -1,53 +1,55 @@
-import { 
-    ADD_TO_CART,
-    REMOVE_ITEM,
-    SUB_QUANTITY,
-    ADD_QUANTITY,
-    ADD_QUANTITY_WITH_NUMBER,
-    RESET_CART
-} from './action-types/cart-actions'
+//Types should be in const to avoid typos and duplication since it's a string and could be easily miss spelled
+export const ADD_TO_CART = "ADD_TO_CART";
+export const REMOVE_ITEM = "REMOVE_ITEM";
+export const SUB_QUANTITY = "SUB_QUANTITY";
+export const ADD_QUANTITY = "ADD_QUANTITY";
+export const ADD_SHIPPING = "ADD_SHIPPING";
+export const ADD_QUANTITY_WITH_NUMBER = "ADD_QUANTITY_WITH_NUMBER";
+export const ORDER_FORM = "ORDER_FORM";
+export const CHECKOUT_CHARGE = "CHECKOUT_CHARGE";
+export const RESET_CART = "RESET_CART";
 
 //add cart action
 export const addToCart = (id) => {
     return {
         type: ADD_TO_CART,
-        id
-    }
-}
+        id,
+    };
+};
 //remove item action
 export const removeItem = (id) => {
     return {
         type: REMOVE_ITEM,
-        id
-    }
-}
+        id,
+    };
+};
 //subtract qt action
 export const subtractQuantity = (id) => {
     return {
         type: SUB_QUANTITY,
-        id
-    }
-}
+        id,
+    };
+};
 //add qt action
 export const addQuantity = (id) => {
     return {
         type: ADD_QUANTITY,
-        id
-    }
-}
+        id,
+    };
+};
 
 //add qt action with quantity number
 export const addQuantityWithNumber = (id, qty) => {
     return {
         type: ADD_QUANTITY_WITH_NUMBER,
         id,
-        qty
-    }
-}
+        qty,
+    };
+};
 
 // Reset cart after form submit
 export const resetCart = () => {
     return {
-        type: RESET_CART
-    }
-}
+        type: RESET_CART,
+    };
+};

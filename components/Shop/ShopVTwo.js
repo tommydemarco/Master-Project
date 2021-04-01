@@ -315,7 +315,7 @@ class ShopVTwo extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.products
+        products: state.cart.products
     }
 }
 

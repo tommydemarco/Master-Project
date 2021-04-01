@@ -1,15 +1,27 @@
-import React, { Component } from "react";
+import { connect } from "react-redux";
+import { setBannerText } from "../../store/actions/bannerActions";
+import { useBannerUpdate } from "../../utils/hooks";
 
 import DetailsContent from "../../components/Blog/DetailsContent";
 
-class BlogDetails extends Component {
-    render() {
-        return (
-            <React.Fragment>
-                <DetailsContent />
-            </React.Fragment>
-        );
-    }
-}
+const BlogArticlePage = ({ setBannerText }) => {
+    const bannerText = {
+        title: null,
+        subtitle: null,
+    };
+    useBannerUpdate(setBannerText, bannerText);
 
-export default BlogDetails;
+    return (
+        <React.Fragment>
+            <DetailsContent />
+        </React.Fragment>
+    );
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setBannerText: (bannerText) => dispatch(setBannerText(bannerText)),
+    };
+};
+
+export default connect(null, mapDispatchToProps)(BlogArticlePage);

@@ -12,7 +12,7 @@ import { Preloader, Placeholder } from "react-preloading-screen";
 import App from "next/app";
 import Head from "next/head";
 import withRedux from "next-redux-wrapper";
-import { initStore } from "../store/reducers/cartReducer";
+import { initStore } from "../store";
 
 import GoTop from "../components/Shared/GoTop";
 import Layout from "../components/Layouts";

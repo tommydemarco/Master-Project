@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
 import Link from "next/link";
-import Payment from '../Payment/Payment';
+import Payment from "../Payment/Payment";
 
 class OrderSummary extends Component {
     render() {
-        let totalAmount = (this.props.total).toFixed(2)
+        let totalAmount = this.props.total.toFixed(2);
         return (
             <div className="col-lg-6 col-md-12">
                 <div className="order-details">
@@ -31,18 +31,22 @@ class OrderSummary extends Component {
                                         </td>
 
                                         <td className="product-total">
-                                            <span className="subtotal-amount">${data.price * data.quantity}</span>
+                                            <span className="subtotal-amount">
+                                                ${data.price * data.quantity}
+                                            </span>
                                         </td>
                                     </tr>
                                 ))}
-                                
+
                                 <tr>
                                     <td className="order-subtotal">
                                         <span>Cart Subtotal</span>
                                     </td>
 
                                     <td className="order-subtotal-price">
-                                        <span className="order-subtotal-amount">${this.props.total}</span>
+                                        <span className="order-subtotal-amount">
+                                            ${this.props.total}
+                                        </span>
                                     </td>
                                 </tr>
 
@@ -61,7 +65,9 @@ class OrderSummary extends Component {
                                     </td>
 
                                     <td className="product-subtotal">
-                                        <span className="subtotal-amount">${this.props.total}</span>
+                                        <span className="subtotal-amount">
+                                            ${this.props.total}
+                                        </span>
                                     </td>
                                 </tr>
                             </tbody>
@@ -70,22 +76,40 @@ class OrderSummary extends Component {
 
                     <div className="payment-method">
                         <p>
-                            <input type="radio" id="direct-bank-transfer" name="radio-group" />
-                            <label htmlFor="direct-bank-transfer">Direct Bank Transfer</label>
-
-                            Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
+                            <input
+                                type="radio"
+                                id="direct-bank-transfer"
+                                name="radio-group"
+                            />
+                            <label htmlFor="direct-bank-transfer">
+                                Direct Bank Transfer
+                            </label>
+                            Make your payment directly into our bank account.
+                            Please use your Order ID as the payment reference.
+                            Your order will not be shipped until the funds have
+                            cleared in our account.
                         </p>
                         <p>
-                            <input type="radio" id="paypal" name="radio-group" />
+                            <input
+                                type="radio"
+                                id="paypal"
+                                name="radio-group"
+                            />
                             <label htmlFor="paypal">PayPal</label>
                         </p>
                         <p>
-                            <input type="radio" id="cash-on-delivery" name="radio-group" />
-                            <label htmlFor="cash-on-delivery">Cash on Delivery</label>
+                            <input
+                                type="radio"
+                                id="cash-on-delivery"
+                                name="radio-group"
+                            />
+                            <label htmlFor="cash-on-delivery">
+                                Cash on Delivery
+                            </label>
                         </p>
                     </div>
 
-                    <Payment 
+                    <Payment
                         amount={totalAmount * 100}
                         disabled={this.props.disabled}
                     />
@@ -97,11 +121,9 @@ class OrderSummary extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.addedItems,
-        total: state.total
-    }
-}
+        products: state.cart.addedItems,
+        total: state.cart.total,
+    };
+};
 
-export default connect(
-    mapStateToProps
-)(OrderSummary)
+export default connect(mapStateToProps)(OrderSummary);
