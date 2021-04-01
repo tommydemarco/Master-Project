@@ -1,6 +1,7 @@
-import React from "react";
-import Navbar from "../components/Layouts/Navbar";
-import Footer from "../components/Layouts/Footer";
+import { connect } from "react-redux";
+import { setBannerText } from "../store/actions/bannerActions";
+import { useBannerUpdate } from "../utils/hooks";
+
 import Banner from "../components/Saas/Banner";
 import Features from "../components/Saas/Features";
 import Overview from "../components/Saas/Overview";
@@ -14,25 +15,35 @@ import GetStarted from "../components/Saas/GetStarted";
 import Feedback from "../components/Saas/Feedback";
 import Partner from "../components/Saas/Partner";
 
-class Index extends React.Component {
-    render() {
-        return (
-            <React.Fragment>
-                <Banner />
-                <Features />
-                <Overview />
-                <JoinCard />
-                <CtaCard />
-                <SaasTools />
-                <Funfact />
-                <WorkProcess />
-                <PricingPlan />
-                <GetStarted />
-                <Feedback />
-                <Partner />
-            </React.Fragment>
-        );
-    }
-}
+const HomePage = ({ setBannerText }) => {
+    const bannerText = {
+        title: null,
+        subtitle: null,
+    };
+    useBannerUpdate(setBannerText, bannerText);
 
-export default Index;
+    return (
+        <React.Fragment>
+            <Banner />
+            <Features />
+            <Overview />
+            <JoinCard />
+            <CtaCard />
+            <SaasTools />
+            <Funfact />
+            <WorkProcess />
+            <PricingPlan />
+            <GetStarted />
+            <Feedback />
+            <Partner />
+        </React.Fragment>
+    );
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setBannerText: (bannerText) => dispatch(setBannerText(bannerText)),
+    };
+};
+
+export default connect(null, mapDispatchToProps)(HomePage);

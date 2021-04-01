@@ -71,7 +71,7 @@ const Navbar = ({ products, router, noBanner }) => {
                 <div id="navbar" className={navbarClasses.join(" ")}>
                     <div className="container">
                         <nav className="navbar navbar-expand-md navbar-light">
-                            <Link href="/saas">
+                            <Link href="/">
                                 <a className="navbar-brand">
                                     <img src={logo} alt="logo" />
                                 </a>
