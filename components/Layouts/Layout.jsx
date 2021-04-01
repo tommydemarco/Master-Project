@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { bannerContext } from "../../context";
 
 import Navbar from "./Navbar"
-import Banner from "./Banner"
+import LayoutBanner from "./LayoutBanner"
 import Footer from "./Footer"
 import SearchForm from "./SearchForm"
 import SideDrawer from "./SideDrawer"
@@ -14,14 +14,12 @@ const Layout = ({ children }) => {
 
     const { state } = useContext(bannerContext)
 
-    const noBanner = !state.title && !state.subtitle
-
     return (
         <>
-            <Navbar noBanner={noBanner} />
-            {noBanner && <div className="navbar-placeholder"></div>}
-            {<Banner title={state.title} subtitle={state.subtitle} style={noBanner ? { display: "none"} : {} } noBanner={noBanner}/>}
-            {children}
+            <Navbar noBanner={!state.showBanner} />
+            <div style={state.showBanner ? { display: "none"} : {} } className="navbar-placeholder"></div>
+            {<LayoutBanner noBanner={!state.showBanner}/>}
+                {children}
             <Footer />
             {/* <SearchForm /> */}
             {/* <SideDrawer /> */}

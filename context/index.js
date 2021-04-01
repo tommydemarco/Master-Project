@@ -3,17 +3,14 @@ import { createContext, useReducer } from "react";
 const bannerContext = createContext(null);
 
 const INITIAL_STATE = {
-    title: null,
-    subtitle: null,
+    showBanner: false,
 };
 
 const bannerReducer = (state, action) => {
     switch (action.type) {
-        case "SET_BANNER_TEXT":
+        case "SET_BANNER":
             return {
-                ...state,
-                title: action.payload.title,
-                subtitle: action.payload.subtitle,
+                showBanner: action.payload,
             };
         default:
             return state;

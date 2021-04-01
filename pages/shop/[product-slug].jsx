@@ -5,13 +5,9 @@ import { useBannerUpdate } from "../../utils/hooks";
 import DetailsBody from '../../components/Shop/DetailsBody';
 
 const ProductDetails = () => {
-    const bannerText = {
-        title: null,
-        subtitle: null,
-    };
     const { dispatch } = useContext(bannerContext);
-    useBannerUpdate(dispatch, bannerText);
-    
+    useBannerUpdate(dispatch, false);
+
     return (
         <DetailsBody />
     );

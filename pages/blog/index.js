@@ -5,13 +5,8 @@ import { useBannerUpdate } from "../../utils/hooks";
 import BlogCard from "../../components/BlogCard";
 
 const Blog = () => {
-    const bannerText = {
-        title: "Blog",
-        subtitle:
-            "Browse through our latest posts to find cool Javascript news",
-    };
     const { dispatch } = useContext(bannerContext);
-    useBannerUpdate(dispatch, bannerText);
+    useBannerUpdate(dispatch, false);
 
     return (
         <React.Fragment>

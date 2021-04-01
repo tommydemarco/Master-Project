@@ -16,12 +16,8 @@ import Feedback from "../components/Saas/Feedback";
 import Partner from "../components/Saas/Partner";
 
 const HomePage = () => {
-    const bannerText = {
-        title: null,
-        subtitle: null,
-    };
     const { dispatch } = useContext(bannerContext);
-    useBannerUpdate(dispatch, bannerText);
+    useBannerUpdate(dispatch, false);
 
     return (
         <React.Fragment>
