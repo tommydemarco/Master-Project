@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
 import { bannerContext } from "../context";
+import { useBannerUpdate } from "../utils/hooks";
 
 import Banner from "../components/Saas/Banner";
 import Features from "../components/Saas/Features";
@@ -16,13 +17,11 @@ import Partner from "../components/Saas/Partner";
 
 const HomePage = () => {
     const bannerText = {
-        text: null,
+        title: null,
         subtitle: null,
     };
     const { dispatch } = useContext(bannerContext);
-    useEffect(() => {
-        dispatch({ type: "SET_BANNER_TEXT", payload: bannerText });
-    }, []);
+    useBannerUpdate(dispatch, bannerText);
 
     return (
         <React.Fragment>

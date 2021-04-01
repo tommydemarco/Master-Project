@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
         <>
             <Navbar noBanner={noBanner} />
             {noBanner && <div className="navbar-placeholder"></div>}
-            {!noBanner && <Banner title={state.title} subtitle={state.subtitle} />}
+            {<Banner title={state.title} subtitle={state.subtitle} style={noBanner ? { display: "none"} : {} } noBanner={noBanner}/>}
             {children}
             <Footer />
             {/* <SearchForm /> */}

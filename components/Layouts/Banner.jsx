@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
 
-const Banner = ({ title, subtitle }) => {
+const Banner = ({ title, subtitle, noBanner }) => {
 
     return (
         <section className="page-title-banner">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12">
-                        <h2>{title}</h2>
-                        <span>{subtitle}</span>
+                        {!noBanner && <h2>{title}</h2>}
+                        {!noBanner && <span>{subtitle}</span>}
                     </div>
                 </div>
             </div>
@@ -24,8 +24,8 @@ const Banner = ({ title, subtitle }) => {
 };
 
 Banner.propTypes = {
-    title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
 };
 
 
