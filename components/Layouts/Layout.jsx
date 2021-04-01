@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { connect } from "react-redux"
+import { useContext } from "react";
+import { bannerContext } from "../../context";
 
 import Navbar from "./Navbar"
 import Banner from "./Banner"
@@ -9,14 +10,17 @@ import Footer from "./Footer"
 import SearchForm from "./SearchForm"
 import SideDrawer from "./SideDrawer"
 
-const Layout = ({ children, bannerTitle, bannerSubtitle }) => {
+const Layout = ({ children }) => {
 
-    const noBanner = !bannerTitle && !bannerSubtitle
+    const { state } = useContext(bannerContext)
+
+    const noBanner = !state.title && !state.subtitle
+
     return (
         <>
             <Navbar noBanner={noBanner} />
             {noBanner && <div className="navbar-placeholder"></div>}
-            {!noBanner && <Banner title={bannerTitle} subtitle={bannerSubtitle} />}
+            {!noBanner && <Banner title={state.title} subtitle={state.subtitle} />}
             {children}
             <Footer />
             {/* <SearchForm /> */}
@@ -26,14 +30,8 @@ const Layout = ({ children, bannerTitle, bannerSubtitle }) => {
 }
 
 Layout.propTypes = {
-
+    children: PropTypes.node.isRequired
 }
 
-const mapStateToProps = state => {
-    return {
-        bannerTitle: state.banner.title,
-        bannerSubtitle: state.banner.subtitle
-    }
-}
 
-export default connect(mapStateToProps)(Layout);
+export default Layout;

@@ -1,7 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-export const useBannerUpdate = (actionCreator, bannerText) => {
+export const useBannerUpdate = (dispatch, bannerText) => {
+    const [secondRender, setSecondRender] = useState(false);
     useEffect(() => {
-        actionCreator(bannerText);
+        setSecondRender(true);
     }, []);
+    (() => {
+        if (secondRender) return;
+        dispatch({ type: "SET_BANNER_TEXT", payload: bannerText });
+    })();
 };

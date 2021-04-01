@@ -1,15 +1,16 @@
-import { connect } from "react-redux";
-import { setBannerText } from "../../store/actions/bannerActions";
+import { useContext } from "react";
+import { bannerContext } from "../../context";
 import { useBannerUpdate } from "../../utils/hooks";
 
 import DetailsContent from "../../components/Blog/DetailsContent";
 
-const BlogArticlePage = ({ setBannerText }) => {
+const BlogArticlePage = () => {
     const bannerText = {
         title: null,
         subtitle: null,
     };
-    useBannerUpdate(setBannerText, bannerText);
+    const { dispatch } = useContext(bannerContext);
+    useBannerUpdate(dispatch, bannerText);
 
     return (
         <React.Fragment>
@@ -18,10 +19,4 @@ const BlogArticlePage = ({ setBannerText }) => {
     );
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        setBannerText: (bannerText) => dispatch(setBannerText(bannerText)),
-    };
-};
-
-export default connect(null, mapDispatchToProps)(BlogArticlePage);
+export default BlogArticlePage;

@@ -13,6 +13,7 @@ import App from "next/app";
 import Head from "next/head";
 import withRedux from "next-redux-wrapper";
 import { initStore } from "../store";
+import BannerContext from "../context";
 
 import GoTop from "../components/Shared/GoTop";
 import Layout from "../components/Layouts";
@@ -54,9 +55,11 @@ export default withRedux(initStore)(
 
                     <Preloader>
                         <Provider store={store}>
-                            <Layout>
-                                <Component {...pageProps} />
-                            </Layout>
+                            <BannerContext>
+                                <Layout>
+                                    <Component {...pageProps} />
+                                </Layout>
+                            </BannerContext>
                         </Provider>
 
                         <GoTop scrollStepInPx="50" delayInMs="16.66" />

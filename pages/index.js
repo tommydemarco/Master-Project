@@ -1,6 +1,5 @@
-import { connect } from "react-redux";
-import { setBannerText } from "../store/actions/bannerActions";
-import { useBannerUpdate } from "../utils/hooks";
+import { useContext, useEffect } from "react";
+import { bannerContext } from "../context";
 
 import Banner from "../components/Saas/Banner";
 import Features from "../components/Saas/Features";
@@ -15,12 +14,15 @@ import GetStarted from "../components/Saas/GetStarted";
 import Feedback from "../components/Saas/Feedback";
 import Partner from "../components/Saas/Partner";
 
-const HomePage = ({ setBannerText }) => {
+const HomePage = () => {
     const bannerText = {
-        title: null,
+        text: null,
         subtitle: null,
     };
-    useBannerUpdate(setBannerText, bannerText);
+    const { dispatch } = useContext(bannerContext);
+    useEffect(() => {
+        dispatch({ type: "SET_BANNER_TEXT", payload: bannerText });
+    }, []);
 
     return (
         <React.Fragment>
@@ -40,10 +42,4 @@ const HomePage = ({ setBannerText }) => {
     );
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        setBannerText: (bannerText) => dispatch(setBannerText(bannerText)),
-    };
-};
-
-export default connect(null, mapDispatchToProps)(HomePage);
+export default HomePage;
