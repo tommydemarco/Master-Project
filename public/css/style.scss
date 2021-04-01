@@ -65,15 +65,15 @@ This files table contents are outlined below>>>>>
 /*================================================
 Default CSS
 =================================================*/
-@import url('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i");
 :root {
-    --fontFamily: 'Nunito', sans-serif;
+    --fontFamily: "Nunito", sans-serif;
     --templateColor: #13c4a1;
-    --templateColor2: #FF8A73;
+    --templateColor2: #ff8a73;
     --whiteColor: #ffffff;
     --blackColor: #000000;
     --paragraphColor: #818992;
-    --transition: .5s;
+    --transition: 0.5s;
 }
 body {
     font-family: var(--fontFamily);
@@ -83,11 +83,12 @@ body {
 a {
     color: var(--blackColor);
     text-decoration: none;
-    transition: .4s;
+    transition: 0.4s;
     display: inline-block;
     outline: 0;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         text-decoration: none;
         color: var(--templateColor2);
     }
@@ -129,29 +130,38 @@ button {
     color: var(--whiteColor);
     background-color: var(--templateColor2);
 
-    &:hover, &:focus, &:active {
+    &:hover,
+    &:focus,
+    &:active {
         color: var(--whiteColor);
         background: var(--templateColor);
         transform: translateY(-5px);
     }
-    &.focus, &:focus {
+    &.focus,
+    &:focus {
         box-shadow: unset;
     }
-    &:not(:disabled):not(.disabled).active:focus, &:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    &:not(:disabled):not(.disabled).active:focus,
+    &:not(:disabled):not(.disabled):active:focus,
+    .show > .btn-primary.dropdown-toggle:focus {
         box-shadow: unset;
     }
-    &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    &:not(:disabled):not(.disabled).active,
+    &:not(:disabled):not(.disabled):active,
+    .show > .btn-primary.dropdown-toggle {
         color: var(--whiteColor);
         background: var(--templateColor);
         transform: translateY(-5px);
     }
-    &.disabled, &:disabled {
+    &.disabled,
+    &:disabled {
         color: var(--whiteColor);
         background-color: var(--templateColor2);
         border-color: var(--templateColor2);
         opacity: 1;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             background: var(--templateColor);
         }
     }
@@ -166,17 +176,18 @@ button {
     border-radius: 5px;
     text-transform: uppercase;
     position: relative;
-    box-shadow: 0 13px 27px 0 rgba(163,48,53,.25);
+    box-shadow: 0 13px 27px 0 rgba(163, 48, 53, 0.25);
     z-index: 1;
-    transition: .9s;
+    transition: 0.9s;
 
-    &::after, &::before {
-        content: '';
+    &::after,
+    &::before {
+        content: "";
         position: absolute;
         top: 0;
         height: 100%;
         width: 0;
-        transition: .4s;
+        transition: 0.4s;
         background: var(--templateColor);
         z-index: -1;
         border-radius: 5px;
@@ -188,7 +199,8 @@ button {
         right: 0;
     }
     &:hover {
-        &::after, &::before {
+        &::after,
+        &::before {
             width: 50%;
         }
     }
@@ -225,7 +237,7 @@ button {
         overflow: hidden;
 
         &::before {
-            content: '';
+            content: "";
             position: absolute;
             left: 0;
             top: 0;
@@ -243,7 +255,7 @@ button {
     from {
         -webkit-transform: translateX(0);
     }
-    to { 
+    to {
         -webkit-transform: translateX(85px);
     }
 }
@@ -251,7 +263,7 @@ button {
     from {
         transform: translateX(0);
     }
-    to { 
+    to {
         transform: translateX(85px);
     }
 }
@@ -265,7 +277,7 @@ button {
     font-size: 16px;
     border: 1px solid #eeeeee;
     border-radius: 5px;
-    transition: .4s;
+    transition: 0.4s;
     color: var(--paragraphColor);
     background: var(--whiteColor);
 
@@ -313,7 +325,8 @@ Preloader CSS
             margin: 6px;
             box-sizing: border-box;
             border: 36px solid var(--templateColor);
-            border-color: var(--templateColor) transparent var(--templateColor2) transparent;
+            border-color: var(--templateColor) transparent var(--templateColor2)
+                transparent;
             animation: lds-hourglass 2.9s infinite;
         }
     }
@@ -336,7 +349,7 @@ Preloader CSS
 Navbar CSS
 =================================================*/
 .crake-nav {
-    background: transparent;
+    background: var(--templateColor);
     position: absolute;
     top: 0;
     left: 0;
@@ -371,7 +384,7 @@ Navbar CSS
                     position: relative;
 
                     &::before {
-                        content: '';
+                        content: "";
                         position: absolute;
                         left: 0;
                         top: 9px;
@@ -381,7 +394,7 @@ Navbar CSS
                         opacity: 0;
                         border-radius: 50%;
                         visibility: hidden;
-                        transition: .4s;
+                        transition: 0.4s;
                     }
                     &:hover {
                         &::before {
@@ -480,7 +493,7 @@ Navbar CSS
                                     &:hover {
                                         color: var(--templateColor) !important;
                                         padding-left: 25px !important;
-                                        
+
                                         &::before {
                                             left: 13px;
                                             opacity: 1;
@@ -490,7 +503,7 @@ Navbar CSS
                                     &.active {
                                         color: var(--templateColor) !important;
                                         padding-left: 25px !important;
-        
+
                                         &::before {
                                             left: 13px;
                                             opacity: 1;
@@ -583,8 +596,9 @@ Navbar CSS
                             margin-bottom: 2px;
                             transition: all 0.4s ease-in-out;
 
-                            &::before, &::after {
-                                content: '';
+                            &::before,
+                            &::after {
+                                content: "";
                                 position: absolute;
                                 right: -12px;
                                 top: 0;
@@ -608,8 +622,9 @@ Navbar CSS
                             border-radius: 50%;
                             transition: all 0.4s ease-in-out;
 
-                            &::before, &::after {
-                                content: '';
+                            &::before,
+                            &::after {
+                                content: "";
                                 position: absolute;
                                 right: -12px;
                                 top: 0;
@@ -633,8 +648,9 @@ Navbar CSS
                             border-radius: 50%;
                             transition: all 0.4s ease-in-out;
 
-                            &::before, &::after {
-                                content: '';
+                            &::before,
+                            &::after {
+                                content: "";
                                 position: absolute;
                                 right: -12px;
                                 top: 0;
@@ -649,7 +665,8 @@ Navbar CSS
                                 transition: all 0.8s ease-in-out;
                             }
                         }
-                        &:hover, &:focus {
+                        &:hover,
+                        &:focus {
                             .bar-2 {
                                 &::after {
                                     opacity: 0;
@@ -658,7 +675,8 @@ Navbar CSS
                                 }
                             }
                             .bar-3 {
-                                &::after, &::before {
+                                &::after,
+                                &::before {
                                     opacity: 0;
                                     visibility: hidden;
                                     transform: translateX(-100%);
@@ -676,11 +694,13 @@ Navbar CSS
                 li {
                     a {
                         color: #716c80 !important;
-    
+
                         &::before {
                             background: var(--templateColor);
                         }
-                        &:hover, &:focus, &.active {
+                        &:hover,
+                        &:focus,
+                        &.active {
                             color: var(--templateColor) !important;
                         }
                     }
@@ -688,21 +708,24 @@ Navbar CSS
                         .bar-1 {
                             background: #716c80;
 
-                            &::before, &::after {
+                            &::before,
+                            &::after {
                                 background: #716c80;
                             }
                         }
                         .bar-2 {
                             background: #716c80;
 
-                            &::before, &::after {
+                            &::before,
+                            &::after {
                                 background: #716c80;
                             }
                         }
                         .bar-3 {
                             background: #716c80;
 
-                            &::before, &::after {
+                            &::before,
+                            &::after {
                                 background: #716c80;
                             }
                         }
@@ -726,6 +749,11 @@ Navbar CSS
         animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
     }
 }
+
+.crake-nav--no-banner {
+    background: var(--templateColor);
+}
+
 .header-search {
     position: fixed;
     top: 0px;
@@ -752,7 +780,7 @@ Navbar CSS
         input {
             &[type="search"] {
                 width: 100%;
-                color: #222D39;
+                color: #222d39;
                 font-size: 20px;
                 text-align: left;
                 border: 1px solid var(--templateColor);
@@ -760,7 +788,7 @@ Navbar CSS
                 padding: 25px 10px 25px 30px;
                 outline: none;
                 background: transparent;
-                transition: .4s;
+                transition: 0.4s;
 
                 &:focus {
                     border-color: var(--templateColor2);
@@ -796,13 +824,14 @@ Navbar CSS
         width: 35px;
         height: 35px;
         border: 1px solid var(--templateColor2);
-        transition: .4s;
+        transition: 0.4s;
         right: 24%;
         margin: -100px auto 0;
         top: 50%;
         line-height: 25px;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             background-color: var(--templateColor) !important;
             color: var(--whiteColor) !important;
             border-color: var(--templateColor) !important;
@@ -877,10 +906,10 @@ Navbar CSS
                         height: 2px;
                         border-radius: 5px;
                         background: var(--templateColor);
-                        content: '';
+                        content: "";
                     }
                     &::after {
-                        content: '';
+                        content: "";
                         position: absolute;
                         left: 0;
                         bottom: -7px;
@@ -900,10 +929,10 @@ Navbar CSS
                     padding: 0;
                     margin: 0;
                     list-style-type: none;
-    
+
                     li {
                         margin-bottom: 10px;
-    
+
                         &:last-child {
                             margin-bottom: 0;
                         }
@@ -915,7 +944,7 @@ Navbar CSS
                             padding-left: 65px;
                             text-transform: uppercase;
                             margin-bottom: 17px;
-    
+
                             i {
                                 position: absolute;
                                 left: 0;
@@ -929,7 +958,7 @@ Navbar CSS
                                 width: 50px;
                                 line-height: 50px;
                                 font-size: 25px;
-                                transition: .4s;
+                                transition: 0.4s;
                             }
                             span {
                                 display: block;
@@ -964,8 +993,9 @@ Navbar CSS
                                 border-radius: 50%;
                                 color: var(--paragraphColor);
                                 border: 1px solid var(--paragraphColor);
-    
-                                &:hover, &:focus {
+
+                                &:hover,
+                                &:focus {
                                     color: var(--whiteColor);
                                     background: var(--templateColor);
                                     border-color: var(--templateColor);
@@ -1030,7 +1060,7 @@ Main Banner CSS
     background: var(--templateColor);
     position: relative;
     z-index: 1;
-    
+
     .hero-content {
         h1 {
             color: var(--whiteColor);
@@ -1050,18 +1080,22 @@ Main Banner CSS
         }
         .btn {
             &:hover {
-                &::after, &::before {
+                &::after,
+                &::before {
                     background: var(--whiteColor);
                 }
                 transform: translateY(0);
             }
         }
         .btn-primary {
-            &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+            &:not(:disabled):not(.disabled).active,
+            &:not(:disabled):not(.disabled):active,
+            .show > .btn-primary.dropdown-toggle {
                 color: var(--templateColor2);
                 background: var(--whiteColor);
             }
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
                 background: var(--whiteColor);
                 color: var(--templateColor2);
             }
@@ -1079,7 +1113,7 @@ Main Banner CSS
                 position: relative;
                 margin-left: 10px;
                 top: 4px;
-                transition: .4s;
+                transition: 0.4s;
             }
             &:hover {
                 i {
@@ -1093,7 +1127,7 @@ Main Banner CSS
 
             .form-control {
                 height: 70px;
-                background: rgba(255, 255, 255,0.10);
+                background: rgba(255, 255, 255, 0.1);
                 box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.1);
                 border: none;
                 border-radius: 3px;
@@ -1120,19 +1154,19 @@ Main Banner CSS
         position: relative;
 
         &::before {
-            content: '';
+            content: "";
             position: absolute;
             z-index: -1;
             background: var(--whiteColor);
             width: 96%;
-            opacity: .62;
+            opacity: 0.62;
             height: 50%;
             bottom: -6px;
             left: 0;
             right: 0;
             margin: auto;
             border-radius: 3px;
-            transition: .4s;
+            transition: 0.4s;
         }
 
         form {
@@ -1386,7 +1420,8 @@ Main Banner CSS
         }
     }
     &.marketing-home {
-        background: var(--whiteColor) url("/images/bg-point.png") no-repeat fixed right -500px center/auto;
+        background: var(--whiteColor) url("/images/bg-point.png") no-repeat
+            fixed right -500px center/auto;
 
         .hero-content {
             h1 {
@@ -1398,7 +1433,8 @@ Main Banner CSS
             .video-btn {
                 color: #716c80;
 
-                &:hover, &:focus {
+                &:hover,
+                &:focus {
                     i {
                         color: var(--templateColor);
                     }
@@ -1406,17 +1442,21 @@ Main Banner CSS
             }
             .btn {
                 &:hover {
-                    &::after, &::before {
+                    &::after,
+                    &::before {
                         background: var(--templateColor);
                     }
                 }
             }
             .btn-primary {
-                &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+                &:not(:disabled):not(.disabled).active,
+                &:not(:disabled):not(.disabled):active,
+                .show > .btn-primary.dropdown-toggle {
                     background: var(--templateColor);
                     color: var(--whiteColor);
                 }
-                &:hover, &:focus {
+                &:hover,
+                &:focus {
                     background: var(--templateColor);
                     color: var(--whiteColor);
                 }
@@ -1530,7 +1570,7 @@ Main Banner CSS
             repeat: no-repeat;
         }
         &::before {
-            content: '';
+            content: "";
             position: absolute;
             left: 0;
             top: 0;
@@ -1538,7 +1578,7 @@ Main Banner CSS
             height: 100%;
             background: var(--blackColor);
             z-index: -1;
-            opacity: .87;
+            opacity: 0.87;
         }
         .hero-content {
             span {
@@ -1580,7 +1620,7 @@ Main Banner CSS
         }
 
         &::before {
-            content: '';
+            content: "";
             position: absolute;
             left: 0;
             top: 0;
@@ -1588,7 +1628,7 @@ Main Banner CSS
             height: 100%;
             background: var(--blackColor);
             z-index: -1;
-            opacity: .95;
+            opacity: 0.95;
         }
     }
     .startup-bg1 {
@@ -1604,19 +1644,19 @@ Main Banner CSS
         .owl-nav {
             margin-top: 0;
 
-            [class*=owl-] {
+            [class*="owl-"] {
                 position: absolute;
                 left: 10px;
                 top: 50%;
                 margin: 0;
                 width: 45px;
                 height: 45px;
-                background: rgba(255,255,255,0.1);
+                background: rgba(255, 255, 255, 0.1);
                 line-height: 42px;
                 font-size: 30px;
                 border-radius: 5px;
                 margin-top: -25px;
-                transition: .4s;
+                transition: 0.4s;
 
                 &.owl-next {
                     left: auto;
@@ -1664,7 +1704,7 @@ Main Banner CSS
     position: absolute;
     border-radius: 50%;
     z-index: -1;
-    opacity: .5;
+    opacity: 0.5;
     animation: movebounce 5s linear infinite;
 }
 .shape1 {
@@ -1693,7 +1733,7 @@ Main Banner CSS
     left: 9%;
     top: 23%;
     z-index: -1;
-    opacity: .3;
+    opacity: 0.3;
 }
 .shape6 {
     position: absolute;
@@ -1701,7 +1741,7 @@ Main Banner CSS
     z-index: -1;
     left: 30px;
     animation: rotate3d 4s linear infinite;
-    opacity: .6;
+    opacity: 0.6;
 }
 .shape7 {
     position: absolute;
@@ -1709,7 +1749,7 @@ Main Banner CSS
     z-index: -1;
     left: 0;
     animation: movebounce 5s linear infinite;
-    opacity: .4;
+    opacity: 0.4;
 }
 .shape8 {
     position: absolute;
@@ -1739,25 +1779,25 @@ Main Banner CSS
 }
 @keyframes movebounce {
     0% {
-        transform: translateY(0px); 
+        transform: translateY(0px);
     }
     50% {
-        transform: translateY(20px); 
+        transform: translateY(20px);
     }
     100% {
-        transform: translateY(0px); 
-    } 
+        transform: translateY(0px);
+    }
 }
 @keyframes moveleftbounce {
     0% {
-        transform: translateX(0px); 
+        transform: translateX(0px);
     }
     50% {
-        transform: translateX(20px); 
+        transform: translateX(20px);
     }
     100% {
-        transform: translateX(0px); 
-    } 
+        transform: translateX(0px);
+    }
 }
 .rotateme {
     animation-name: rotateme;
@@ -1817,64 +1857,80 @@ Main Banner CSS
         transform: rotateY(360deg);
     }
 }
-@keyframes animationFramesOne{
+@keyframes animationFramesOne {
     0% {
-        transform:  translate(0px,0px)  rotate(0deg) ;
+        transform: translate(0px, 0px) rotate(0deg);
     }
     20% {
-        transform:  translate(73px,-1px)  rotate(36deg) ;
+        transform: translate(73px, -1px) rotate(36deg);
     }
     40% {
-        transform:  translate(141px,72px)  rotate(72deg) ;
+        transform: translate(141px, 72px) rotate(72deg);
     }
     60% {
-        transform:  translate(83px,122px)  rotate(108deg) ;
+        transform: translate(83px, 122px) rotate(108deg);
     }
     80% {
-        transform:  translate(-40px,72px)  rotate(144deg) ;
+        transform: translate(-40px, 72px) rotate(144deg);
     }
     100% {
-        transform:  translate(0px,0px)  rotate(0deg) ;
+        transform: translate(0px, 0px) rotate(0deg);
     }
 }
 @-webkit-keyframes animationFramesOne {
     0% {
-        -webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+        -webkit-transform: translate(0px, 0px) rotate(0deg);
     }
     20% {
-        -webkit-transform:  translate(73px,-1px)  rotate(36deg) ;
+        -webkit-transform: translate(73px, -1px) rotate(36deg);
     }
     40% {
-        -webkit-transform:  translate(141px,72px)  rotate(72deg) ;
+        -webkit-transform: translate(141px, 72px) rotate(72deg);
     }
     60% {
-        -webkit-transform:  translate(83px,122px)  rotate(108deg) ;
+        -webkit-transform: translate(83px, 122px) rotate(108deg);
     }
     80% {
-        -webkit-transform:  translate(-40px,72px)  rotate(144deg) ;
+        -webkit-transform: translate(-40px, 72px) rotate(144deg);
     }
     100% {
-        -webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+        -webkit-transform: translate(0px, 0px) rotate(0deg);
     }
 }
 @-webkit-keyframes ripple-white {
     0% {
-        -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2), 0 0 0 20px rgba(255, 255, 255, 0.2), 0 0 0 40px rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2), 0 0 0 20px rgba(255, 255, 255, 0.2), 0 0 0 40px rgba(255, 255, 255, 0.2)
+        -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2),
+            0 0 0 20px rgba(255, 255, 255, 0.2),
+            0 0 0 40px rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2),
+            0 0 0 20px rgba(255, 255, 255, 0.2),
+            0 0 0 40px rgba(255, 255, 255, 0.2);
     }
     100% {
-        -webkit-box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.2), 0 0 0 40px rgba(255, 255, 255, 0.2), 0 0 0 60px rgba(255, 255, 255, 0);
-        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.2), 0 0 0 40px rgba(255, 255, 255, 0.2), 0 0 0 60px rgba(255, 255, 255, 0)
+        -webkit-box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.2),
+            0 0 0 40px rgba(255, 255, 255, 0.2),
+            0 0 0 60px rgba(255, 255, 255, 0);
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.2),
+            0 0 0 40px rgba(255, 255, 255, 0.2),
+            0 0 0 60px rgba(255, 255, 255, 0);
     }
 }
 @keyframes ripple-white {
     0% {
-        -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2), 0 0 0 20px rgba(255, 255, 255, 0.2), 0 0 0 40px rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2), 0 0 0 20px rgba(255, 255, 255, 0.2), 0 0 0 40px rgba(255, 255, 255, 0.2)
+        -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2),
+            0 0 0 20px rgba(255, 255, 255, 0.2),
+            0 0 0 40px rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2),
+            0 0 0 20px rgba(255, 255, 255, 0.2),
+            0 0 0 40px rgba(255, 255, 255, 0.2);
     }
     100% {
-        -webkit-box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.2), 0 0 0 40px rgba(255, 255, 255, 0.2), 0 0 0 60px rgba(255, 255, 255, 0);
-        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.2), 0 0 0 40px rgba(255, 255, 255, 0.2), 0 0 0 60px rgba(255, 255, 255, 0)
+        -webkit-box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.2),
+            0 0 0 40px rgba(255, 255, 255, 0.2),
+            0 0 0 60px rgba(255, 255, 255, 0);
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.2),
+            0 0 0 40px rgba(255, 255, 255, 0.2),
+            0 0 0 60px rgba(255, 255, 255, 0);
     }
 }
 
@@ -1948,12 +2004,13 @@ Features CSS
         }
     }
     &.book-features {
-        background: #F9FAFC url('/images/bg-point.png') no-repeat fixed right -600px center/ auto;
+        background: #f9fafc url("/images/bg-point.png") no-repeat fixed right -600px
+            center/ auto;
     }
 }
 .single-features {
     text-align: center;
-    transition: .4s;
+    transition: 0.4s;
     margin-bottom: 40px;
 
     .icon {
@@ -1965,7 +2022,7 @@ Features CSS
         border-radius: 50%;
         font-size: 30px;
         color: var(--templateColor);
-        transition: .4s;
+        transition: 0.4s;
     }
     h3 {
         font: {
@@ -1990,7 +2047,7 @@ Features CSS
     text-align: center;
     border-radius: 5px;
     padding: 30px;
-    transition: .4s;
+    transition: 0.4s;
 
     h3 {
         font: {
@@ -2015,7 +2072,7 @@ Features CSS
         margin-top: 50px;
     }
 }
-.features-holder-content  {
+.features-holder-content {
     .section-title {
         text-align: left;
         margin: {
@@ -2045,7 +2102,7 @@ Features CSS
     background: var(--whiteColor);
     box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
     border-radius: 3px;
-    transition: .4s;
+    transition: 0.4s;
 
     .icon {
         display: inline-block;
@@ -2057,7 +2114,7 @@ Features CSS
         text-align: center;
         font-size: 30px;
         color: var(--templateColor);
-        transition: .4s;
+        transition: 0.4s;
     }
     h3 {
         font: {
@@ -2085,7 +2142,7 @@ Features CSS
             margin-bottom: 35px;
             position: relative;
             padding-left: 90px;
-            transition: .4s;
+            transition: 0.4s;
 
             &:last-child {
                 margin-bottom: 0;
@@ -2102,8 +2159,8 @@ Features CSS
                 font-size: 25px;
                 text-align: center;
                 color: var(--templateColor);
-                box-shadow: 0 0 1.25rem rgba(108,118,134,.1)!important;
-                transition: .4s;
+                box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1) !important;
+                transition: 0.4s;
             }
             h3 {
                 font: {
@@ -2114,7 +2171,7 @@ Features CSS
             }
             &:hover {
                 transform: translateY(-10px);
-        
+
                 .icon {
                     color: var(--whiteColor);
                     background: var(--templateColor2);
@@ -2139,7 +2196,7 @@ Product New Features CSS
     }
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         z-index: -1;
         left: 0;
@@ -2147,7 +2204,7 @@ Product New Features CSS
         width: 100%;
         height: 100%;
         background: var(--templateColor);
-        opacity: .87;
+        opacity: 0.87;
     }
 }
 .new-features-content {
@@ -2210,7 +2267,7 @@ Services CSS
 .single-services {
     margin-bottom: 30px;
     background: var(--whiteColor);
-    padding:  {
+    padding: {
         left: 30px;
         right: 30px;
         top: 30px;
@@ -2218,7 +2275,7 @@ Services CSS
     }
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.08);
     border-radius: 5px;
-    transition: .4s;
+    transition: 0.4s;
 
     .icon {
         display: inline-block;
@@ -2230,7 +2287,7 @@ Services CSS
         border-radius: 50%;
         font-size: 25px;
         color: var(--templateColor);
-        transition: .4s;
+        transition: 0.4s;
     }
     h3 {
         font: {
@@ -2303,7 +2360,8 @@ Overview CSS
 .overview-section {
     position: relative;
     z-index: 1;
-    background: #F9FAFC url('/images/bg-point.png') no-repeat fixed right -600px center/ auto;
+    background: #f9fafc url("/images/bg-point.png") no-repeat fixed right -600px
+        center/ auto;
 
     .shape7 {
         opacity: 1;
@@ -2353,7 +2411,7 @@ Overview CSS
             padding: 0;
             margin: 15px 0 25px;
             list-style-type: none;
-            
+
             li {
                 color: var(--paragraphColor);
                 padding-left: 18px;
@@ -2361,7 +2419,7 @@ Overview CSS
                 margin-bottom: 10px;
 
                 &::before {
-                    content: '';
+                    content: "";
                     position: absolute;
                     left: 0;
                     top: 8px;
@@ -2456,27 +2514,43 @@ Overview CSS
             position: absolute;
 
             &.item-one {
-                background-image: -webkit-linear-gradient(40deg,#e87e16 0,#f0de14 100%);
-                box-shadow: 0 20px 40px 0 rgba(224,149,32,.4);
+                background-image: -webkit-linear-gradient(
+                    40deg,
+                    #e87e16 0,
+                    #f0de14 100%
+                );
+                box-shadow: 0 20px 40px 0 rgba(224, 149, 32, 0.4);
                 right: 0;
                 top: -150px;
                 z-index: 1;
             }
             &.item-two {
-                background-image: -webkit-linear-gradient(40deg,#13C4A1 0,#41CBB0 100%);
-                box-shadow: 0 20px 40px 0 rgba(19,196,161,.4);
+                background-image: -webkit-linear-gradient(
+                    40deg,
+                    #13c4a1 0,
+                    #41cbb0 100%
+                );
+                box-shadow: 0 20px 40px 0 rgba(19, 196, 161, 0.4);
                 left: 60px;
                 top: 0;
             }
             &.item-three {
-                background-image: -webkit-linear-gradient(40deg,#008000 0,#268B26 100%);
-                box-shadow: 0 20px 40px 0 rgba(0,128,0,.4);
+                background-image: -webkit-linear-gradient(
+                    40deg,
+                    #008000 0,
+                    #268b26 100%
+                );
+                box-shadow: 0 20px 40px 0 rgba(0, 128, 0, 0.4);
                 left: 90px;
                 bottom: -10px;
             }
             &.item-four {
-                background-image: -webkit-linear-gradient(40deg,#FF8A73 0,#F89B88 100%);
-                box-shadow: 0 20px 40px 0 rgba(255,138,115,.4);
+                background-image: -webkit-linear-gradient(
+                    40deg,
+                    #ff8a73 0,
+                    #f89b88 100%
+                );
+                box-shadow: 0 20px 40px 0 rgba(255, 138, 115, 0.4);
                 right: 35px;
                 top: -15px;
             }
@@ -2515,7 +2589,7 @@ CTA CSS
     }
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         z-index: -1;
         left: 0;
@@ -2523,7 +2597,7 @@ CTA CSS
         width: 100%;
         height: 100%;
         background: var(--templateColor);
-        opacity: .87;
+        opacity: 0.87;
     }
     p {
         color: var(--whiteColor);
@@ -2534,17 +2608,21 @@ CTA CSS
     }
     .btn {
         &:hover {
-            &::after, &::before {
+            &::after,
+            &::before {
                 background: var(--whiteColor);
             }
         }
     }
     .btn-primary {
-        &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        .show > .btn-primary.dropdown-toggle {
             color: var(--templateColor2);
             background: var(--whiteColor);
         }
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             background: var(--whiteColor);
             color: var(--templateColor2);
         }
@@ -2557,14 +2635,14 @@ SAAS Tools CSS
 .saas-tools {
     position: relative;
     z-index: 1;
-    
+
     .bubble-animate {
         .circle {
             &.small {
-                opacity: .1;
+                opacity: 0.1;
             }
             &.medium {
-                opacity: .1;
+                opacity: 0.1;
             }
         }
     }
@@ -2575,7 +2653,7 @@ SAAS Tools CSS
     padding: 30px;
     box-shadow: 0 6px 13px 0 rgba(137, 173, 255, 0.35);
     border-radius: 5px;
-    
+
     .tabs {
         list-style-type: none;
         margin-bottom: 30px;
@@ -2599,7 +2677,7 @@ SAAS Tools CSS
                 left: 15px;
             }
             text-align: center;
-       
+
             &:first-child {
                 padding-left: 0;
             }
@@ -2625,8 +2703,8 @@ SAAS Tools CSS
                     font-size: 25px;
                     border-radius: 50%;
                     margin-bottom: 15px;
-                    -moz-transition: .4s;
-                    transition: .4s;
+                    -moz-transition: 0.4s;
+                    transition: 0.4s;
                 }
                 &:hover {
                     i {
@@ -2650,7 +2728,7 @@ SAAS Tools CSS
     .tab_content {
         .tabs_item {
             display: none;
-            
+
             &:first-child {
                 display: block;
             }
@@ -2704,7 +2782,7 @@ Fun Facts CSS
         bottom: 30px;
         right: 30px;
     }
-    transition: .4s;
+    transition: 0.4s;
     border-radius: 5px;
 
     .icon {
@@ -2716,7 +2794,7 @@ Fun Facts CSS
         border-radius: 50%;
         font-size: 25px;
         color: var(--templateColor);
-        transition: .4s;
+        transition: 0.4s;
     }
     h3 {
         font: {
@@ -2729,8 +2807,8 @@ Fun Facts CSS
         font-size: 17px;
     }
     &:hover {
-        box-shadow: 0 10px 55px 5px rgba(137,173,255,.35);
-        transform: translate(0,-10px);
+        box-shadow: 0 10px 55px 5px rgba(137, 173, 255, 0.35);
+        transform: translate(0, -10px);
         background-color: var(--whiteColor);
 
         .icon {
@@ -2755,7 +2833,7 @@ Fun Facts CSS
         border-radius: 50%;
         font-size: 25px;
         color: var(--templateColor);
-        transition: .4s;
+        transition: 0.4s;
     }
     h3 {
         font: {
@@ -2796,7 +2874,7 @@ Fun Facts CSS
             padding: 0;
             margin: 0 0 25px;
             list-style-type: none;
-            
+
             li {
                 color: var(--paragraphColor);
                 padding-left: 18px;
@@ -2804,7 +2882,7 @@ Fun Facts CSS
                 margin-bottom: 10px;
 
                 &::before {
-                    content: '';
+                    content: "";
                     position: absolute;
                     left: 0;
                     top: 8px;
@@ -2835,7 +2913,7 @@ Fun Facts CSS
     }
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         z-index: -1;
         left: 0;
@@ -2843,7 +2921,7 @@ Fun Facts CSS
         width: 100%;
         height: 100%;
         background: var(--templateColor);
-        opacity: .87;
+        opacity: 0.87;
     }
     .single-funfact {
         border: none;
@@ -2883,7 +2961,7 @@ Work Process CSS
     }
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         z-index: -1;
         left: 0;
@@ -2891,10 +2969,11 @@ Work Process CSS
         width: 100%;
         height: 100%;
         background: var(--templateColor);
-        opacity: .87;
+        opacity: 0.87;
     }
     .section-title {
-        h2, p {
+        h2,
+        p {
             color: var(--whiteColor);
         }
         .bar {
@@ -2912,23 +2991,23 @@ Work Process CSS
     background: var(--whiteColor);
     border-radius: 3px;
     box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
-    transition: .4s;
+    transition: 0.4s;
     z-index: 1;
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         z-index: -1;
         background: var(--whiteColor);
         width: 96%;
-        opacity: .62;
+        opacity: 0.62;
         height: 50%;
         bottom: -6px;
         left: 0;
         right: 0;
         margin: auto;
         border-radius: 3px;
-        transition: .4s;
+        transition: 0.4s;
     }
     .icon {
         display: inline-block;
@@ -2940,7 +3019,7 @@ Work Process CSS
         border-radius: 50%;
         font-size: 25px;
         color: var(--templateColor);
-        transition: .4s;
+        transition: 0.4s;
     }
     h3 {
         font: {
@@ -2950,8 +3029,8 @@ Work Process CSS
         margin: 25px 0 15px;
     }
     &:hover {
-        box-shadow: 0 10px 55px 5px rgba(137,173,255,.35);
-        transform: translate(0,-10px);
+        box-shadow: 0 10px 55px 5px rgba(137, 173, 255, 0.35);
+        transform: translate(0, -10px);
         background-color: var(--whiteColor);
 
         .icon {
@@ -3076,7 +3155,7 @@ Pricing CSS
             li {
                 margin-bottom: 10px;
                 text-decoration: line-through;
-                color: #CCDCEA;
+                color: #ccdcea;
 
                 &:last-child {
                     margin-bottom: 0;
@@ -3089,8 +3168,8 @@ Pricing CSS
         }
     }
     &:hover {
-        box-shadow: 0 10px 55px 5px rgba(137,173,255,.35);
-        transform: translate(0,-10px);
+        box-shadow: 0 10px 55px 5px rgba(137, 173, 255, 0.35);
+        transform: translate(0, -10px);
 
         .pricing-icon {
             background: var(--templateColor);
@@ -3111,8 +3190,8 @@ Pricing CSS
 .pricing-table {
     text-align: center;
     padding: 30px 0;
-    -o-transition: .3s ease-in;
-    transition: .3s ease-in;
+    -o-transition: 0.3s ease-in;
+    transition: 0.3s ease-in;
     position: relative;
     z-index: 1;
     background-color: var(--templateColor);
@@ -3135,7 +3214,7 @@ Pricing CSS
                 size: 45px;
                 weight: 700;
             }
-            transition: .3s ease-in;
+            transition: 0.3s ease-in;
             text-align: left;
             position: relative;
             padding: 15px 0 15px 65px;
@@ -3149,7 +3228,7 @@ Pricing CSS
                 width: 100%;
                 background-color: var(--whiteColor);
                 border-radius: 25px;
-                content: '';
+                content: "";
                 height: 100%;
                 -webkit-transform: skewX(-35deg);
                 -ms-transform: skewX(-35deg);
@@ -3191,17 +3270,21 @@ Pricing CSS
     .price-footer {
         .btn {
             &:hover {
-                &::after, &::before {
+                &::after,
+                &::before {
                     background: var(--whiteColor);
                 }
             }
         }
         .btn-primary {
-            &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+            &:not(:disabled):not(.disabled).active,
+            &:not(:disabled):not(.disabled):active,
+            .show > .btn-primary.dropdown-toggle {
                 color: var(--templateColor2);
                 background: var(--whiteColor);
             }
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
                 background: var(--whiteColor);
                 color: var(--templateColor2);
             }
@@ -3213,20 +3296,20 @@ Pricing CSS
 }
 /* Pricing Table Style Three */
 .pricing-table-box {
-	padding-bottom: 30px;
-	background: var(--whiteColor);
-	text-align: center;
-	z-index: 1;
-	position: relative;
-	border-radius: 5px;
+    padding-bottom: 30px;
+    background: var(--whiteColor);
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    border-radius: 5px;
     background: {
         image: url(/images/patt.png);
         position: center center;
     }
-	overflow: hidden;
-	box-shadow: 7px 5px 30px 0 rgba(72,73,121,0.15);
-    transition: .4s;
-    
+    overflow: hidden;
+    box-shadow: 7px 5px 30px 0 rgba(72, 73, 121, 0.15);
+    transition: 0.4s;
+
     .pricingTable-header {
         padding: 30px 15px 45px;
         background: var(--templateColor);
@@ -3241,8 +3324,11 @@ Pricing CSS
             position: absolute;
             right: -50%;
             top: -130%;
-            background: repeating-radial-gradient(rgba(255,255,255,0.05), rgba(255,255,255,0.2) 20%);
-            transition: .4s;
+            background: repeating-radial-gradient(
+                rgba(255, 255, 255, 0.05),
+                rgba(255, 255, 255, 0.2) 20%
+            );
+            transition: 0.4s;
         }
     }
     .title {
@@ -3314,7 +3400,7 @@ Project CSS
         .owl-nav {
             margin-top: 30px;
 
-            [class*=owl-] {
+            [class*="owl-"] {
                 color: var(--templateColor2);
                 font-size: 30px;
                 margin: 0 3px;
@@ -3323,7 +3409,7 @@ Project CSS
                 display: inline-block;
                 cursor: pointer;
                 border-radius: 0;
-                transition: .4s;
+                transition: 0.4s;
                 border: 1px solid #eee;
                 line-height: 1;
 
@@ -3333,14 +3419,14 @@ Project CSS
             }
         }
         .owl-controls {
-            line-height: .1;
+            line-height: 0.1;
         }
     }
 }
 .single-project {
     text-align: center;
     background: var(--whiteColor);
-    box-shadow: 0 10px 50px 0 rgba(46,65,90,.1);
+    box-shadow: 0 10px 50px 0 rgba(46, 65, 90, 0.1);
     margin-bottom: 30px;
     border-radius: 5px;
 
@@ -3366,7 +3452,7 @@ Project CSS
         position: relative;
 
         &::before {
-            content: '';
+            content: "";
             position: absolute;
             left: 0;
             top: 0;
@@ -3376,8 +3462,8 @@ Project CSS
             opacity: 0;
             visibility: hidden;
             border-radius: 5px;
-            transform: scale(.8);
-            transition: .4s;
+            transform: scale(0.8);
+            transition: 0.4s;
         }
         a {
             position: absolute;
@@ -3390,7 +3476,7 @@ Project CSS
             opacity: 0;
             visibility: hidden;
             margin-top: -20px;
-            transition: .4s;
+            transition: 0.4s;
             transform: scale(0);
 
             &:hover {
@@ -3406,7 +3492,7 @@ Project CSS
         .project-image {
             &::before {
                 visibility: visible;
-                opacity: .8;
+                opacity: 0.8;
                 transform: scale(1);
             }
             a {
@@ -3428,7 +3514,7 @@ Project Details CSS
     text-align: center;
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         top: 0;
@@ -3437,7 +3523,7 @@ Project Details CSS
         background: var(--blackColor);
         opacity: 0;
         visibility: hidden;
-        transition: .4s;
+        transition: 0.4s;
     }
     a {
         position: absolute;
@@ -3453,7 +3539,7 @@ Project Details CSS
     }
     &:hover {
         &::before {
-            opacity: .77;
+            opacity: 0.77;
             visibility: visible;
         }
         a {
@@ -3522,7 +3608,7 @@ Gallery CSS
     position: relative;
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         top: 0;
@@ -3531,8 +3617,8 @@ Gallery CSS
         background: var(--blackColor);
         opacity: 0;
         visibility: hidden;
-        transform: scale(.8);
-        transition: .4s;
+        transform: scale(0.8);
+        transition: 0.4s;
     }
     a {
         position: absolute;
@@ -3545,7 +3631,7 @@ Gallery CSS
         opacity: 0;
         visibility: hidden;
         margin-top: -20px;
-        transition: .4s;
+        transition: 0.4s;
         transform: scale(0);
 
         &:hover {
@@ -3555,7 +3641,7 @@ Gallery CSS
     &:hover {
         &::before {
             visibility: visible;
-            opacity: .8;
+            opacity: 0.8;
             transform: scale(1);
         }
         a {
@@ -3617,7 +3703,7 @@ How App Works CSS
     }
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         z-index: -1;
         left: 0;
@@ -3625,10 +3711,11 @@ How App Works CSS
         width: 100%;
         height: 100%;
         background: var(--templateColor);
-        opacity: .87;
+        opacity: 0.87;
     }
     .section-title {
-        h2, p {
+        h2,
+        p {
             color: var(--whiteColor);
         }
         .bar {
@@ -3647,7 +3734,7 @@ How App Works CSS
 }
 .single-app-works {
     text-align: center;
-    transition: .4s;
+    transition: 0.4s;
 
     .icon {
         display: inline-block;
@@ -3659,7 +3746,7 @@ How App Works CSS
         text-align: center;
         font-size: 30px;
         color: var(--templateColor);
-        transition: .4s;
+        transition: 0.4s;
     }
     h3 {
         margin: {
@@ -3693,7 +3780,7 @@ Screenshot CSS
         .owl-nav {
             margin-top: 120px;
 
-            [class*=owl-] {
+            [class*="owl-"] {
                 color: var(--templateColor2);
                 font-size: 30px;
                 margin: 0 3px;
@@ -3702,7 +3789,7 @@ Screenshot CSS
                 display: inline-block;
                 cursor: pointer;
                 border-radius: 0;
-                transition: .4s;
+                transition: 0.4s;
                 border: 1px solid #eee;
                 line-height: 1;
                 &:hover {
@@ -3711,7 +3798,7 @@ Screenshot CSS
             }
         }
         .owl-controls {
-            line-height: .1;
+            line-height: 0.1;
         }
     }
 }
@@ -3752,7 +3839,7 @@ Screenshot CSS
             display: block;
         }
         &::before {
-            content: '';
+            content: "";
             position: absolute;
             left: 0;
             top: 0;
@@ -3761,8 +3848,8 @@ Screenshot CSS
             background: var(--blackColor);
             opacity: 0;
             visibility: hidden;
-            transform: scale(.8);
-            transition: .4s;
+            transform: scale(0.8);
+            transition: 0.4s;
         }
         .popup-btn {
             position: absolute;
@@ -3776,7 +3863,7 @@ Screenshot CSS
             display: inline-block;
             visibility: hidden;
             margin-top: -20px;
-            transition: .4s;
+            transition: 0.4s;
             transform: scale(0);
 
             &:hover {
@@ -3790,7 +3877,7 @@ Screenshot CSS
         &:hover {
             &::before {
                 visibility: visible;
-                opacity: .8;
+                opacity: 0.8;
                 transform: scale(1);
             }
             .popup-btn {
@@ -3816,7 +3903,7 @@ Team CSS
                 bottom: 30px;
             }
 
-            [class*=owl-] {
+            [class*="owl-"] {
                 color: var(--templateColor2);
                 font-size: 30px;
                 margin: 0 3px;
@@ -3825,17 +3912,17 @@ Team CSS
                 display: inline-block;
                 cursor: pointer;
                 border-radius: 0;
-                transition: .4s;
+                transition: 0.4s;
                 border: 1px solid #eee;
                 line-height: 1;
-                
+
                 &:hover {
                     color: var(--templateColor);
                 }
             }
         }
         .owl-controls {
-            line-height: .1;
+            line-height: 0.1;
         }
     }
 }
@@ -3889,11 +3976,11 @@ Team CSS
                         border-color: var(--templateColor);
                     }
                     &.facebook {
-                        border-color: #5580FF;
-                        color: #5580FF;
+                        border-color: #5580ff;
+                        color: #5580ff;
 
                         &:hover {
-                            background-color: #5580FF;
+                            background-color: #5580ff;
                             color: var(--whiteColor);
                         }
                     }
@@ -3907,20 +3994,20 @@ Team CSS
                         }
                     }
                     &.twitter {
-                        border-color: #FF8A73;
-                        color: #FF8A73;
+                        border-color: #ff8a73;
+                        color: #ff8a73;
 
                         &:hover {
-                            background-color: #FF8A73;
+                            background-color: #ff8a73;
                             color: var(--whiteColor);
                         }
                     }
                     &.linkedin {
-                        border-color: #FFD474;
-                        color: #FFD474;
+                        border-color: #ffd474;
+                        color: #ffd474;
 
                         &:hover {
-                            background-color: #FFD474;
+                            background-color: #ffd474;
                             color: var(--whiteColor);
                         }
                     }
@@ -3938,7 +4025,33 @@ Team CSS
     padding: 30px;
 
     img {
-        clip-path: polygon(50% 0%, 38.11% 6.7%, 24.99% 6.72%, 18.06% 18.44%, 6.7% 25%, 6.56% 38.64%, 0% 50%, 6.7% 61.89%, 6.7% 75%, 18.44% 81.94%, 25% 93.3%, 38.64% 93.44%, 50% 100%, 61.88% 93.3%, 75% 93.3%, 81.94% 81.56%, 93.3% 74.9%, 93.44% 61.36%, 100% 50%, 93.3% 38.11%, 93.3% 25%, 81.56% 18.06%, 74.96% 6.7%, 61.36% 6.56%, 50% 0%);
+        clip-path: polygon(
+            50% 0%,
+            38.11% 6.7%,
+            24.99% 6.72%,
+            18.06% 18.44%,
+            6.7% 25%,
+            6.56% 38.64%,
+            0% 50%,
+            6.7% 61.89%,
+            6.7% 75%,
+            18.44% 81.94%,
+            25% 93.3%,
+            38.64% 93.44%,
+            50% 100%,
+            61.88% 93.3%,
+            75% 93.3%,
+            81.94% 81.56%,
+            93.3% 74.9%,
+            93.44% 61.36%,
+            100% 50%,
+            93.3% 38.11%,
+            93.3% 25%,
+            81.56% 18.06%,
+            74.96% 6.7%,
+            61.36% 6.56%,
+            50% 0%
+        );
     }
     .team-content {
         margin-top: 30px;
@@ -3972,13 +4085,13 @@ Team CSS
                         transform: translateY(-5px);
                     }
                     &.facebook {
-                        color: #5580FF;
+                        color: #5580ff;
                     }
                     &.twitter {
-                        color: #FF8A73;
+                        color: #ff8a73;
                     }
                     &.linkedin {
-                        color: #FFD474;
+                        color: #ffd474;
                     }
                     &.instagram {
                         color: var(--blackColor);
@@ -4006,7 +4119,7 @@ Next Generation CSS
             top: 0;
             font-size: 35px;
             color: var(--templateColor);
-            transition: .4s;
+            transition: 0.4s;
         }
         h3 {
             font: {
@@ -4044,7 +4157,7 @@ Feedback CSS
     position: relative;
     padding: 30px;
     background: var(--whiteColor);
-    transition: .4s;
+    transition: 0.4s;
     text-align: center;
     border-radius: 3px;
     z-index: 1;
@@ -4052,10 +4165,36 @@ Feedback CSS
         bottom: 30px;
         top: 50px;
     }
-    
+
     .client-info {
         img {
-            clip-path: polygon(50% 0%, 38.11% 6.7%, 24.99% 6.72%, 18.06% 18.44%, 6.7% 25%, 6.56% 38.64%, 0% 50%, 6.7% 61.89%, 6.7% 75%, 18.44% 81.94%, 25% 93.3%, 38.64% 93.44%, 50% 100%, 61.88% 93.3%, 75% 93.3%, 81.94% 81.56%, 93.3% 74.9%, 93.44% 61.36%, 100% 50%, 93.3% 38.11%, 93.3% 25%, 81.56% 18.06%, 74.96% 6.7%, 61.36% 6.56%, 50% 0%);
+            clip-path: polygon(
+                50% 0%,
+                38.11% 6.7%,
+                24.99% 6.72%,
+                18.06% 18.44%,
+                6.7% 25%,
+                6.56% 38.64%,
+                0% 50%,
+                6.7% 61.89%,
+                6.7% 75%,
+                18.44% 81.94%,
+                25% 93.3%,
+                38.64% 93.44%,
+                50% 100%,
+                61.88% 93.3%,
+                75% 93.3%,
+                81.94% 81.56%,
+                93.3% 74.9%,
+                93.44% 61.36%,
+                100% 50%,
+                93.3% 38.11%,
+                93.3% 25%,
+                81.56% 18.06%,
+                74.96% 6.7%,
+                61.36% 6.56%,
+                50% 0%
+            );
             position: absolute;
             top: -50px;
             left: 0;
@@ -4084,7 +4223,7 @@ Feedback CSS
         margin-top: 25px;
     }
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         z-index: -1;
         bottom: 0;
@@ -4093,7 +4232,7 @@ Feedback CSS
         height: 4px;
         background: var(--templateColor);
         border-radius: 0 0 3px 3px;
-        transition: .4s;
+        transition: 0.4s;
     }
     &:hover {
         box-shadow: 0 0 20px 5px rgba(137, 173, 255, 0.35);
@@ -4142,8 +4281,8 @@ Feedback CSS
 .feedback-slides {
     .owl-item {
         .single-feedback {
-            opacity: .5;
-            transition: .5s;
+            opacity: 0.5;
+            transition: 0.5s;
 
             &::before {
                 opacity: 0;
@@ -4154,7 +4293,7 @@ Feedback CSS
             &.center {
                 .single-feedback {
                     opacity: 1;
-                    transition: .5s;
+                    transition: 0.5s;
                     box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1);
 
                     &::before {
@@ -4173,7 +4312,7 @@ Feedback CSS
         .owl-nav {
             margin-top: 20px;
 
-            [class*=owl-] {
+            [class*="owl-"] {
                 color: var(--templateColor2);
                 font-size: 30px;
                 margin: 0 3px;
@@ -4182,17 +4321,17 @@ Feedback CSS
                 display: inline-block;
                 cursor: pointer;
                 border-radius: 0;
-                transition: .4s;
+                transition: 0.4s;
                 border: 1px solid #eee;
                 line-height: 1;
-                
+
                 &:hover {
                     color: var(--templateColor);
                 }
             }
         }
         .owl-controls {
-            line-height: .1;
+            line-height: 0.1;
         }
     }
 }
@@ -4251,7 +4390,8 @@ App Download CSS
                         size: 16px;
                     }
                 }
-                &:hover, &:focus {
+                &:hover,
+                &:focus {
                     background: var(--templateColor);
                     transform: translateY(-5px);
                 }
@@ -4266,7 +4406,7 @@ App Download CSS
         height: 100%;
         bottom: 295px;
 
-        img {   
+        img {
             animation: movebounce 5s linear infinite;
             position: absolute;
             left: -75px;
@@ -4279,8 +4419,9 @@ App Download CSS
             }
         }
     }
- 
-    .col-lg-6, .col-md-12 {
+
+    .col-lg-6,
+    .col-md-12 {
         position: relative;
     }
 }
@@ -4289,7 +4430,8 @@ App Download CSS
 Platform Connect CSS
 =================================================*/
 .platform-connect {
-    background: var(--whiteColor) url('/images/bg-point.png') no-repeat fixed left -600px center/ auto;
+    background: var(--whiteColor) url("/images/bg-point.png") no-repeat fixed
+        left -600px center/ auto;
 
     h2 {
         text-align: center;
@@ -4306,11 +4448,11 @@ Platform Connect CSS
     }
     .box {
         display: block;
-        box-shadow: 0 10px 55px 5px rgba(137,173,255,.35);
+        box-shadow: 0 10px 55px 5px rgba(137, 173, 255, 0.35);
         position: relative;
         padding: 15px 15px 15px 80px;
         border-radius: 5px;
-        transition: .4s;
+        transition: 0.4s;
         background: var(--whiteColor);
 
         img {
@@ -4336,7 +4478,7 @@ Platform Connect CSS
             top: 50%;
             margin-top: -8px;
             color: var(--paragraphColor);
-            transition: .4s;
+            transition: 0.4s;
             font-size: 25px;
         }
         &:hover {
@@ -4353,7 +4495,8 @@ Platform Connect CSS
 Blog CSS
 =================================================*/
 .blog-area {
-    background: #F9FAFC url('/images/bg-point.png') no-repeat fixed right -600px center/ auto;
+    background: #f9fafc url("/images/bg-point.png") no-repeat fixed right -600px
+        center/ auto;
 
     &.blog-section {
         background: unset;
@@ -4363,7 +4506,7 @@ Blog CSS
         .owl-nav {
             margin-top: 20px;
 
-            [class*=owl-] {
+            [class*="owl-"] {
                 color: var(--templateColor2);
                 font-size: 30px;
                 margin: 0 3px;
@@ -4372,17 +4515,17 @@ Blog CSS
                 display: inline-block;
                 cursor: pointer;
                 border-radius: 0;
-                transition: .4s;
+                transition: 0.4s;
                 border: 1px solid #eee;
                 line-height: 1;
-                
+
                 &:hover {
                     color: var(--templateColor);
                 }
             }
         }
         .owl-controls {
-            line-height: .1;
+            line-height: 0.1;
         }
     }
 }
@@ -4451,7 +4594,8 @@ Blog Details CSS
     position: relative;
 
     .blog-details {
-        box-shadow: 0 5px 10px rgba(0, 9, 128, 0.035), 0 7px 18px rgba(0, 9, 128, 0.05);
+        box-shadow: 0 5px 10px rgba(0, 9, 128, 0.035),
+            0 7px 18px rgba(0, 9, 128, 0.05);
         background: var(--whiteColor);
 
         .article-img {
@@ -4469,9 +4613,9 @@ Blog Details CSS
                 height: 100px;
                 text-align: center;
                 font: {
-                   size: 25px;
-                   style: italic;
-                   weight: 700;
+                    size: 25px;
+                    style: italic;
+                    weight: 700;
                 }
                 background: var(--templateColor);
                 color: var(--whiteColor);
@@ -4545,7 +4689,8 @@ Blog Details CSS
                             border-radius: 50%;
                             color: #555555;
 
-                            &:hover, &:focus {
+                            &:hover,
+                            &:focus {
                                 color: var(--whiteColor);
                                 border-color: var(--templateColor);
                                 background-color: var(--templateColor);
@@ -4567,9 +4712,10 @@ Blog Details CSS
             top: 25px;
             bottom: 25px;
         }
-        background: var(--whiteColor);;
+        background: var(--whiteColor);
         padding: 30px;
-        box-shadow: 0 5px 10px rgba(0, 9, 128, 0.035), 0 7px 18px rgba(0, 9, 128, 0.05);
+        box-shadow: 0 5px 10px rgba(0, 9, 128, 0.035),
+            0 7px 18px rgba(0, 9, 128, 0.05);
 
         .controls-left {
             float: left;
@@ -4586,7 +4732,8 @@ Blog Details CSS
                 font-weight: 700;
                 font-size: 14px;
 
-                &:hover, &:focus {
+                &:hover,
+                &:focus {
                     color: var(--whiteColor);
                     background: var(--templateColor);
                     border-color: var(--templateColor);
@@ -4597,7 +4744,8 @@ Blog Details CSS
     .post-comments {
         padding: 30px;
         background: var(--whiteColor);
-        box-shadow: 0 5px 10px rgba(0, 9, 128, 0.035), 0 7px 18px rgba(0, 9, 128, 0.05);
+        box-shadow: 0 5px 10px rgba(0, 9, 128, 0.035),
+            0 7px 18px rgba(0, 9, 128, 0.05);
 
         h3 {
             font: {
@@ -4653,7 +4801,8 @@ Blog Details CSS
     .leave-a-reply {
         padding: 30px;
         background: var(--whiteColor);
-        box-shadow: 0 5px 10px rgba(0, 9, 128, 0.035), 0 7px 18px rgba(0, 9, 128, 0.05);
+        box-shadow: 0 5px 10px rgba(0, 9, 128, 0.035),
+            0 7px 18px rgba(0, 9, 128, 0.05);
         margin-top: 25px;
 
         h3 {
@@ -4679,7 +4828,7 @@ Boxes CSS
         background: var(--whiteColor);
         box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
         border-radius: 3px;
-        transition: .4s;
+        transition: 0.4s;
 
         .icon {
             display: inline-block;
@@ -4691,7 +4840,7 @@ Boxes CSS
             text-align: center;
             font-size: 25px;
             color: var(--templateColor);
-            transition: .4s;
+            transition: 0.4s;
         }
         h3 {
             font: {
@@ -4702,7 +4851,7 @@ Boxes CSS
         }
         &:hover {
             transform: translateY(-10px);
-    
+
             .icon {
                 color: var(--whiteColor);
                 background: var(--templateColor2);
@@ -4740,12 +4889,12 @@ Join CSS
 Analysis CSS
 =================================================*/
 .analysis-form {
-	background: var(--whiteColor);
-	box-shadow: 5px 7px 30px rgba(72,73,121,0.15);
-	padding: 40px;
-	border-radius: 5px;
+    background: var(--whiteColor);
+    box-shadow: 5px 7px 30px rgba(72, 73, 121, 0.15);
+    padding: 40px;
+    border-radius: 5px;
     text-align: center;
-    
+
     h3 {
         font: {
             size: 23px;
@@ -4787,7 +4936,7 @@ Analysis CSS
             padding-left: 30px;
 
             &::before {
-                content: '';
+                content: "";
                 position: absolute;
                 left: 0;
                 top: 6px;
@@ -4829,19 +4978,19 @@ Partner CSS
         padding: 50px 0 0;
         border: 0;
     }
-    &.marketing-partner {  
+    &.marketing-partner {
         border: {
             bottom: 1px dashed #edf5ff;
             top: 1px dashed #edf5ff;
         }
     }
-    &.software-partner {  
+    &.software-partner {
         border: {
             bottom: 1px dashed #edf5ff;
             top: none;
         }
     }
-    &.startup-partner {  
+    &.startup-partner {
         border: {
             bottom: 1px dashed #edf5ff;
             top: none;
@@ -4864,7 +5013,7 @@ Subscribe CSS
     }
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         z-index: -1;
         left: 0;
@@ -4872,10 +5021,11 @@ Subscribe CSS
         width: 100%;
         height: 100%;
         background: var(--templateColor);
-        opacity: .67;
+        opacity: 0.67;
     }
     .section-title {
-        h2, p {
+        h2,
+        p {
             color: var(--whiteColor);
         }
         .bar {
@@ -4911,7 +5061,8 @@ Subscribe CSS
             top: 0;
             height: 100%;
 
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
                 transform: translateY(0);
             }
         }
@@ -4936,7 +5087,7 @@ Subscribe CSS
     height: 100%;
     overflow: hidden;
     z-index: -1;
- 
+
     .circle {
         background: var(--templateColor);
         bottom: 0;
@@ -5223,7 +5374,7 @@ Subscribe CSS
 Product CSS
 =================================================*/
 .single-product {
-    box-shadow: 0 10px 50px 0 rgba(46,65,90,.1);
+    box-shadow: 0 10px 50px 0 rgba(46, 65, 90, 0.1);
     margin-bottom: 30px;
 
     .product-img {
@@ -5251,7 +5402,7 @@ Product CSS
                 size: 14px;
             }
             overflow: hidden;
-            transition: .4s;
+            transition: 0.4s;
 
             i {
                 font-size: 20px;
@@ -5317,7 +5468,7 @@ Product CSS
                 top: 20px;
             }
 
-            [class*=owl-] {
+            [class*="owl-"] {
                 color: var(--templateColor2);
                 font-size: 30px;
                 margin: 0 3px;
@@ -5326,15 +5477,15 @@ Product CSS
                 display: inline-block;
                 cursor: pointer;
                 border-radius: 0;
-                transition: .4s;
-                
+                transition: 0.4s;
+
                 &:hover {
                     color: var(--templateColor);
                 }
             }
         }
         .owl-controls {
-            line-height: .1;
+            line-height: 0.1;
         }
     }
 }
@@ -5349,10 +5500,10 @@ Product Details CSS
     padding-bottom: 70px;
 }
 .shop-details {
-	background: var(--whiteColor);
-	padding: 30px;
+    background: var(--whiteColor);
+    padding: 30px;
     box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
-    
+
     .product-entry-summary {
         h3 {
             font: {
@@ -5441,7 +5592,7 @@ Product Details CSS
         .owl-nav {
             margin-top: 20px;
 
-            [class*=owl-] {
+            [class*="owl-"] {
                 color: var(--templateColor2);
                 font-size: 30px;
                 margin: 0 3px;
@@ -5450,16 +5601,16 @@ Product Details CSS
                 display: inline-block;
                 cursor: pointer;
                 border-radius: 0;
-                transition: .4s;
+                transition: 0.4s;
                 line-height: 1;
-                
+
                 &:hover {
                     color: var(--templateColor);
                 }
             }
         }
         .owl-controls {
-            line-height: .1;
+            line-height: 0.1;
         }
     }
     .shop-details-tabs {
@@ -5485,7 +5636,7 @@ Product Details CSS
                     position: relative;
                     color: #fff;
                     &::before {
-                        content: '';
+                        content: "";
                         position: absolute;
                         width: 100%;
                         height: 4px;
@@ -5537,7 +5688,7 @@ Product Details CSS
                         }
 
                         &::before {
-                            content: '';
+                            content: "";
                             position: absolute;
                             width: 1px;
                             height: 13px;
@@ -5551,7 +5702,7 @@ Product Details CSS
                             }
                         }
                         a {
-                            color: #FF9800;
+                            color: #ff9800;
                         }
                     }
                 }
@@ -5632,7 +5783,8 @@ Pagination CSS
                 font-size: 16px;
                 box-shadow: 0 2px 10px 0 #d8dde6;
 
-                &:hover, &:focus {
+                &:hover,
+                &:focus {
                     color: var(--whiteColor);
                     background-color: var(--templateColor);
                     box-shadow: unset;
@@ -5662,7 +5814,7 @@ Sidebar CSS
                 .form-control {
                     background: #edf5ff;
                     border-color: transparent;
-                    
+
                     &:focus {
                         border-color: var(--templateColor);
                     }
@@ -5676,7 +5828,7 @@ Sidebar CSS
                     border: none;
                     background: transparent;
                     cursor: pointer;
-                    transition: .4s;
+                    transition: 0.4s;
 
                     &:hover {
                         background: var(--templateColor);
@@ -5703,9 +5855,9 @@ Sidebar CSS
             position: relative;
             border-radius: 5px;
             overflow: hidden;
-    
+
             &::before {
-                content: '';
+                content: "";
                 position: absolute;
                 left: 0;
                 top: 0;
@@ -5754,7 +5906,7 @@ Sidebar CSS
                             margin-top: -8px;
                             opacity: 0;
                             visibility: hidden;
-                            transition: .4s;
+                            transition: 0.4s;
                         }
                     }
                 }
@@ -5796,7 +5948,7 @@ Sidebar CSS
                             margin-top: -8px;
                             opacity: 0;
                             visibility: hidden;
-                            transition: .4s;
+                            transition: 0.4s;
                         }
                     }
                 }
@@ -5945,7 +6097,7 @@ Login CSS
     box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
     padding: 40px;
     border-radius: 5px;
-    
+
     h3 {
         font: {
             size: 23px;
@@ -6003,7 +6155,7 @@ Signup CSS
     box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
     padding: 40px;
     border-radius: 5px;
-    
+
     h3 {
         font: {
             size: 23px;
@@ -6071,7 +6223,9 @@ FAQ CSS
                     weight: 700;
                 }
 
-                &:hover, &.active, &:focus {
+                &:hover,
+                &.active,
+                &:focus {
                     background: var(--templateColor);
                     color: var(--whiteColor);
                 }
@@ -6091,13 +6245,14 @@ FAQ CSS
         }
     }
     .accordion__button {
-        transition: .5s;
+        transition: 0.5s;
         background-color: #f5f9ff;
         font-size: 18px;
         font-weight: 600;
         outline: 0;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             color: var(--whiteColor);
             background-color: var(--templateColor);
         }
@@ -6151,7 +6306,7 @@ Error 404 CSS
         margin-top: -68px;
 
         &::before {
-            content: '';
+            content: "";
             position: absolute;
             width: 100%;
             height: 100%;
@@ -6197,8 +6352,8 @@ Coming Soon CSS
         left: 0;
         top: 0;
         background: var(--blackColor);
-        opacity: .77;
-        content: '';
+        opacity: 0.77;
+        content: "";
         position: absolute;
     }
     .coming-soon-content {
@@ -6249,7 +6404,7 @@ Coming Soon CSS
                 text-transform: uppercase;
                 font-weight: 700;
                 border-radius: 0 50px 50px 0;
-                transition: .4s;
+                transition: 0.4s;
 
                 &:hover {
                     background: var(--templateColor2);
@@ -6355,7 +6510,7 @@ Cart CSS
             width: 200px;
             border: none;
             background: var(--templateColor2);
-            transition: .4s;
+            transition: 0.4s;
             cursor: pointer;
             border-radius: 0 5px 5px 0;
             color: var(--whiteColor);
@@ -6387,13 +6542,13 @@ Cart CSS
         padding: 0;
         margin: 0 0 25px;
         list-style-type: none;
-        
+
         li {
             border: 1px solid #eaedff;
             padding: 10px 15px;
             color: var(--paragraphColor);
             overflow: hidden;
-            
+
             &:first-child {
                 border-bottom: none;
             }
@@ -6446,7 +6601,7 @@ Checkout CSS
         overflow: hidden;
 
         &::before {
-            content: '';
+            content: "";
             position: absolute;
             left: 0;
             top: 0;
@@ -6496,7 +6651,7 @@ Checkout CSS
         table {
             margin-bottom: 0;
             text-align: left;
-    
+
             thead {
                 tr {
                     th {
@@ -6518,18 +6673,20 @@ Checkout CSS
                         color: var(--paragraphColor);
                         border-color: #eaedff;
                         font-size: 15px;
-    
+
                         &.product-name {
                             a {
                                 color: var(--paragraphColor);
                                 font-weight: 600;
-    
+
                                 &:hover {
                                     color: var(--templateColor);
                                 }
                             }
                         }
-                        &.order-subtotal, &.order-shipping , &.total-price {
+                        &.order-subtotal,
+                        &.order-shipping,
+                        &.total-price {
                             span {
                                 color: var(--blackColor);
                                 font-weight: 700;
@@ -6550,13 +6707,15 @@ Checkout CSS
                 size: 14px;
             }
             [type="radio"] {
-                &:checked, &:not(:checked) {
+                &:checked,
+                &:not(:checked) {
                     position: absolute;
                     left: -9999px;
                 }
             }
             [type="radio"] {
-                &:checked, &:not(:checked) {
+                &:checked,
+                &:not(:checked) {
                     + label {
                         padding-left: 30px;
                         cursor: pointer;
@@ -6570,7 +6729,7 @@ Checkout CSS
                         margin-bottom: 8px;
 
                         &::before {
-                            content: '';
+                            content: "";
                             position: absolute;
                             left: 0;
                             top: 3px;
@@ -6581,7 +6740,7 @@ Checkout CSS
                             background: var(--whiteColor);
                         }
                         &::after {
-                            content: '';
+                            content: "";
                             width: 12px;
                             height: 12px;
                             background: var(--templateColor);
@@ -6646,11 +6805,11 @@ Contact Us CSS
 }
 .contact-info-box {
     text-align: center;
-    transition: .4s;
+    transition: 0.4s;
     box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
     background: var(--whiteColor);
     padding: 30px;
-    
+
     .icon {
         display: inline-block;
         width: 80px;
@@ -6660,7 +6819,7 @@ Contact Us CSS
         border-radius: 50%;
         font-size: 30px;
         color: var(--templateColor);
-        transition: .4s;
+        transition: 0.4s;
     }
     h3 {
         font: {
@@ -6707,7 +6866,8 @@ Contact Us CSS
         margin-top: 10px;
     }
     #msgSubmit {
-        &.text-danger, &.text-success {
+        &.text-danger,
+        &.text-success {
             margin: 20px 0 0;
         }
     }
@@ -6810,7 +6970,7 @@ Footer CSS
             padding-left: 17px;
 
             &::before {
-                content: '';
+                content: "";
                 position: absolute;
                 left: 7px;
                 top: 5px;
@@ -6858,9 +7018,10 @@ Back To Top CSS
         outline: 0 !important;
         transition: all 0.25s ease-in-out;
         background-color: var(--paragraphColor);
-    
-        &::before, &::after {
-            content: '';
+
+        &::before,
+        &::after {
+            content: "";
             position: absolute;
             left: 0;
             width: 0;
@@ -6878,7 +7039,8 @@ Back To Top CSS
             z-index: 5;
             border-bottom: 20px solid var(--templateColor);
         }
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             opacity: 1;
             text-decoration: none;
             height: 40px;
@@ -6889,7 +7051,7 @@ Back To Top CSS
 .modal-video {
     position: absolute !important;
 }
-.fade:not(.show){
+.fade:not(.show) {
     opacity: 1;
 }
 .input-counter {
@@ -6898,7 +7060,7 @@ Back To Top CSS
     margin-right: 10px;
     text-align: center;
     display: inline-block;
-    position: relative;    
+    position: relative;
 
     span {
         position: absolute;

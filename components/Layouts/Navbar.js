@@ -5,7 +5,7 @@ import Link from "../../utils/ActiveLink";
 import SideDrawer from "./SideDrawer";
 import SearchForm from "./SearchForm";
 
-const Navbar = ({ products, router }) => {
+const Navbar = ({ products, router, noBanner }) => {
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
@@ -60,10 +60,13 @@ const Navbar = ({ products, router }) => {
         ? "navbar-toggler navbar-toggler-right collapsed"
         : "navbar-toggler navbar-toggler-right";
 
+    const navbarClasses = [`crake-nav ${layOutCls}`];
+    if (noBanner) navbarClasses.push("crake-nav--no-banner");
+
     return (
         <React.Fragment>
             <header id="header">
-                <div id="navbar" className={`crake-nav ${layOutCls}`}>
+                <div id="navbar" className={navbarClasses.join(" ")}>
                     <div className="container">
                         <nav className="navbar navbar-expand-md navbar-light">
                             <Link href="/saas">
@@ -295,55 +298,10 @@ const Navbar = ({ products, router }) => {
                                             <li className="nav-item">
                                                 <a
                                                     className="nav-link"
-                                                    href="/#"
-                                                    onClick={(e) =>
-                                                        e.preventDefault()
-                                                    }
+                                                    href="/shop"
                                                 >
                                                     Shop
                                                 </a>
-                                                <ul className="dropdown_menu">
-                                                    <li>
-                                                        <Link
-                                                            activeClassName="active"
-                                                            href="/shop-one"
-                                                        >
-                                                            <a>Shop 1</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link
-                                                            activeClassName="active"
-                                                            href="/shop"
-                                                        >
-                                                            <a>Shop 2</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link
-                                                            activeClassName="active"
-                                                            href="/shop-details"
-                                                        >
-                                                            <a>Shop Details</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link
-                                                            activeClassName="active"
-                                                            href="/cart"
-                                                        >
-                                                            <a>Cart</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link
-                                                            activeClassName="active"
-                                                            href="/checkout"
-                                                        >
-                                                            <a>Checkout</a>
-                                                        </Link>
-                                                    </li>
-                                                </ul>
                                             </li>
 
                                             <li className="nav-item">
@@ -464,55 +422,9 @@ const Navbar = ({ products, router }) => {
                                     </li>
 
                                     <li className="nav-item">
-                                        <a
-                                            className="nav-link"
-                                            href="/#"
-                                            onClick={(e) => e.preventDefault()}
-                                        >
+                                        <a className="nav-link" href="/shop/">
                                             Shop
                                         </a>
-                                        <ul className="dropdown_menu">
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/shop-one"
-                                                >
-                                                    <a>Shop 1</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/shop"
-                                                >
-                                                    <a>Shop 2</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/shop-details"
-                                                >
-                                                    <a>Shop Details</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/cart"
-                                                >
-                                                    <a>Cart</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/checkout"
-                                                >
-                                                    <a>Checkout</a>
-                                                </Link>
-                                            </li>
-                                        </ul>
                                     </li>
 
                                     <li className="nav-item">
