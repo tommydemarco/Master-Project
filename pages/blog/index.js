@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { bannerContext } from "../../context";
 import { useBannerUpdate } from "../../utils/hooks";
 
+import Banner from "../../components/Banner";
 import BlogCard from "../../components/BlogCard";
 
 const Blog = () => {
@@ -10,6 +11,10 @@ const Blog = () => {
 
     return (
         <React.Fragment>
+            <Banner
+                title="Blog"
+                subtitle="Find amazing news on the Javascript world"
+            />
             <section className="blog-area blog-section ptb-100">
                 <div className="container">
                     <div className="row">

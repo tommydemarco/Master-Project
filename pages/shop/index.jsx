@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { bannerContext } from "../../context";
 import { useBannerUpdate } from "../../utils/hooks";
 
+import Banner from "../../components/Banner"
 import ShopVTwo from '../../components/Shop/ShopVTwo';
 
 const Shop = () => {
@@ -10,6 +11,7 @@ const Shop = () => {
 
     return (
         <>
+            <Banner title="Shop" subtitle="Welcome to our shop" />
             <ShopVTwo />
         </>
     );

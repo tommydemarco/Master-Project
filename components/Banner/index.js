@@ -1,1 +1,1 @@
-export { default } from "../Layouts/Banner";
+export { default } from "./Banner";

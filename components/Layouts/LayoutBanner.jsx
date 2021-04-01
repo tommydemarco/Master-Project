@@ -1,7 +1,10 @@
 const LayoutBanner = ({ noBanner }) => {
 
     return (
-        <section className="page-title-banner" style={!noBanner ? { willChange: "display"} : { display: "none", willChange: "display"} }>
+        <section className="page-title-banner" style={!noBanner ? { 
+            position: "absolute", 
+            zIndex: "-1",
+            width: "100%", pointerEvents: "none"} : { display: "none", willChange: "display"} }>
             <div className="container" style={{ height: "66px" }}>
             </div>
 

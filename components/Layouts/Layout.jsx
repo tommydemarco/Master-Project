@@ -17,8 +17,8 @@ const Layout = ({ children }) => {
     return (
         <>
             <Navbar noBanner={!state.showBanner} />
-            <div style={state.showBanner ? { display: "none"} : {} } className="navbar-placeholder"></div>
-            {<LayoutBanner noBanner={!state.showBanner}/>}
+            <div style={!state.showBanner ? { display: "none"} : {} } className="navbar-placeholder"></div>
+            {<LayoutBanner noBanner={state.showBanner}/>}
                 {children}
             <Footer />
             {/* <SearchForm /> */}
