@@ -6,7 +6,7 @@ import BlogCard from "../../components/BlogCard";
 
 const Blog = () => {
     const { dispatch } = useContext(bannerContext);
-    useBannerUpdate(dispatch, false);
+    useBannerUpdate(dispatch, true);
 
     return (
         <React.Fragment>
