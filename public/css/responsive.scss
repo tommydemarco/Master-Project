@@ -19,8 +19,8 @@ $value_eight: 1910px;
     }
     .ptb-100 {
         padding: {
-            top: 50px;
-            bottom: 50px;
+            top: 40px;
+            bottom: 40px;
         }
     }
     .section-title {
@@ -125,7 +125,8 @@ $value_eight: 1910px;
             }
         }
         &.saas-home {
-            .shape1, .shape3 {
+            .shape1,
+            .shape3 {
                 display: none;
             }
             .shape3 {
@@ -133,7 +134,7 @@ $value_eight: 1910px;
                 right: 0;
             }
             .shape-1 {
-                opacity: .2;
+                opacity: 0.2;
             }
         }
         .product-image {
@@ -157,7 +158,9 @@ $value_eight: 1910px;
             }
         }
         &.product-home {
-            .shape1, .shape4, .shape6 {
+            .shape1,
+            .shape4,
+            .shape6 {
                 display: none;
             }
             .shape3 {
@@ -165,7 +168,7 @@ $value_eight: 1910px;
                 right: 0;
             }
             .shape-1 {
-                opacity: .2;
+                opacity: 0.2;
             }
         }
         &.app-home {
@@ -181,9 +184,11 @@ $value_eight: 1910px;
             }
         }
         &.marketing-home {
-            background: var(--whiteColor) url(/images/bg-point.png) no-repeat fixed right -700px center/auto;
+            background: var(--whiteColor) url(/images/bg-point.png) no-repeat
+                fixed right -700px center/auto;
 
-            .shape4, .shape2 {
+            .shape4,
+            .shape2 {
                 display: none;
             }
             .shape1 {
@@ -205,12 +210,16 @@ $value_eight: 1910px;
                     }
                 }
             }
-            .bubble-animate, .shape6 {
+            .bubble-animate,
+            .shape6 {
                 display: none;
             }
         }
         &.software-home {
-            .shape4, .shape2, .shape1, .shape6 {
+            .shape4,
+            .shape2,
+            .shape1,
+            .shape6 {
                 display: none;
             }
             .shape3 {
@@ -233,7 +242,8 @@ $value_eight: 1910px;
                     right: 0;
                 }
             }
-            .shape9, .shape2 {
+            .shape9,
+            .shape2 {
                 display: none;
             }
             .hero-content {
@@ -244,7 +254,10 @@ $value_eight: 1910px;
             }
         }
         &.payment-processing-home {
-            .shape9, .shape1, .shape3, .shape6 {
+            .shape9,
+            .shape1,
+            .shape3,
+            .shape6 {
                 display: none;
             }
         }
@@ -254,7 +267,7 @@ $value_eight: 1910px;
             img {
                 position: relative;
                 display: none;
-                
+
                 &:last-child {
                     display: block;
                 }
@@ -266,7 +279,7 @@ $value_eight: 1910px;
             img {
                 position: relative;
                 display: none !important;
-                
+
                 &:last-child {
                     display: block !important;
                 }
@@ -275,13 +288,18 @@ $value_eight: 1910px;
     }
     .startup-home {
         .main-banner {
-            .shape1, .shape, .shape6, .shape3, .shape9, .shape2 {
+            .shape1,
+            .shape,
+            .shape6,
+            .shape3,
+            .shape9,
+            .shape2 {
                 display: none;
             }
         }
         &.owl-theme {
             .owl-nav {
-                [class*=owl-] {
+                [class*="owl-"] {
                     top: auto;
                     bottom: 10px;
                 }
@@ -293,7 +311,10 @@ $value_eight: 1910px;
     }
 
     .features-area {
-        .shape10, .shape11, .shape6, .shape3 {
+        .shape10,
+        .shape11,
+        .shape6,
+        .shape3 {
             display: none;
         }
         &.marketing-features {
@@ -461,11 +482,13 @@ $value_eight: 1910px;
     }
 
     .overview-section {
-        .shape3, .shape11, .shape6 {
+        .shape3,
+        .shape11,
+        .shape6 {
             display: none;
         }
         .shape7 {
-            opacity: .4;
+            opacity: 0.4;
         }
     }
     .overview-box {
@@ -602,7 +625,8 @@ $value_eight: 1910px;
         padding: 20px;
         margin-bottom: 30px;
 
-        &.mt-30, &.mt-50 {
+        &.mt-30,
+        &.mt-50 {
             margin-top: 0;
         }
         h3 {
@@ -627,7 +651,8 @@ $value_eight: 1910px;
     }
 
     .saas-tools {
-        .shape1, .shape2 {
+        .shape1,
+        .shape2 {
             display: none;
         }
     }
@@ -645,7 +670,7 @@ $value_eight: 1910px;
                 bottom: 0;
                 right: 0;
             }
- 
+
             li {
                 -ms-flex: 0 0 33.3333%;
                 -webkit-box-flex: 0;
@@ -716,7 +741,7 @@ $value_eight: 1910px;
             right: 20px;
         }
         margin-bottom: 30px;
-        
+
         h3 {
             font-size: 27px;
         }
@@ -837,7 +862,7 @@ $value_eight: 1910px;
 
     .next-generation-virtual-reality {
         padding-bottom: 20px;
-        
+
         .single-item {
             padding-left: 45px;
             margin-bottom: 30px;
@@ -997,7 +1022,7 @@ $value_eight: 1910px;
     .subscribe-area {
         .newsletter-form {
             max-width: 100%;
-            
+
             .btn {
                 position: relative;
                 display: block;
@@ -1044,7 +1069,10 @@ $value_eight: 1910px;
             top: 5%;
             left: 0;
         }
-        .shape1, .shape3, .shape9, .shape2 {
+        .shape1,
+        .shape3,
+        .shape9,
+        .shape2 {
             display: none;
         }
         h2 {
@@ -1216,7 +1244,7 @@ $value_eight: 1910px;
             }
             form {
                 .form-control {
-                    width: 100px
+                    width: 100px;
                 }
             }
         }
@@ -1247,7 +1275,7 @@ $value_eight: 1910px;
     .screenshot-slides {
         &.owl-theme {
             .owl-controls {
-                line-height: .01;
+                line-height: 0.01;
 
                 .owl-nav {
                     margin: {
@@ -1262,7 +1290,7 @@ $value_eight: 1910px;
     .team-slides {
         &.owl-theme {
             .owl-controls {
-                line-height: .01;
+                line-height: 0.01;
 
                 .owl-nav {
                     margin: {
@@ -1277,7 +1305,7 @@ $value_eight: 1910px;
     .feedback-slides {
         &.owl-theme {
             .owl-controls {
-                line-height: .01;
+                line-height: 0.01;
 
                 .owl-nav {
                     margin: {
@@ -1292,7 +1320,7 @@ $value_eight: 1910px;
     .blog-slides {
         &.owl-theme {
             .owl-controls {
-                line-height: .01;
+                line-height: 0.01;
 
                 .owl-nav {
                     margin: {
@@ -1307,7 +1335,7 @@ $value_eight: 1910px;
     .project-slides {
         &.owl-theme {
             .owl-controls {
-                line-height: .01;
+                line-height: 0.01;
 
                 .owl-nav {
                     margin: {
@@ -1322,7 +1350,7 @@ $value_eight: 1910px;
     .product-slides {
         &.owl-theme {
             .owl-controls {
-                line-height: .01;
+                line-height: 0.01;
 
                 .owl-nav {
                     margin: {
@@ -1529,7 +1557,7 @@ $value_eight: 1910px;
         .single-footer-widget {
             padding: 0 !important;
             margin-bottom: 30px;
-    
+
             h3 {
                 font-size: 20px;
                 margin-bottom: 18px;
@@ -1538,11 +1566,11 @@ $value_eight: 1910px;
         .copyright-area {
             margin-top: 20px;
             text-align: center;
-    
+
             ul {
                 text-align: center;
                 margin-top: 20px;
-    
+
                 li {
                     &:first-child {
                         padding-left: 0;
@@ -1631,8 +1659,8 @@ $value_eight: 1910px;
 @media only #{$media} and ($feature_min : $value_two) and ($feature_max : $value_three) {
     .ptb-100 {
         padding: {
-            top: 80px;
-            bottom: 80px;
+            top: 60px;
+            bottom: 60px;
         }
     }
     .section-title {
@@ -1757,7 +1785,8 @@ $value_eight: 1910px;
             }
         }
         &.marketing-home {
-            .shape3, .shape1 {
+            .shape3,
+            .shape1 {
                 display: none;
             }
 
@@ -1778,7 +1807,10 @@ $value_eight: 1910px;
     }
     .startup-home {
         .main-banner {
-            .shape6, .shape2, .shape3, .shape9 {
+            .shape6,
+            .shape2,
+            .shape3,
+            .shape9 {
                 display: none;
             }
         }
@@ -1819,7 +1851,7 @@ $value_eight: 1910px;
         &.marketing-features {
             .features-inner-area {
                 margin-top: 55px;
-    
+
                 .features-image {
                     margin: {
                         bottom: 0;
@@ -1837,7 +1869,7 @@ $value_eight: 1910px;
             }
             .features-inner-area {
                 margin-top: 55px;
-    
+
                 .features-image {
                     margin: {
                         bottom: 0;
@@ -1855,7 +1887,7 @@ $value_eight: 1910px;
             }
             .features-inner-area {
                 margin-top: 55px;
-    
+
                 .features-image {
                     margin: {
                         bottom: 0;
@@ -1889,7 +1921,10 @@ $value_eight: 1910px;
                 }
             }
         }
-        .shape10, .shape6, .shape11, .shape3 {
+        .shape10,
+        .shape6,
+        .shape11,
+        .shape3 {
             display: none;
         }
         .features-inner-content {
@@ -1926,7 +1961,10 @@ $value_eight: 1910px;
     }
 
     .overview-section {
-        .shape6, .shape10, .shape3, .shape11 {
+        .shape6,
+        .shape10,
+        .shape3,
+        .shape11 {
             display: none;
         }
     }
@@ -2156,7 +2194,7 @@ $value_eight: 1910px;
     .pricing-table {
         margin-bottom: 30px;
 
-        .price-header{
+        .price-header {
             .title {
                 font-size: 21px;
             }
@@ -2207,7 +2245,7 @@ $value_eight: 1910px;
         }
         .box {
             margin-top: 30px;
-            
+
             h3 {
                 font-size: 21px;
             }
@@ -2234,7 +2272,7 @@ $value_eight: 1910px;
             padding-right: 30px;
             padding-left: 30px;
             margin-bottom: 20px;
-   
+
             padding-bottom: 10px;
 
             li {
@@ -2296,7 +2334,7 @@ $value_eight: 1910px;
 
     .login-image {
         margin-bottom: 30px;
-        text-align:  center;
+        text-align: center;
     }
     .login-form {
         h3 {
@@ -2306,7 +2344,7 @@ $value_eight: 1910px;
 
     .signup-image {
         margin-bottom: 30px;
-        text-align:  center;
+        text-align: center;
     }
     .signup-form {
         h3 {
@@ -2508,7 +2546,7 @@ $value_eight: 1910px;
             top: 195px;
             bottom: 160px;
         }
-        
+
         .hero-content {
             &.pl-4 {
                 padding-left: 0 !important;
@@ -2560,17 +2598,18 @@ $value_eight: 1910px;
                 }
             }
         }
-        .shape4, .shape1 {
+        .shape4,
+        .shape1 {
             display: none;
         }
         .shape6 {
-            opacity: .3;
+            opacity: 0.3;
         }
     }
     .app-download {
         .download-image {
             bottom: 200px;
-    
+
             img {
                 left: -10px;
                 top: 0;
@@ -2634,7 +2673,7 @@ $value_eight: 1910px;
                 left: 75px;
                 top: 32px;
             }
-        }   
+        }
     }
     .tab {
         .tabs {
@@ -2815,9 +2854,9 @@ $value_eight: 1910px;
                 left: 0;
                 top: -40px;
                 width: 80%;
-    
+
                 &:last-child {
-                    left: 380px; 
+                    left: 380px;
                     top: -20px;
                 }
             }
@@ -2845,11 +2884,11 @@ $value_eight: 1910px;
     }
     .app-download {
         .download-image {
-            img {   
+            img {
                 left: -75px;
                 top: 0;
                 width: 485px;
-    
+
                 &:last-child {
                     left: 280px;
                     top: 0;
@@ -2859,12 +2898,12 @@ $value_eight: 1910px;
     }
 }
 
-@media only screen and (min-width : 1824px) {
+@media only screen and (min-width: 1824px) {
     .header-search {
         .close {
             right: 29%;
         }
-    } 
+    }
 }
 
 // Only For Mobile Navbar
@@ -2896,7 +2935,7 @@ $value_eight: 1910px;
     .crake-nav nav .navbar-nav li .dropdown_menu {
         left: 15px;
         width: 200px;
-        padding: 10px 0; 
+        padding: 10px 0;
     }
     .crake-nav nav .navbar-nav li .dropdown_menu li .dropdown_menu {
         left: 90px;

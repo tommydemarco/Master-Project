@@ -296,50 +296,25 @@ const Navbar = ({ products, router, noBanner }) => {
                                             </li>
 
                                             <li className="nav-item">
-                                                <a
-                                                    className="nav-link"
+                                                <Link
+                                                    activeClassName="active"
                                                     href="/shop"
                                                 >
-                                                    Shop
-                                                </a>
+                                                    <a className="nav-link">
+                                                        Shop
+                                                    </a>
+                                                </Link>
                                             </li>
 
                                             <li className="nav-item">
-                                                <a
-                                                    className="nav-link"
-                                                    href="/#"
-                                                    onClick={(e) =>
-                                                        e.preventDefault()
-                                                    }
+                                                <Link
+                                                    activeClassName="active"
+                                                    href="/blog"
                                                 >
-                                                    Blog
-                                                </a>
-                                                <ul className="dropdown_menu">
-                                                    <li>
-                                                        <Link
-                                                            activeClassName="active"
-                                                            href="/blog/blog-one"
-                                                        >
-                                                            <a>Blog 1</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link
-                                                            activeClassName="active"
-                                                            href="/blog/blog-two"
-                                                        >
-                                                            <a>Blog 2</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link
-                                                            activeClassName="active"
-                                                            href="/blog/blog-details"
-                                                        >
-                                                            <a>Blog Details</a>
-                                                        </Link>
-                                                    </li>
-                                                </ul>
+                                                    <a className="nav-link">
+                                                        Blog
+                                                    </a>
+                                                </Link>
                                             </li>
 
                                             <li>
@@ -386,45 +361,21 @@ const Navbar = ({ products, router, noBanner }) => {
                                     </li>
 
                                     <li className="nav-item">
-                                        <a
-                                            className="nav-link"
-                                            href="/#"
-                                            onClick={(e) => e.preventDefault()}
+                                        <Link
+                                            activeClassName="active"
+                                            href="/blog"
                                         >
-                                            Blog
-                                        </a>
-                                        <ul className="dropdown_menu">
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/blog-one"
-                                                >
-                                                    <a>Blog 1</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/blog-two"
-                                                >
-                                                    <a>Blog 2</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/blog-details"
-                                                >
-                                                    <a>Blog Details</a>
-                                                </Link>
-                                            </li>
-                                        </ul>
+                                            <a className="nav-link">Blog</a>
+                                        </Link>
                                     </li>
 
                                     <li className="nav-item">
-                                        <a className="nav-link" href="/shop/">
-                                            Shop
-                                        </a>
+                                        <Link
+                                            activeClassName="active"
+                                            href="/shop"
+                                        >
+                                            <a className="nav-link">Shop</a>
+                                        </Link>
                                     </li>
 
                                     <li className="nav-item">

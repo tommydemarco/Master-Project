@@ -7,14 +7,12 @@ import Form from "../components/ContactUs/Form";
 const Contact = () => {
     return (
         <>
-            <Navbar />
-            <Banner
+            {/* <Banner
                 title="Get in touch with us"
                 subtitle="Anything On your Mind. We’ll Be Glad To Assist You!"
-            />
+            /> */}
             <Form />
             <Content />
-            <Footer />
         </>
     );
 };

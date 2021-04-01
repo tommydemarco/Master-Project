@@ -35,11 +35,12 @@ const BlogCard = ({ imageSrc, imageAlt, date, author, title, description, slug }
                         {description}
                     </p>
                     <Link
-                        href={`/blog/${slug}`}
-                        className="read-more-btn"
+                        href={`/blog/${slug}`}   
                     >
-                        Read More{" "}
-                        <i className="icofont-rounded-double-right"></i>
+                        <a className="read-more-btn" >
+                            Read More
+                            <i className="icofont-rounded-double-right"></i>
+                        </a>
                     </Link>
                 </div>
             </div>
@@ -60,11 +61,11 @@ BlogCard.propTypes = {
 BlogCard.defaultProps = {
     imageSrc: "/images/blog-img1.jpg",
     imageAlt: "blog-image",
-    date: PropTypes.string.isRequired,
+    date: "28-04-2020",
     author: "Admin",
     title: "The Most Popular New Business Apps Landing Page",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morbi turpis massa, dapibus nec libero vitae.",
-    slug: PropTypes.string.isRequired,
+    slug: "blog-post",
 }
 
 export default BlogCard
