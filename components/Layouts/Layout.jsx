@@ -10,10 +10,13 @@ import SearchForm from "./SearchForm"
 import SideDrawer from "./SideDrawer"
 
 const Layout = ({ children, bannerTitle, bannerSubtitle }) => {
+
+    const noBanner = !bannerTitle && !bannerSubtitle
     return (
         <>
-            <Navbar />
-            {bannerTitle && bannerSubtitle && <Banner title={bannerTitle} subtitle={bannerSubtitle} />}
+            <Navbar noBanner={noBanner} />
+            {noBanner && <div className="navbar-placeholder"></div>}
+            {!noBanner && <Banner title={bannerTitle} subtitle={bannerSubtitle} />}
             {children}
             <Footer />
             {/* <SearchForm /> */}

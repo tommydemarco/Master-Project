@@ -34,12 +34,14 @@ const Navbar = ({ products, router, noBanner }) => {
 
     useEffect(() => {
         let elementId = document.getElementById("navbar");
+        let scrollY = 0;
         document.addEventListener("scroll", () => {
-            if (window.scrollY > 170) {
+            if (window.scrollY > 200) {
                 elementId.classList.add("is-sticky");
-            } else {
+            } else if (window.scrollY === 0) {
                 elementId.classList.remove("is-sticky");
             }
+            scrollY = window.scrollY;
         });
         window.scrollTo(0, 0);
     });

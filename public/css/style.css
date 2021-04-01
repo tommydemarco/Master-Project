@@ -434,10 +434,19 @@ Navbar CSS
     position: absolute;
     top: 0;
     left: 0;
-    padding-top: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
     z-index: 666;
     height: auto;
+}
+
+.crake-nav--no-banner {
+    background: var(--templateColor);
+}
+
+.navbar-placeholder {
+    margin-top: 80px;
 }
 
 .crake-nav nav .navbar-brand img {
@@ -848,7 +857,8 @@ Navbar CSS
     top: 0;
     left: 0;
     width: 100%;
-    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
     z-index: 999;
     -webkit-box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.1);
