@@ -1,5 +1,3 @@
-import React, { Component } from "react";
-
 import Banner from "../components/Banner";
 import CartBody from "../components/Cart/CartBody";
 
