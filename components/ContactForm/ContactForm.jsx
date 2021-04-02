@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 
 import Link from "next/link"
 
+import ErrorMessage from "./ErrorMessage"
+
 const ContactForm = () => {
 
     const checkboxRef = useRef()
@@ -9,7 +11,6 @@ const ContactForm = () => {
     const [ formData, setFormData ] = useState({ 
         name: "",
         email: "", 
-        phone: "",
         subject: "",
         message: "",
     })
@@ -18,8 +19,7 @@ const ContactForm = () => {
 
     const [ formError, setFormError ] = useState({
         name: null,
-        email: null, 
-        phone: null,
+        email: null,
         subject: null,
         message: null,
         privacy: null
@@ -37,9 +37,6 @@ const ContactForm = () => {
         } else if (changingField === "email") {
             if (formData.email === "") setFormError((prevState) => ({...prevState, email: true}))
             else setFormError((prevState) => ({...prevState, email: false}))
-        } else if(changingField === "phone") {
-            if (formData.phone === "") setFormError((prevState) => ({...prevState, phone: true}))
-            else setFormError((prevState) => ({...prevState, phone: false}))
         } else if (changingField === "subject") {
             if (formData.subject === "") setFormError((prevState) => ({...prevState, subject: true}))
             else setFormError((prevState) => ({...prevState, subject: false}))
@@ -89,7 +86,7 @@ const ContactForm = () => {
                                             onChange={(e) => onFieldChange(e, "name")}
                                             style={formError.name ? errorStyles : {}}
                                         />
-                                        <div className="help-block with-errors"></div>
+                                        {formError.name && <ErrorMessage absolute={true} />}
                                     </div>
                                 </div>
 
@@ -104,19 +101,7 @@ const ContactForm = () => {
                                             onChange={(e) => onFieldChange(e, "email")}
                                             style={formError.email ? errorStyles : {}}
                                         />
-                                        <div className="help-block with-errors"></div>
-                                    </div>
-                                </div>
-
-                                <div className="col-lg-12 col-md-6">
-                                    <div className="form-group">
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            placeholder="Phone"
-                                            onChange={(e) => onFieldChange(e, "phone")}
-                                            style={formError.phone ? errorStyles : {}}
-                                        />
+                                        {formError.email && <ErrorMessage absolute={true} />}
                                     </div>
                                 </div>
 
@@ -129,6 +114,7 @@ const ContactForm = () => {
                                             onChange={(e) => onFieldChange(e, "subject")}
                                             style={formError.subject ? errorStyles : {}}
                                         />
+                                        {formError.subject && <ErrorMessage absolute={true} />}
                                     </div>
                                 </div>
 
@@ -146,7 +132,7 @@ const ContactForm = () => {
                                             onChange={(e) => onFieldChange(e, "message")}
                                             style={formError.message ? errorStyles : {}}
                                         />
-                                        <div className="help-block with-errors"></div>
+                                        {formError.message && <ErrorMessage absolute={true} />}
                                     </div>
                                 </div>
                                 <div className="col-lg-12 col-md-12">
@@ -160,7 +146,7 @@ const ContactForm = () => {
                                         <label htmlFor="privacy" style={{ marginLeft: "10px"}}>
                                             I confirm that I agree with the <Link href="/privacy-policy"><a>Privacy policy</a></Link>
                                         </label>
-                                        {formError.privacy && <span style={{ color: "red", padding: "0 10px" }}>This field is required</span>}
+                                        {formError.privacy && <ErrorMessage />}
                                         <div className="help-block with-errors"></div>
                                     </div>
                                 </div>

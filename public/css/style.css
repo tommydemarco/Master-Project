@@ -298,6 +298,7 @@ button {
 /* form-control */
 .form-group {
     margin-bottom: 20px;
+    position: relative;
 }
 
 .form-control {
