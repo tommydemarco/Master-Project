@@ -1,20 +1,18 @@
-import React, { Component } from 'react';
-import Navbar from '../components/Layouts/Navbar';
-import Footer from '../components/Layouts/Footer';
-import Banner from '../components/Cart/Banner';
-import CartBody from '../components/Cart/CartBody';
+import React, { Component } from "react";
 
-class Cart extends Component {
-    render() {
-        return (
-            <React.Fragment>
-                <Navbar />
-                <Banner />
-                <CartBody />
-                <Footer />
-            </React.Fragment>
-        );
-    }
-}
+import Banner from "../components/Banner";
+import CartBody from "../components/Cart/CartBody";
 
-export default Cart;
+const CartPage = () => {
+    return (
+        <React.Fragment>
+            <Banner
+                title="Your Cart"
+                subtitle="Your are just a click away from some awesome gadgets"
+            />
+            <CartBody />
+        </React.Fragment>
+    );
+};
+
+export default CartPage;
