@@ -4,13 +4,13 @@ export default class GoTop extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            is_visible: false
+            is_visible: false,
         };
     }
 
     componentDidMount() {
         var scrollComponent = this;
-        document.addEventListener("scroll", function(e) {
+        document.addEventListener("scroll", function (e) {
             scrollComponent.toggleVisibility();
         });
     }
@@ -18,11 +18,11 @@ export default class GoTop extends Component {
     toggleVisibility() {
         if (window.pageYOffset > 300) {
             this.setState({
-                is_visible: true
+                is_visible: true,
             });
         } else {
             this.setState({
-                is_visible: false
+                is_visible: false,
             });
         }
     }
@@ -30,7 +30,7 @@ export default class GoTop extends Component {
     scrollToTop() {
         window.scrollTo({
             top: 0,
-            behavior: "smooth"
+            behavior: "smooth",
         });
     }
 
@@ -39,7 +39,9 @@ export default class GoTop extends Component {
         return (
             <div className="back-to-top show-back-to-top">
                 {is_visible && (
-                    <div className="top" onClick={() => this.scrollToTop()}>TOP</div>
+                    <div className="top" onClick={() => this.scrollToTop()}>
+                        TOP
+                    </div>
                 )}
             </div>
         );

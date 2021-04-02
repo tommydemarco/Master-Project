@@ -6,7 +6,7 @@ import Banner from "../components/Banner";
 import Content from "../components/ContactUs/Content";
 import Form from "../components/ContactUs/Form";
 
-const Contact = () => {
+const ContactUsPage = () => {
     const { dispatch } = useContext(bannerContext);
     useBannerUpdate(dispatch, true);
 
@@ -22,4 +22,4 @@ const Contact = () => {
     );
 };
 
-export default Contact;
+export default ContactUsPage;

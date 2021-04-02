@@ -62,8 +62,6 @@ export default withRedux(initStore)(
                             </BannerContext>
                         </Provider>
 
-                        <GoTop scrollStepInPx="50" delayInMs="16.66" />
-
                         <Placeholder>
                             <Loader />
                         </Placeholder>

@@ -116,9 +116,11 @@ const Navbar = ({ products, router, noBanner }) => {
                                     <li className="nav-item">
                                         <Link
                                             activeClassName="active"
-                                            href="/contact"
+                                            href="/contact-us"
                                         >
-                                            <a className="nav-link">Contact</a>
+                                            <a className="nav-link">
+                                                Contact us
+                                            </a>
                                         </Link>
                                     </li>
 
