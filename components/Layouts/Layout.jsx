@@ -7,7 +7,6 @@ import { bannerContext } from "../../context";
 import Navbar from "./Navbar"
 import LayoutBanner from "./LayoutBanner"
 import Footer from "./Footer"
-import SearchForm from "./SearchForm"
 import SideDrawer from "./SideDrawer"
 
 const Layout = ({ children }) => {

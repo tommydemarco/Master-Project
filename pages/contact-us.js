@@ -4,7 +4,7 @@ import { useBannerUpdate } from "../utils/hooks";
 
 import Banner from "../components/Banner";
 import Content from "../components/ContactUs/Content";
-import Form from "../components/ContactUs/Form";
+import Form from "../components/ContactForm";
 
 const ContactUsPage = () => {
     const { dispatch } = useContext(bannerContext);
