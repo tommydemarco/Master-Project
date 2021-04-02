@@ -658,7 +658,7 @@ Navbar CSS
 }
 
 .crake-nav nav .others-option .navbar-nav .cart-wrapper a {
-    margin: 0 0 0 10px !important;
+    margin: 0 25px 0 5px !important;
 }
 
 .crake-nav nav .others-option .navbar-nav .cart-wrapper a .cart-icon {

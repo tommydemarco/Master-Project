@@ -150,23 +150,6 @@ const Navbar = ({ products, router, noBanner }) => {
                                         </Link>
                                     </li>
 
-                                    <li className="header-search-box">
-                                        <Link
-                                            activeClassName="active"
-                                            href="/#"
-                                        >
-                                            <a
-                                                onClick={(e) => {
-                                                    e.preventDefault();
-                                                    handleSearchForm();
-                                                }}
-                                                title="Search"
-                                            >
-                                                <i className="icofont-search-2"></i>
-                                            </a>
-                                        </Link>
-                                    </li>
-
                                     <li onClick={handleDrawer}>
                                         <div className="side-menu">
                                             <span className="bar-1"></span>

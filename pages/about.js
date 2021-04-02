@@ -19,12 +19,8 @@ const AboutPage = () => {
         <Fragment>
             <Banner title="About us" subtitle="What makes us unique" />
             <AboutContent />
-            <Team />
             <CtaCard />
             <Feedback />
-            <Partner />
-            <Platform />
-            <Footer />
         </Fragment>
     );
 };
