@@ -1,28 +1,32 @@
 import { useContext } from "react";
 import { bannerContext } from "../../context";
 import { useBannerUpdate } from "../../utils/hooks";
+import firebaseLooper from "../../utils/firebaseLooper";
 
 import Banner from "../../components/Banner";
 import BlogCard from "../../components/BlogCard";
 
 import { db } from "../../config/firebase";
 
-export const getStaticProps = () => {
-    db.collection("blog")
-        .get()
-        .then((snapshot) => {
-            console.log(snapshot);
-        })
-        .catch((e) => {
-            console.log(e);
-        });
+export async function getStaticProps() {
+    let posts = null;
+    let error = null;
+    try {
+        const snapshot = await db.collection("blog").get();
+        posts = firebaseLooper(snapshot);
+    } catch (e) {
+        error = true;
+    }
 
     return {
-        props: { hello: "hello" },
+        props: { posts: posts, error: error },
+        revalidate: 60000,
     };
-};
+}
 
-const Blog = () => {
+function BlogPage(props) {
+    console.log("POSTS", props);
+
     const { dispatch } = useContext(bannerContext);
     useBannerUpdate(dispatch, true);
 
@@ -351,6 +355,6 @@ const Blog = () => {
             </section>
         </React.Fragment>
     );
-};
+}
 
-export default Blog;
+export default BlogPage;
