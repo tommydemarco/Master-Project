@@ -15,9 +15,10 @@ import withRedux from "next-redux-wrapper";
 import { initStore } from "../store";
 import BannerContext from "../context";
 
-import GoTop from "../components/Shared/GoTop";
 import Layout from "../components/Layouts";
 import Loader from "../components/Shared/Loader";
+
+import firebase from "../firebase";
 
 export default withRedux(initStore)(
     class MyApp extends App {
