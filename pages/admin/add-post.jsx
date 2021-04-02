@@ -21,4 +21,4 @@ addPost.propTypes = {
 
 }
 
-export default addPost
+export default addPost  
