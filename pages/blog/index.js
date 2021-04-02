@@ -5,6 +5,23 @@ import { useBannerUpdate } from "../../utils/hooks";
 import Banner from "../../components/Banner";
 import BlogCard from "../../components/BlogCard";
 
+import { db } from "../../config/firebase";
+
+export const getStaticProps = () => {
+    db.collection("blog")
+        .get()
+        .then((snapshot) => {
+            console.log(snapshot);
+        })
+        .catch((e) => {
+            console.log(e);
+        });
+
+    return {
+        props: { hello: "hello" },
+    };
+};
+
 const Blog = () => {
     const { dispatch } = useContext(bannerContext);
     useBannerUpdate(dispatch, true);

@@ -1,4 +1,4 @@
-import firebase from "firebase";
+import * as firebase from "firebase";
 import "firebase/firestore";
 
 const firebaseConfig = {
@@ -10,17 +10,13 @@ const firebaseConfig = {
     appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-firebase.initializeApp(firebaseConfig);
-
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
+const app = firebase.app();
+const auth = firebase.auth();
 const db = firebase.firestore();
+const now = firebase.firestore.Timestamp.now();
+export { auth, db, now };
 
-db.collection("blog")
-    .get()
-    .then((snapshot) => {
-        console.log(snapshot);
-    })
-    .catch((e) => {
-        console.log(e);
-    });
-
-export default firebase;
+console.log(app.name ? "Firebase Mode Activated!" : "Firebase not working :(");

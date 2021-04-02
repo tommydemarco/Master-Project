@@ -18,8 +18,6 @@ import BannerContext from "../context";
 import Layout from "../components/Layouts";
 import Loader from "../components/Shared/Loader";
 
-import firebase from "../firebase";
-
 export default withRedux(initStore)(
     class MyApp extends App {
         render() {
