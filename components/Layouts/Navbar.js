@@ -96,270 +96,12 @@ const Navbar = ({ products, router, noBanner }) => {
                             >
                                 <ul className="navbar-nav nav ms-auto">
                                     <li className="nav-item">
-                                        <a
-                                            className="nav-link"
-                                            href="/#"
-                                            onClick={(e) => e.preventDefault()}
+                                        <Link
+                                            activeClassName="active"
+                                            href="/shop"
                                         >
-                                            Home
-                                        </a>
-                                        <ul className="dropdown_menu">
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/saas"
-                                                >
-                                                    <a>SaaS Landing</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/app"
-                                                >
-                                                    <a>App Landing</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/digital-marketing"
-                                                >
-                                                    <a>Digital Marketing</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/product-landing"
-                                                >
-                                                    <a>Product Landing</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/software-landing"
-                                                >
-                                                    <a>Software Landing</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/book-landing"
-                                                >
-                                                    <a>Book Landing</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/agency"
-                                                >
-                                                    <a>Startup Agency</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/payment-processing"
-                                                >
-                                                    <a>Payment Processing</a>
-                                                </Link>
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li className="nav-item">
-                                        <a
-                                            href="/#"
-                                            className="nav-link"
-                                            onClick={(e) => e.preventDefault()}
-                                        >
-                                            Pages
-                                        </a>
-                                        <ul className="dropdown_menu">
-                                            <li className="nav-item">
-                                                <a
-                                                    className="nav-link"
-                                                    href="/#"
-                                                    onClick={(e) =>
-                                                        e.preventDefault()
-                                                    }
-                                                >
-                                                    About
-                                                </a>
-                                                <ul className="dropdown_menu">
-                                                    <li>
-                                                        <Link
-                                                            activeClassName="active"
-                                                            href="/about"
-                                                        >
-                                                            <a>About Us 1</a>
-                                                        </Link>
-                                                    </li>
-                                                </ul>
-                                            </li>
-
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/features"
-                                                >
-                                                    <a>Features</a>
-                                                </Link>
-                                            </li>
-
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/services"
-                                                >
-                                                    <a>Services</a>
-                                                </Link>
-                                            </li>
-
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/gallery"
-                                                >
-                                                    <a>Gallery</a>
-                                                </Link>
-                                            </li>
-
-                                            <li className="nav-item">
-                                                <a
-                                                    className="nav-link"
-                                                    href="/#"
-                                                    onClick={(e) =>
-                                                        e.preventDefault()
-                                                    }
-                                                >
-                                                    Team
-                                                </a>
-                                                <ul className="dropdown_menu">
-                                                    <li>
-                                                        <Link
-                                                            activeClassName="active"
-                                                            href="/team-one"
-                                                        >
-                                                            <a>Team 1</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link
-                                                            activeClassName="active"
-                                                            href="/team-two"
-                                                        >
-                                                            <a>Team 2</a>
-                                                        </Link>
-                                                    </li>
-                                                </ul>
-                                            </li>
-
-                                            <li className="nav-item">
-                                                <a
-                                                    className="nav-link"
-                                                    href="/#"
-                                                    onClick={(e) =>
-                                                        e.preventDefault()
-                                                    }
-                                                >
-                                                    Pricing
-                                                </a>
-                                                <ul className="dropdown_menu">
-                                                    <li>
-                                                        <Link
-                                                            activeClassName="active"
-                                                            href="/pricing-one"
-                                                        >
-                                                            <a>Pricing 1</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link
-                                                            activeClassName="active"
-                                                            href="/pricing-two"
-                                                        >
-                                                            <a>Pricing 2</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link
-                                                            activeClassName="active"
-                                                            href="/pricing-three"
-                                                        >
-                                                            <a>Pricing 3</a>
-                                                        </Link>
-                                                    </li>
-                                                </ul>
-                                            </li>
-
-                                            <li className="nav-item">
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/shop"
-                                                >
-                                                    <a className="nav-link">
-                                                        Shop
-                                                    </a>
-                                                </Link>
-                                            </li>
-
-                                            <li className="nav-item">
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/blog"
-                                                >
-                                                    <a className="nav-link">
-                                                        Blog
-                                                    </a>
-                                                </Link>
-                                            </li>
-
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/login"
-                                                >
-                                                    <a>Login</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/signup"
-                                                >
-                                                    <a>Sign Up</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/coming-soon"
-                                                >
-                                                    <a>Coming Soon</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/error"
-                                                >
-                                                    <a>404 Error</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    activeClassName="active"
-                                                    href="/faq"
-                                                >
-                                                    <a>FAQ</a>
-                                                </Link>
-                                            </li>
-                                        </ul>
+                                            <a className="nav-link">Shop</a>
+                                        </Link>
                                     </li>
 
                                     <li className="nav-item">
@@ -374,18 +116,18 @@ const Navbar = ({ products, router, noBanner }) => {
                                     <li className="nav-item">
                                         <Link
                                             activeClassName="active"
-                                            href="/shop"
+                                            href="/contact"
                                         >
-                                            <a className="nav-link">Shop</a>
+                                            <a className="nav-link">Contact</a>
                                         </Link>
                                     </li>
 
                                     <li className="nav-item">
                                         <Link
                                             activeClassName="active"
-                                            href="/contact"
+                                            href="/about"
                                         >
-                                            <a className="nav-link">Contact</a>
+                                            <a className="nav-link">About</a>
                                         </Link>
                                     </li>
                                 </ul>
