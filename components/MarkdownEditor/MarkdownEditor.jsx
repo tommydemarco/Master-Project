@@ -11,9 +11,9 @@ const converter = new Showdown.Converter({
   tasklists: true
 });
 
-const MarkdownEditor = ({setFormData}) => {
+const MarkdownEditor = ({ data, setFormData}) => {
 
-    const [value, setValue] = useState("**Hello world!!!**");
+    const [value, setValue] = useState(data);
     const [selectedTab, setSelectedTab] = useState("write");
 
     const setMarkdownValue = value => {

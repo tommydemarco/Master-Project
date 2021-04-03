@@ -9,8 +9,6 @@ import ErrorMessage from "../ErrorMessage"
 import FileUploader from "../FileUploader";
 import MarkdownEditor from "../MarkdownEditor"
 
-import styles from "./PostForm.module.scss"
-
 const setFormErrorObject = setFormError
 
 const PostForm = () => {
@@ -103,7 +101,7 @@ const PostForm = () => {
                             <div className="row">
                                 <div className="col-lg-12 col-md-12">
                                     <div className="form-group">
-                                        <MarkdownEditor setFormData={setFormData} />
+                                        <MarkdownEditor data={formData.body} setFormData={setFormData} />
                                     </div>
                                 </div>
 
