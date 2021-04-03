@@ -1,9 +1,14 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
+
 import useFormValidation from "../../hooks/useFormValidation";
+import onFormFieldChange from "../../utils/onFormFieldChange";
+import setFormError from "../../utils/setFormError";
 
 import Link from "next/link"
 
 import ErrorMessage from "../ErrorMessage"
+
+const setFormErrorObject = setFormError
 
 const ContactForm = () => {
 
@@ -11,25 +16,15 @@ const ContactForm = () => {
 
     const [ formData, setFormData ] = useState({ 
         name: "",
-        email: "", 
+        email: "",
         subject: "",
         message: "",
+        privacy: false
     })
 
     const [ changingField, setChangingField ] = useState(null)
-
-    const [ formError, setFormError ] = useState({
-        name: null,
-        email: null,
-        subject: null,
-        message: null,
-        privacy: null
-    })
-
-    const onFieldChange = (e, field) => {
-        setChangingField(field)
-        setFormData({...formData, [field]: e.target.value})
-    }
+    const [ formError, setFormError ] = useState(() => setFormErrorObject(formData))
+    const onFieldChange = onFormFieldChange(setChangingField, formData, setFormData)
 
     useFormValidation(changingField, formData, setFormError)
 
@@ -41,10 +36,6 @@ const ContactForm = () => {
         }
         console.log(formData)
     }
-
-    useEffect(() => {
-        console.log(formError, changingField)
-    }, [ formError, changingField ])
 
     const errorStyles = { background: "rgba(255, 68, 0, 0.324)", border: "1px solid red"}
 
