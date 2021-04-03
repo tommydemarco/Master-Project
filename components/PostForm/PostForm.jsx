@@ -1,10 +1,16 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef } from 'react'
 import Link from "next/link"
+
+import useFormValidation from "../../hooks/useFormValidation";
+import onFormFieldChange from "../../utils/onFormFieldChange";
+import setFormError from "../../utils/setFormError";
 
 import ErrorMessage from "../ErrorMessage"
 import MarkdownEditor from "../MarkdownEditor"
 
 import styles from "./PostForm.module.scss"
+
+const setFormErrorObject = setFormError
 
 const PostForm = () => {
     const checkboxRef = useRef()
@@ -18,38 +24,10 @@ const PostForm = () => {
     })
 
     const [ changingField, setChangingField ] = useState(null)
+    const [ formError, setFormError ] = useState(() => setFormErrorObject(formData))
+    const onFieldChange = onFormFieldChange(setChangingField, formData, setFormData)
 
-    const [ formError, setFormError ] = useState({
-        title: null,
-        subtitle: null,
-        category: null,
-        image: null,
-        body: null,
-    })
-
-    const onFieldChange = (e, field) => {
-        setChangingField(field)
-        setFormData({...formData, [field]: e.target.value})
-    }
-
-    useEffect(() => {
-        if(changingField === "name") {
-            if (formData.title === "") setFormError((prevState) => ({...prevState, title: true}))
-            else setFormError((prevState) => ({...prevState, title: false}))
-        } else if (changingField === "email") {
-            if (formData.email === "") setFormError((prevState) => ({...prevState, email: true}))
-            else setFormError((prevState) => ({...prevState, email: false}))
-        } else if (changingField === "subject") {
-            if (formData.subject === "") setFormError((prevState) => ({...prevState, subject: true}))
-            else setFormError((prevState) => ({...prevState, subject: false}))
-        } else if (changingField === "message") {
-            if (formData.message === "") setFormError((prevState) => ({...prevState, message: true}))
-            else setFormError((prevState) => ({...prevState, message: false}))
-        } else if (changingField === "privacy") {
-            if (checkboxRef.current.checked !== true) setFormError((prevState) => ({...prevState, privacy: true}))
-            else setFormError((prevState) => ({...prevState, privacy: false}))
-        }
-    }, [ changingField, formData ])
+    useFormValidation(changingField, formData, setFormError)
 
     const onSubmit = (e) => {
         e.preventDefault()
@@ -57,11 +35,8 @@ const PostForm = () => {
             setFormError({...formError, privacy: true })
             return
         }
+        console.log(formData)
     }
-
-    useEffect(() => {
-        console.log(formError)
-    }, [ formError ])
 
     const errorStyles = { background: "rgba(255, 68, 0, 0.324)", border: "1px solid red"}
 
@@ -124,7 +99,7 @@ const PostForm = () => {
                             <div className="row">
                                 <div className="col-lg-12 col-md-12">
                                     <div className="form-group">
-                                        <MarkdownEditor />
+                                        <MarkdownEditor setFormData={setFormData} />
                                     </div>
                                 </div>
 

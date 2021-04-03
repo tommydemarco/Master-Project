@@ -11,15 +11,20 @@ const converter = new Showdown.Converter({
   tasklists: true
 });
 
-const MarkdownEditor = () => {
+const MarkdownEditor = ({setFormData}) => {
 
     const [value, setValue] = useState("**Hello world!!!**");
     const [selectedTab, setSelectedTab] = useState("write");
 
+    const setMarkdownValue = value => {
+      setValue(value)
+      setFormData((prevData) => ({...prevData, body: value}))
+    }
+
     return (
         <ReactMde
           value={value}
-          onChange={setValue}
+          onChange={(value) => setMarkdownValue(value)}
           selectedTab={selectedTab}
           onTabChange={setSelectedTab}
           generateMarkdownPreview={markdown =>
