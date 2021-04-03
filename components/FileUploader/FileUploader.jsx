@@ -30,7 +30,7 @@ FileUploader.propTypes = {
     setFormData: PropTypes.func.isRequired, 
     setFormError: PropTypes.func.isRequired, 
     field: PropTypes.string.isRequired, 
-    sizeLimit: propTypes.number, 
+    sizeLimit: PropTypes.number, 
     allowedFormats: PropTypes.arrayOf(PropTypes.string)
 }
 
