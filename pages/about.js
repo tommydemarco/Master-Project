@@ -1,6 +1,6 @@
 import { useContext, Fragment } from "react";
 import { bannerContext } from "../context";
-import { useBannerUpdate } from "../utils/hooks";
+import useBannerUpdate from "../hooks/useBannerUpdate";
 
 import Footer from "../components/Layouts/Footer";
 import Banner from "../components/Banner";

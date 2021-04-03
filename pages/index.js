@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { bannerContext } from "../context";
-import { useBannerUpdate } from "../utils/hooks";
+import useBannerUpdate from "../hooks/useBannerUpdate";
 
 import Banner from "../components/Saas/Banner";
 import Features from "../components/Saas/Features";

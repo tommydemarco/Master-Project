@@ -11,18 +11,20 @@ const PostForm = () => {
 
     const [ formData, setFormData ] = useState({ 
         title: "",
+        subtitle: "",
         category: "",
-        tags: "",
+        image: null,
+        body: "",
     })
 
     const [ changingField, setChangingField ] = useState(null)
 
     const [ formError, setFormError ] = useState({
-        name: null,
-        email: null,
-        subject: null,
-        message: null,
-        privacy: null
+        title: null,
+        subtitle: null,
+        category: null,
+        image: null,
+        body: null,
     })
 
     const onFieldChange = (e, field) => {
@@ -32,8 +34,8 @@ const PostForm = () => {
 
     useEffect(() => {
         if(changingField === "name") {
-            if (formData.name === "") setFormError((prevState) => ({...prevState, name: true}))
-            else setFormError((prevState) => ({...prevState, name: false}))
+            if (formData.title === "") setFormError((prevState) => ({...prevState, title: true}))
+            else setFormError((prevState) => ({...prevState, title: false}))
         } else if (changingField === "email") {
             if (formData.email === "") setFormError((prevState) => ({...prevState, email: true}))
             else setFormError((prevState) => ({...prevState, email: false}))
