@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 
 import Link from "next/link"
 
-import ErrorMessage from "./ErrorMessage"
+import ErrorMessage from "../ErrorMessage"
 
 const ContactForm = () => {
 

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import ReactMde from "react-mde";
 import * as Showdown from "showdown";
 import "react-mde/lib/styles/css/react-mde-all.css";
@@ -10,10 +12,11 @@ const converter = new Showdown.Converter({
 });
 
 const MarkdownEditor = () => {
-    const [value, setValue] = React.useState("**Hello world!!!**");
-    const [selectedTab, setSelectedTab] = React.useState<"write" | "preview">("write");
+
+    const [value, setValue] = useState("**Hello world!!!**");
+    const [selectedTab, setSelectedTab] = useState("write");
+
     return (
-      <div className="container">
         <ReactMde
           value={value}
           onChange={setValue}
@@ -23,7 +26,6 @@ const MarkdownEditor = () => {
             Promise.resolve(converter.makeHtml(markdown))
           }
         />
-      </div>
     );
 }
 

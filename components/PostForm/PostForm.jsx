@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from 'react'
 import Link from "next/link"
 
 import ErrorMessage from "../ErrorMessage"
+import MarkdownEditor from "../MarkdownEditor"
+
 import styles from "./PostForm.module.scss"
 
 const PostForm = () => {
@@ -120,64 +122,11 @@ const PostForm = () => {
                             <div className="row">
                                 <div className="col-lg-12 col-md-12">
                                     <div className="form-group">
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            required={true}
-                                            data-error="Please enter your name"
-                                            placeholder="Name*"
-                                            onChange={(e) => onFieldChange(e, "name")}
-                                            style={formError.name ? errorStyles : {}}
-                                        />
-                                        {formError.name && <ErrorMessage absolute={true} />}
+                                        <MarkdownEditor />
                                     </div>
                                 </div>
 
-                                <div className="col-lg-12 col-md-12">
-                                    <div className="form-group">
-                                        <input
-                                            type="email"
-                                            className="form-control"
-                                            required={true}
-                                            data-error="Please enter your email"
-                                            placeholder="Email*"
-                                            onChange={(e) => onFieldChange(e, "email")}
-                                            style={formError.email ? errorStyles : {}}
-                                        />
-                                        {formError.email && <ErrorMessage absolute={true} />}
-                                    </div>
-                                </div>
-
-                                <div className="col-lg-12 col-md-6">
-                                    <div className="form-group">
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            placeholder="Subject*"
-                                            onChange={(e) => onFieldChange(e, "subject")}
-                                            style={formError.subject ? errorStyles : {}}
-                                        />
-                                        {formError.subject && <ErrorMessage absolute={true} />}
-                                    </div>
-                                </div>
-
-                                <div className="col-lg-12 col-md-12">
-                                    <div className="form-group">
-                                        <textarea
-                                            name="message"
-                                            className="form-control"
-                                            id="message"
-                                            cols="30"
-                                            rows="5"
-                                            required
-                                            data-error="Write your message"
-                                            placeholder="Your Message*"
-                                            onChange={(e) => onFieldChange(e, "message")}
-                                            style={formError.message ? errorStyles : {}}
-                                        />
-                                        {formError.message && <ErrorMessage absolute={true} />}
-                                    </div>
-                                </div>
+        
                                 <div className="col-lg-12 col-md-12">
                                     <div className="form-group">
                                         <input
