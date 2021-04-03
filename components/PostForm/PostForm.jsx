@@ -72,13 +72,11 @@ const PostForm = () => {
                                     <input
                                         type="text"
                                         className="form-control"
-                                        required={true}
-                                        data-error="Please enter your name"
-                                        placeholder="Name*"
-                                        onChange={(e) => onFieldChange(e, "name")}
-                                        style={formError.name ? errorStyles : {}}
+                                        placeholder="Title*"
+                                        onChange={(e) => onFieldChange(e, "title")}
+                                        style={formError.title ? errorStyles : {}}
                                     />
-                                    {formError.name && <ErrorMessage absolute={true} />}
+                                    {formError.title && <ErrorMessage absolute={true} />}
                                 </div>
                             </div>
                             <div className="col-lg-12 col-md-12">
@@ -87,26 +85,31 @@ const PostForm = () => {
                                         type="text"
                                         className="form-control"
                                         required={true}
-                                        data-error="Please enter your name"
-                                        placeholder="Name*"
-                                        onChange={(e) => onFieldChange(e, "name")}
-                                        style={formError.name ? errorStyles : {}}
+                                        placeholder="Subtitle*"
+                                        onChange={(e) => onFieldChange(e, "subtitle")}
+                                        style={formError.subtitle ? errorStyles : {}}
                                     />
+                                    {formError.subtitle && <ErrorMessage absolute={true} />}
+                                </div>
+                            </div>
+                            <div className="col-lg-12 col-md-12">
+                                <div className="form-group">
+                                    <div className="select-box">
+                                        <select className="form-control">
+                                            <option value="1">Select a Category</option>
+                                            <option value="2">Javascript News</option>
+                                            <option value="0">Tutorial</option>
+                                            <option value="3">Programming News</option>
+                                        </select>
+                                    </div>
                                     {formError.name && <ErrorMessage absolute={true} />}
                                 </div>
                             </div>
                             <div className="col-lg-12 col-md-12">
                                 <div className="form-group">
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        required={true}
-                                        data-error="Please enter your name"
-                                        placeholder="Name*"
-                                        onChange={(e) => onFieldChange(e, "name")}
-                                        style={formError.name ? errorStyles : {}}
-                                    />
-                                    {formError.name && <ErrorMessage absolute={true} />}
+                                    <label className={styles.label} htmlFor="myfile">Select an image:</label>
+                                    <input type="file" id="image" name="image"></input>
+                                    {formError.image && <ErrorMessage absolute={true} />}
                                 </div>
                             </div>
                         </div>
