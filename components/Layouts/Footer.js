@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import FooterIcons from "../FooterIcons";
+
 const Footer = () => {
     return (
         <footer className="footer-area pb-0 bg-image">
@@ -12,6 +14,8 @@ const Footer = () => {
                                 reserved
                             </p>
                         </div>
+
+                        <FooterIcons />
 
                         <div className="col-lg-6 col-md-6">
                             <ul>

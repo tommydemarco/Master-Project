@@ -1,18 +1,18 @@
 import { useContext } from "react";
 import { bannerContext } from "../../context";
-import { useBannerUpdate } from "../../hooks/useBannerUpdate";
+import useBannerUpdate from "../../hooks/useBannerUpdate";
 import firebaseLooper from "../../utils/firebaseLooper";
 
 import Banner from "../../components/Banner";
 import BlogCard from "../../components/BlogCard";
 
-import { db } from "../../config/firebase";
+import { blog } from "../../config/firebase";
 
 export async function getStaticProps() {
     let posts = null;
     let error = null;
     try {
-        const snapshot = await db.collection("blog").get();
+        const snapshot = await blog.get();
         posts = firebaseLooper(snapshot);
     } catch (e) {
         error = true;

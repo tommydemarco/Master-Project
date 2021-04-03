@@ -1,0 +1,21 @@
+.footer-icons {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    width: fit-content;
+
+    i {
+        font-size: 20px;
+    }
+
+    a {
+        color: #eeeeee !important;
+        cursor: pointer;
+
+        &:hover {
+            color: white !important;
+        }
+    }
+}
