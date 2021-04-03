@@ -3,8 +3,8 @@ import { bannerContext } from "../context";
 import { useBannerUpdate } from "../utils/hooks";
 
 import Banner from "../components/Banner";
-import Content from "../components/ContactUs/Content";
-import Form from "../components/ContactForm";
+import ContactCards from "../components/ContactCards";
+import ContactForm from "../components/ContactForm";
 
 const ContactUsPage = () => {
     const { dispatch } = useContext(bannerContext);
@@ -16,8 +16,8 @@ const ContactUsPage = () => {
                 title="Get in touch with us"
                 subtitle="Anything On your Mind. We’ll Be Glad To Assist You!"
             />
-            <Form />
-            <Content />
+            <ContactForm />
+            <ContactCards />
         </>
     );
 };
