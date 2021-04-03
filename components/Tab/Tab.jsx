@@ -1,13 +1,21 @@
-import { Fragment, useContext } from "react";
+import { Fragment, useContext, useEffect } from "react";
 import PropTypes from "prop-types"
 
 import Link from "next/link"
 
+import { tabsContext } from "../Tabs/Tabs"
 
-const Tab = ({ id, title, subtitle, list, imageSrc, imageAlt, align, area }) => {
+
+const Tab = ({ id, title, subtitle, list, imageSrc, imageAlt, align, area, icon }) => {
+
+    const { activeTab, setTabs } = useContext(tabsContext)
+
+    useEffect(() => {
+        setTabs((previousState) => ({...previousState, [id]: { title, icon }}))
+    }, [])
 
     return (
-        <div id={id} className="tabs_item">
+        <div id={id} className="tabs_item" style={activeTab === id ? { display: "block"} : { display: "none"}}>
             <div className="row h-100 justify-content-center align-items-center">
                 {align === "left" ? 
                 <Fragment>
@@ -43,11 +51,11 @@ const TabContent = ({ title, subtitle, list, area }) => {
     )
 }
 
-const TabImage = ({imageSrc, imageAlt}) => {
+const TabImage = ({src, alt}) => {
     return (
         <div className="col-lg-6 col-md-6">
             <div className="tabs_item_img">
-                <img src={imageSrc} alt={imageAlt} />
+                <img src={src} alt={alt} />
             </div>
         </div>
     )
@@ -67,7 +75,9 @@ Tab.propTypes = {
 Tab.defaultProps = {
     imageSrc: "/images/features-img1.png",
     imageAlt: "img",
-    align: "left"
+    align: "left",
+    icon: "icofont-dashboard-web",
+    list: []
 }
 
 export default Tab
