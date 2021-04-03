@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import useFormValidation from "../../hooks/useFormValidation";
 
 import Link from "next/link"
 
@@ -30,24 +31,7 @@ const ContactForm = () => {
         setFormData({...formData, [field]: e.target.value})
     }
 
-    useEffect(() => {
-        if(changingField === "name") {
-            if (formData.name === "") setFormError((prevState) => ({...prevState, name: true}))
-            else setFormError((prevState) => ({...prevState, name: false}))
-        } else if (changingField === "email") {
-            if (formData.email === "") setFormError((prevState) => ({...prevState, email: true}))
-            else setFormError((prevState) => ({...prevState, email: false}))
-        } else if (changingField === "subject") {
-            if (formData.subject === "") setFormError((prevState) => ({...prevState, subject: true}))
-            else setFormError((prevState) => ({...prevState, subject: false}))
-        } else if (changingField === "message") {
-            if (formData.message === "") setFormError((prevState) => ({...prevState, message: true}))
-            else setFormError((prevState) => ({...prevState, message: false}))
-        } else if (changingField === "privacy") {
-            if (checkboxRef.current.checked !== true) setFormError((prevState) => ({...prevState, privacy: true}))
-            else setFormError((prevState) => ({...prevState, privacy: false}))
-        }
-    }, [ changingField, formData ])
+    useFormValidation(changingField, formData, setFormError)
 
     const onSubmit = (e) => {
         e.preventDefault()
@@ -59,8 +43,8 @@ const ContactForm = () => {
     }
 
     useEffect(() => {
-        console.log(formError)
-    }, [ formError ])
+        console.log(formError, changingField)
+    }, [ formError, changingField ])
 
     const errorStyles = { background: "rgba(255, 68, 0, 0.324)", border: "1px solid red"}
 
@@ -93,17 +77,15 @@ const ContactForm = () => {
                                 <div className="col-lg-12 col-md-12">
                                     <div className="form-group">
                                         <input
-                                            type="email"
+                                            type="text"
                                             className="form-control"
-                                            required={true}
-                                            data-error="Please enter your email"
                                             placeholder="Email*"
                                             onChange={(e) => onFieldChange(e, "email")}
                                             style={formError.email ? errorStyles : {}}
                                         />
                                         {formError.email && <ErrorMessage absolute={true} />}
                                     </div>
-                                </div>
+                                </div>                              
 
                                 <div className="col-lg-12 col-md-6">
                                     <div className="form-group">
