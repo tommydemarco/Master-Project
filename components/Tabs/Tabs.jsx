@@ -1,5 +1,4 @@
 import { createContext, useState } from 'react';
-import Link from 'next/link';
 
 const Tabs = () => {
 
