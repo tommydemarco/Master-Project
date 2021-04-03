@@ -6,6 +6,7 @@ import onFormFieldChange from "../../utils/onFormFieldChange";
 import setFormError from "../../utils/setFormError";
 
 import ErrorMessage from "../ErrorMessage"
+import FileUploader from "../../utils/FileUploader";
 import MarkdownEditor from "../MarkdownEditor"
 
 import styles from "./PostForm.module.scss"
@@ -86,8 +87,7 @@ const PostForm = () => {
                             </div>
                             <div className="col-lg-12 col-md-12">
                                 <div className="form-group">
-                                    <label className={styles.label} htmlFor="myfile">Select an image:</label>
-                                    <input type="file" id="image" name="image"></input>
+                                    <FileUploader setFormData={setFormData} setFormError={setFormError} field="image" />
                                     {formError.image && <ErrorMessage absolute={true} />}
                                 </div>
                             </div>
