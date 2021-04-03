@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from "next/link"
 
 import useFormValidation from "../../hooks/useFormValidation";
@@ -6,7 +6,7 @@ import onFormFieldChange from "../../utils/onFormFieldChange";
 import setFormError from "../../utils/setFormError";
 
 import ErrorMessage from "../ErrorMessage"
-import FileUploader from "../../utils/FileUploader";
+import FileUploader from "../FileUploader";
 import MarkdownEditor from "../MarkdownEditor"
 
 import styles from "./PostForm.module.scss"
@@ -38,6 +38,10 @@ const PostForm = () => {
         }
         console.log(formData)
     }
+
+    useEffect(() => {
+        console.log(formError)
+    }, [formError])
 
     const errorStyles = { background: "rgba(255, 68, 0, 0.324)", border: "1px solid red"}
 
@@ -88,7 +92,7 @@ const PostForm = () => {
                             <div className="col-lg-12 col-md-12">
                                 <div className="form-group">
                                     <FileUploader setFormData={setFormData} setFormError={setFormError} field="image" />
-                                    {formError.image && <ErrorMessage absolute={true} />}
+                                    {formError.image && <ErrorMessage absolute={true} message={formError.image} />}
                                 </div>
                             </div>
                         </div>
