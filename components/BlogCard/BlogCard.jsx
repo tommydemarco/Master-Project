@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import Link from "next/link"
 
-const BlogCard = ({ imageSrc, imageAlt, date, author, title, description, slug }) => {
+const BlogCard = ({ imageSrc, imageAlt, date, author, title, description, slug, category }) => {
 
     const postDate = new Date(date).toLocaleDateString()
 
@@ -34,8 +34,11 @@ const BlogCard = ({ imageSrc, imageAlt, date, author, title, description, slug }
                     <p>
                         {description}
                     </p>
+                    <p>
+                        {category}
+                    </p>
                     <Link
-                        href={`/blog/${slug}`}   
+                        href={`/blog/${slug}`}
                     >
                         <a className="read-more-btn" >
                             Read More
@@ -56,6 +59,7 @@ BlogCard.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     slug: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
 }
 
 BlogCard.defaultProps = {
@@ -66,6 +70,7 @@ BlogCard.defaultProps = {
     title: "The Most Popular New Business Apps Landing Page",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Morbi turpis massa, dapibus nec libero vitae.",
     slug: "blog-post",
+    category: "Javascript News"
 }
 
 export default BlogCard

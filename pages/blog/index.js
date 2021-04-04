@@ -1,34 +1,115 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { bannerContext } from "../../context";
 import useBannerUpdate from "../../hooks/useBannerUpdate";
 import firebaseLooper from "../../utils/firebaseLooper";
 
 import Banner from "../../components/Banner";
 import BlogCard from "../../components/BlogCard";
+import Pagination from "../../components/Pagination";
 
-import { blog } from "../../config/firebase";
+//import { blog } from "../../config/firebase";
 
 export async function getStaticProps() {
     let posts = null;
     let error = null;
-    try {
-        const snapshot = await blog.get();
-        posts = firebaseLooper(snapshot);
-    } catch (e) {
-        error = true;
-    }
+    // try {
+    //     const snapshot = await blog.get();
+    //     posts = firebaseLooper(snapshot);
+    // } catch (e) {
+    //     error = true;
+    // }
 
     return {
-        props: { posts: posts, error: error },
+        props: {
+            posts: [
+                {
+                    title: "The first title",
+                    category: "Tutorial",
+                    date: "04/04/2021",
+                },
+                {
+                    title: "sed quia consequuntur magni",
+                    category: "Programming News",
+                    date: "04/04/2021",
+                },
+                {
+                    title: "aut odit aut fugit",
+                    category: "Tutorial",
+                    date: "04/04/2021",
+                },
+                {
+                    title: "quia voluptas sit aspernatur",
+                    category: "Programming News",
+                    date: "04/04/2021",
+                },
+                {
+                    title: "Nemo enim ipsam voluptatem",
+                    category: "Tutorial",
+                    date: "04/04/2021",
+                },
+                {
+                    title: "vitae dicta sunt explicabo",
+                    category: "Programming News",
+                    date: "04/04/2021",
+                },
+                {
+                    title: "architecto beatae",
+                    category: "Javascript News",
+                    date: "04/04/2021",
+                },
+                {
+                    title: "illo inventore veritatis et quasi",
+                    category: "Javascript News",
+                    date: "04/04/2021",
+                },
+                {
+                    title: "eaque ipsa quae ab",
+                    category: "Programming News",
+                    date: "04/04/2021",
+                },
+                {
+                    title: "totam rem aperiam",
+                    category: "Tutorial",
+                    date: "04/04/2021",
+                },
+                {
+                    title: "doloremque laudantium",
+                    category: "Javascript News",
+                    date: "04/04/2021",
+                },
+                {
+                    title: "sit voluptatem accusantium",
+                    category: "Tutorial",
+                    date: "04/04/2021",
+                },
+                {
+                    title: "omnis iste natus error",
+                    category: "Javascript News",
+                    date: "04/04/2021",
+                },
+                {
+                    title: "Sed ut perspiciatis unde",
+                    category: "Tutorial",
+                    date: "04/04/2021",
+                },
+            ],
+            error: error,
+        },
         revalidate: 60000,
     };
 }
 
-function BlogPage(props) {
-    console.log("POSTS", props);
-
+function BlogPage({ posts }) {
     const { dispatch } = useContext(bannerContext);
     useBannerUpdate(dispatch, true);
+
+    console.log(posts);
+
+    const [activePaginationItem, setActovePaginationItem] = useState(0);
+    const [activePostList, setActivePostList] = useState(posts);
+    const [postsToRender, setPostsToRender] = useState(
+        activePostList.slice(0, 4)
+    );
 
     return (
         <React.Fragment>
@@ -41,64 +122,26 @@ function BlogPage(props) {
                     <div className="row">
                         <div className="col-lg-8 col-md-12">
                             <div className="row">
-                                <BlogCard />
-                                <BlogCard />
-                                <BlogCard />
-                                <BlogCard />
-                                <BlogCard />
-                                <BlogCard />
+                                {postsToRender.map((post) => (
+                                    <BlogCard
+                                        key={post.title}
+                                        title={posts.title}
+                                        date={posts.date}
+                                        category={posts.category}
+                                    />
+                                ))}
 
                                 <div className="col-lg-12 col-md-12">
-                                    <div className="pagination-area">
-                                        <nav aria-label="Page navigation example">
-                                            <ul className="pagination justify-content-center">
-                                                <li className="page-item">
-                                                    <a
-                                                        className="page-link"
-                                                        href="/#"
-                                                    >
-                                                        <i className="icofont-double-left"></i>
-                                                    </a>
-                                                </li>
-
-                                                <li className="page-item active">
-                                                    <a
-                                                        className="page-link"
-                                                        href="/#"
-                                                    >
-                                                        1
-                                                    </a>
-                                                </li>
-
-                                                <li className="page-item">
-                                                    <a
-                                                        className="page-link"
-                                                        href="/#"
-                                                    >
-                                                        2
-                                                    </a>
-                                                </li>
-
-                                                <li className="page-item">
-                                                    <a
-                                                        className="page-link"
-                                                        href="/#"
-                                                    >
-                                                        3
-                                                    </a>
-                                                </li>
-
-                                                <li className="page-item">
-                                                    <a
-                                                        className="page-link"
-                                                        href="/#"
-                                                    >
-                                                        <i className="icofont-double-right"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                    </div>
+                                    <Pagination
+                                        activePaginationItem={
+                                            activePaginationItem
+                                        }
+                                        setActovePaginationItem={
+                                            setActovePaginationItem
+                                        }
+                                        resultsNumber={activePostList.length}
+                                        itemsPerPage={4}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -116,58 +159,6 @@ function BlogPage(props) {
                                             <i className="icofont-search-2"></i>
                                         </button>
                                     </form>
-                                </div>
-
-                                <div className="widget widget_post_categories">
-                                    <h3 className="widget-title">
-                                        Post Categories
-                                    </h3>
-                                    <div className="bar"></div>
-
-                                    <ul>
-                                        <li>
-                                            <a href="/#">
-                                                <i className="icofont-bubble-right"></i>{" "}
-                                                Art
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/#">
-                                                <i className="icofont-bubble-right"></i>{" "}
-                                                Book
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/#">
-                                                <i className="icofont-bubble-right"></i>{" "}
-                                                Watch
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/#">
-                                                <i className="icofont-bubble-right"></i>{" "}
-                                                TV
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/#">
-                                                <i className="icofont-bubble-right"></i>{" "}
-                                                Gifts
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/#">
-                                                <i className="icofont-bubble-right"></i>{" "}
-                                                Design
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/#">
-                                                <i className="icofont-bubble-right"></i>{" "}
-                                                Smart TV
-                                            </a>
-                                        </li>
-                                    </ul>
                                 </div>
 
                                 <div className="widget widget_recent_posts">
@@ -270,84 +261,6 @@ function BlogPage(props) {
                                         </li>
                                     </ul>
                                 </div>
-
-                                <div className="widget widget_tag_cloud">
-                                    <h3 className="widget-title">
-                                        Popular Tags
-                                    </h3>
-                                    <div className="bar"></div>
-
-                                    <div className="tagcloud">
-                                        <a href="/#">Art</a>
-                                        <a href="/#">Book</a>
-                                        <a href="/#">Watch</a>
-                                        <a href="/#">TV</a>
-                                        <a href="/#">Gifts</a>
-                                        <a href="/#">Smart TV</a>
-                                        <a href="/#">Design</a>
-                                    </div>
-                                </div>
-
-                                <div className="widget widget_text">
-                                    <h3 className="widget-title">Instagram</h3>
-                                    <div className="bar"></div>
-
-                                    <ul>
-                                        <li>
-                                            <a href="/#">
-                                                <img
-                                                    src="/images/work-img1.jpg"
-                                                    alt="image"
-                                                />
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/#">
-                                                <img
-                                                    src="/images/work-img2.jpg"
-                                                    alt="image"
-                                                />
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/#">
-                                                <img
-                                                    src="/images/work-img3.jpg"
-                                                    alt="image"
-                                                />
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/#">
-                                                <img
-                                                    src="/images/work-img4.jpg"
-                                                    alt="image"
-                                                />
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/#">
-                                                <img
-                                                    src="/images/work-img5.jpg"
-                                                    alt="image"
-                                                />
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/#">
-                                                <img
-                                                    src="/images/work-img6.jpg"
-                                                    alt="image"
-                                                />
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -356,5 +269,7 @@ function BlogPage(props) {
         </React.Fragment>
     );
 }
+
+BlogPage.defaultProps = {};
 
 export default BlogPage;
