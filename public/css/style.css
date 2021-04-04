@@ -1954,7 +1954,7 @@ Main Banner CSS
 
 .shape1 {
   position: absolute;
-  top: 95px;
+  top: 105px;
   z-index: -1;
   left: 30px;
   -webkit-animation: movebounce 5s linear infinite;
@@ -6246,7 +6246,7 @@ Page Title CSS
   background: linear-gradient(
     180deg,
     rgba(230, 126, 34, 1) 48%,
-    rgba(211, 84, 0, 1) 95%
+    rgb(233, 93, 0) 95%
   );
   z-index: 1;
   padding-top: 160px;
@@ -6256,7 +6256,7 @@ Page Title CSS
 
 .page-title-banner h2 {
   margin: 0;
-  font-size: 35px;
+  font-size: 38px;
   font-weight: 700;
   color: var(--whiteColor);
 }
