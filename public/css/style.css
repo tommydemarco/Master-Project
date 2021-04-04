@@ -257,6 +257,10 @@ button {
   overflow: hidden;
 }
 
+.section-title .bar--white {
+  background: var(--whiteColor);
+}
+
 .section-title .bar::before {
   content: "";
   position: absolute;
@@ -273,6 +277,10 @@ button {
   animation-iteration-count: infinite;
   -webkit-animation-name: MOVE-BG;
   animation-name: MOVE-BG;
+}
+
+.section-title .bar--white::before {
+  background: rgb(247, 101, 5);
 }
 
 @-webkit-keyframes MOVE-BG {
@@ -456,7 +464,7 @@ Navbar CSS
 
 .crake-nav nav .navbar-nav li a {
   font-weight: 600;
-  font-size: 17px;
+  font-size: 19px;
   color: var(--whiteColor) !important;
   padding: 0 0 !important;
   margin: 0 17px;
@@ -1954,7 +1962,7 @@ Main Banner CSS
 
 .shape1 {
   position: absolute;
-  top: 105px;
+  top: 115px;
   z-index: -1;
   left: 30px;
   -webkit-animation: movebounce 5s linear infinite;
@@ -6254,9 +6262,9 @@ Page Title CSS
   text-align: center;
 }
 
-.page-title-banner h2 {
+.page-title-banner h1 {
   margin: 0;
-  font-size: 38px;
+  font-size: 42px;
   font-weight: 700;
   color: var(--whiteColor);
 }
