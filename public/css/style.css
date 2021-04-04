@@ -1225,7 +1225,12 @@ Main Banner CSS
 =================================================*/
 .main-banner {
   height: 840px;
-  background: var(--templateColor);
+  background: rgb(230, 126, 34);
+  background: linear-gradient(
+    180deg,
+    rgba(230, 126, 34, 1) 48%,
+    rgba(211, 84, 0, 1) 95%
+  );
   position: relative;
   z-index: 1;
 }
@@ -1986,7 +1991,7 @@ Main Banner CSS
   position: absolute;
   top: 35%;
   z-index: -1;
-  right: 135px;
+  right: 145px;
   -webkit-animation: rotate3d 6s linear infinite;
   animation: rotate3d 6s linear infinite;
 }
@@ -6237,7 +6242,12 @@ Page Title CSS
 =================================================*/
 .page-title-banner {
   position: relative;
-  background: var(--templateColor);
+  background: rgb(230, 126, 34);
+  background: linear-gradient(
+    180deg,
+    rgba(230, 126, 34, 1) 48%,
+    rgba(211, 84, 0, 1) 95%
+  );
   z-index: 1;
   padding-top: 160px;
   padding-bottom: 90px;
