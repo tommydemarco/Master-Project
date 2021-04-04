@@ -1,0 +1,41 @@
+.slider-arrow {
+    padding: 0.7rem;
+    background-color: #999;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: absolute;
+    top: 50%;
+    z-index: 999;
+
+    &:hover {
+        background-color: white;
+    }
+
+    &--disabled {
+        cursor: default;
+
+        svg {
+            opacity: 0.4;
+        }
+
+        &:hover {
+            background-color: white;
+        }
+    }
+
+    svg {
+        display: block;
+        font-size: 2.2rem;
+        fill: black;
+    }
+
+    &--prev {
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    &--next {
+        right: 0;
+        transform: translate(50%, -50%);
+    }
+}

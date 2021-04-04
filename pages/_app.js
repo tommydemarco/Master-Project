@@ -21,7 +21,7 @@ const MyApp = ({ Component, pageProps, store }) => {
     return (
         <React.Fragment>
             <Head>
-                <title>Mojosa - React Next Landing Page Templates</title>
+                <title>GadJS - Javascript Gadjets</title>
                 <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -39,10 +39,6 @@ const MyApp = ({ Component, pageProps, store }) => {
                     name="twitter:card"
                     content="Mojosa - React Next Landing Page Templates"
                 ></meta>
-                <link
-                    rel="canonical"
-                    href="https://mojosa-react.envytheme.com/"
-                ></link>
             </Head>
 
             <Preloader>
