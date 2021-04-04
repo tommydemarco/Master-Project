@@ -6,7 +6,7 @@ import Link from "next/link"
 import { tabsContext } from "../Tabs/Tabs"
 
 
-const Tab = ({ id, title, subtitle, list, imageSrc, imageAlt, align, area, icon }) => {
+const Tab = ({ id, title, subtitle, list, imageSrc, imageAlt, align, icon }) => {
 
     const { activeTab, setTabs } = useContext(tabsContext)
 
@@ -19,20 +19,20 @@ const Tab = ({ id, title, subtitle, list, imageSrc, imageAlt, align, area, icon 
             <div className="row h-100 justify-content-center align-items-center">
                 {align === "left" ? 
                 <Fragment>
-                    <TabContent title={title} subtitle={subtitle} list={list} area={area} />
+                    <TabContent title={title} subtitle={subtitle} list={list} id={id} />
                     <TabImage src={imageSrc} alt={imageAlt} />
                 </Fragment> 
                 : 
                 <Fragment>
                     <TabImage src={imageSrc} alt={imageAlt} />
-                    <TabContent title={title} subtitle={subtitle} list={list} area={area} />
+                    <TabContent title={title} subtitle={subtitle} list={list} id={id} />
                 </Fragment>}            
             </div>
         </div>
     )
 }
 
-const TabContent = ({ title, subtitle, list, area }) => {
+const TabContent = ({ title, subtitle, list, id }) => {
     return (
         <div className="col-lg-6 col-md-6">
             <div className="tabs_item_content mt-0">
@@ -41,8 +41,8 @@ const TabContent = ({ title, subtitle, list, area }) => {
                 <ul>
                     {list.map(listItem => (<li><i className="icofont-ui-check"></i>  {listItem}</li>))}
                 </ul>
-                <Link href={`/admin-area/${area}`}>
-                    <a className="btn btn-primary">
+                <Link href={`/admin-area/${id}`}>
+                    <a className="btn btn-primary" style={{ marginTop: "30px"}}>
                         Go to dedicated area
                     </a>    
                 </Link>
