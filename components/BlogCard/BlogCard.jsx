@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import Link from "next/link"
+import Image from "next/image"
 
 const BlogCard = ({ imageSrc, imageAlt, date, author, title, description, slug, category }) => {
 
@@ -9,9 +10,11 @@ const BlogCard = ({ imageSrc, imageAlt, date, author, title, description, slug, 
         <div className="col-lg-6 col-md-6">
             <div className="single-blog-post">
                 <a href="/#" className="post-image">
-                    <img
+                    <Image
                         src={imageSrc}
                         alt={imageAlt}
+                        width={416}
+                        height={286}
                     />
                 </a>
 

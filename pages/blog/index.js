@@ -1,4 +1,6 @@
 import { useContext, useState } from "react";
+import Head from "next/head";
+
 import { bannerContext } from "../../context";
 import useBannerUpdate from "../../hooks/useBannerUpdate";
 import firebaseLooper from "../../utils/firebaseLooper";
@@ -113,6 +115,15 @@ function BlogPage({ posts }) {
 
     return (
         <React.Fragment>
+            <Head>
+                <title>GadJS - Javascript Blog</title>
+                <meta
+                    name="description"
+                    content="In this blog you can find a lot of useful information 
+                    about the Javascript world, includiing news and tutorial of React, 
+                    Anglular and Vue and other amazing frameworks and libraries"
+                />
+            </Head>
             <Banner
                 title="Blog"
                 subtitle="Find amazing news on the Javascript world"
