@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useRef } from "react";
 import Head from "next/head";
 
 import { bannerContext } from "../../context";
@@ -107,7 +107,7 @@ function BlogPage({ posts }) {
     const { dispatch } = useContext(bannerContext);
     useBannerUpdate(dispatch, true);
 
-    console.log(posts);
+    const containerRef = useRef(null);
 
     const [activePaginationItem, setActovePaginationItem] = useState(0);
     const [activePostList, setActivePostList] = useState(posts);
@@ -125,7 +125,9 @@ function BlogPage({ posts }) {
         const isCategoryDefined = selectedCategory !== "All Categories";
         const updatedActivePostList = isCategoryDefined
             ? posts.filter((post) => {
-                  post.category === selectedCategory;
+                  if (post.category === selectedCategory) {
+                      return post;
+                  }
               })
             : posts;
         setActivePostList(updatedActivePostList);
@@ -133,6 +135,9 @@ function BlogPage({ posts }) {
 
     useEffect(() => {
         setPostsToRender(activePostList);
+        containerRef.current.scrollIntoView({
+            behavior: "smooth",
+        });
     }, [activePostList]);
 
     return (
@@ -154,13 +159,17 @@ function BlogPage({ posts }) {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8 col-md-12">
-                            <div className="row">
+                            <div
+                                className="row"
+                                ref={containerRef}
+                                style={{ scrollMargin: "130px" }}
+                            >
                                 {postsToRender.map((post) => (
                                     <BlogCard
                                         key={post.title}
-                                        title={posts.title}
-                                        date={posts.date}
-                                        category={posts.category}
+                                        title={post.title}
+                                        date={post.date}
+                                        category={post.category}
                                     />
                                 ))}
 
