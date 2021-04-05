@@ -55,8 +55,7 @@ const ContactForm = () => {
                                         <input
                                             type="text"
                                             className="form-control"
-                                            required={true}
-                                            data-error="Please enter your name"
+                                            name="name"
                                             placeholder="Name*"
                                             onChange={(e) => onFieldChange(e, "name")}
                                             style={formError.name ? errorStyles : {}}
