@@ -9,6 +9,7 @@ import Banner from "../../components/Banner";
 import BlogCard from "../../components/BlogCard";
 import FilterPosts from "../../components/FilterPosts";
 import Pagination from "../../components/Pagination";
+import { useEffect } from "react/cjs/react.development";
 
 //import { blog } from "../../config/firebase";
 
@@ -111,14 +112,28 @@ function BlogPage({ posts }) {
     const [activePaginationItem, setActovePaginationItem] = useState(0);
     const [activePostList, setActivePostList] = useState(posts);
     const [postsToRender, setPostsToRender] = useState(
-        activePostList.slice(0, 4)
+        activePostList.slice(0, 30)
     );
 
     const postsCategories = posts.map((post) => post.category);
     const categories = postsCategories.filter(
         (item, i, ar) => ar.indexOf(item) === i
     );
-    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [selectedCategory, setSelectedCategory] = useState("All Categories");
+
+    useEffect(() => {
+        const isCategoryDefined = selectedCategory !== "All Categories";
+        const updatedActivePostList = isCategoryDefined
+            ? posts.filter((post) => {
+                  post.category === selectedCategory;
+              })
+            : posts;
+        setActivePostList(updatedActivePostList);
+    }, [selectedCategory]);
+
+    useEffect(() => {
+        setPostsToRender(activePostList);
+    }, [activePostList]);
 
     return (
         <React.Fragment>
