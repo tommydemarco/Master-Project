@@ -1,35 +1,41 @@
+import { Fragment } from "react"
 import PropTypes from 'prop-types'
 
-const Pagination = ({ resultsNumber, itemsPerPage, activePaginationItem, setActovePaginationItem }) => {
+const Pagination = ({ resultsNumber, itemsPerPage, activePaginationItem, setActivePaginationItem }) => {
+
+    if(resultsNumber <= itemsPerPage) return <Fragment></Fragment>
 
     const onPaginationArrow = (direction) => {
         if(direction === "prev" && activePaginationItem !== 0) {
-            setActovePaginationItem(activePaginationItem - 1)
-        } else if (direction === "next" && activePaginationItem !== paginationItems) {
-            setActovePaginationItem(activePaginationItem + 1)
+            setActivePaginationItem(activePaginationItem - 1)
+        } else if (direction === "next" && activePaginationItem !== paginationItems - 1) {
+            setActivePaginationItem(activePaginationItem + 1)
         }
     }
 
     const paginationItems = Math.ceil(resultsNumber / itemsPerPage)
 
     const renderPagnationItems = () => {
-        let paginationItems = []
-        for (let i = 0; i < paginationItems; i++) {
-            paginationItems.push(
+        let paginationItemsList = []
+        for (let i = 0; i < paginationItems - 1; i++) {
+            paginationItemsList.push(
                 <li 
-                    className={activePaginationItem === item ? "page-item active" : "page-item"} 
+                    className={activePaginationItem === i ? "page-item active" : "page-item"} 
                 >
                     <a
                         className="page-link"
                         href="/#"
-                        onClick={() => setActovePaginationItem(item)}
+                        onClick={(e) => {
+                            e.preventDefault()
+                            setActivePaginationItem(i)
+                        }}
                     >
-                        {item + 1}
+                        {i + 1}
                     </a>
                 </li>
             )
         }
-        return paginationItems
+        return paginationItemsList
     }
 
     return (
@@ -40,7 +46,10 @@ const Pagination = ({ resultsNumber, itemsPerPage, activePaginationItem, setActo
                         <a
                             className="page-link"
                             href="/#"
-                            onClick={() => onPaginationArrow("prev")}
+                            onClick={(e) => {
+                                e.preventDefault()
+                                onPaginationArrow("prev")
+                            }}
                         >
                             <i className="icofont-double-left"></i>
                         </a>
@@ -50,7 +59,10 @@ const Pagination = ({ resultsNumber, itemsPerPage, activePaginationItem, setActo
                         <a
                             className="page-link"
                             href="/#"
-                            onClick={() => onPaginationArrow("next")}
+                            onClick={(e) => {
+                                e.preventDefault()
+                                onPaginationArrow("next")
+                            }}
                         >
                             <i className="icofont-double-right"></i>
                         </a>

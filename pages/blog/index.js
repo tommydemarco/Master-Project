@@ -7,7 +7,6 @@ import firebaseLooper from "../../utils/firebaseLooper";
 
 import Banner from "../../components/Banner";
 import BlogCard from "../../components/BlogCard";
-import ItemsContainer from "../../components/ItemsContainer";
 import FilterPosts from "../../components/FilterPosts";
 import Pagination from "../../components/Pagination";
 import { useEffect } from "react/cjs/react.development";
@@ -112,10 +111,10 @@ function BlogPage({ posts }) {
 
     const [isLoading, setIsLoading] = useState(false);
 
-    const [activePaginationItem, setActovePaginationItem] = useState(0);
+    const [activePaginationItem, setActivePaginationItem] = useState(0);
     const [activePostList, setActivePostList] = useState(posts);
     const [postsToRender, setPostsToRender] = useState(
-        activePostList.slice(0, 30)
+        activePostList.slice(0, 4)
     );
 
     const postsCategories = posts.map((post) => post.category);
@@ -136,16 +135,29 @@ function BlogPage({ posts }) {
         setActivePostList(updatedActivePostList);
     }, [selectedCategory]);
 
+    const getEffectivePagination = (pagination) => {
+        if (pagination === 0) return 0;
+        else return pagination * 6;
+    };
+
     useEffect(() => {
+        const effectivePagination = getEffectivePagination(
+            activePaginationItem
+        );
         setIsLoading(true);
         setTimeout(() => {
             setIsLoading(false);
-            setPostsToRender(activePostList);
+            setPostsToRender(
+                activePostList.slice(
+                    effectivePagination,
+                    effectivePagination + 6
+                )
+            );
             containerRef.current.scrollIntoView({
                 behavior: "smooth",
             });
         }, 600);
-    }, [activePostList]);
+    }, [activePostList, activePaginationItem]);
 
     return (
         <React.Fragment>
@@ -186,8 +198,8 @@ function BlogPage({ posts }) {
                                         activePaginationItem={
                                             activePaginationItem
                                         }
-                                        setActovePaginationItem={
-                                            setActovePaginationItem
+                                        setActivePaginationItem={
+                                            setActivePaginationItem
                                         }
                                         resultsNumber={activePostList.length}
                                         itemsPerPage={4}
