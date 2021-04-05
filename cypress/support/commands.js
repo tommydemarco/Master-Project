@@ -23,3 +23,21 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("writeAndDeleteText", (inputType, inputName) => {
+    cy.visit("http://localhost:3000/contact-us");
+    cy.get(`${inputType}[name='${inputName}']`).type("Foo", { force: true });
+    cy.get(`${inputType}[name='${inputName}']`).type(
+        "{backspace}{backspace}{backspace}",
+        {
+            force: true,
+        }
+    );
+    cy.wait(500);
+    cy.get(`${inputType}[name='${inputName}']`)
+        .siblings()
+        .should("have.length", 1);
+    cy.get(`${inputType}[name='${inputName}']`)
+        .siblings()
+        .contains("Required field");
+});

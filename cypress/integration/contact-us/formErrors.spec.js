@@ -1,16 +1,16 @@
 /// <reference types="cypress" />
 
-describe("Simulate form validation errors", () => {
-    it("shows an error if name input is deleted", () => {
-        cy.visit("http://localhost:3000/contact-us");
-        cy.get("input[name='name']").type("Alex", { force: true });
-        cy.get("input[name='name']").type(
-            "{backspace}{backspace}{backspace}{backspace}",
-            {
-                force: true,
-            }
-        );
-        cy.wait(500);
-        cy.get("input[name='name']").siblings().should("have.length", 1);
+describe("Form validation errors", () => {
+    it("shows an error if name is deleted", () => {
+        cy.writeAndDeleteText("input", "name");
+    });
+    it("shows an error if email is deleted", () => {
+        cy.writeAndDeleteText("input", "email");
+    });
+    it("shows an error if subject is deleted", () => {
+        cy.writeAndDeleteText("input", "subject");
+    });
+    it("shows an error if message is deleted", () => {
+        cy.writeAndDeleteText("textarea", "message");
     });
 });

@@ -69,6 +69,7 @@ const ContactForm = () => {
                                         <input
                                             type="text"
                                             className="form-control"
+                                            name="email"
                                             placeholder="Email*"
                                             onChange={(e) => onFieldChange(e, "email")}
                                             style={formError.email ? errorStyles : {}}
@@ -82,6 +83,7 @@ const ContactForm = () => {
                                         <input
                                             type="text"
                                             className="form-control"
+                                            name="subject"
                                             placeholder="Subject*"
                                             onChange={(e) => onFieldChange(e, "subject")}
                                             style={formError.subject ? errorStyles : {}}
@@ -95,7 +97,6 @@ const ContactForm = () => {
                                         <textarea
                                             name="message"
                                             className="form-control"
-                                            id="message"
                                             cols="30"
                                             rows="5"
                                             required
