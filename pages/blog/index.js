@@ -109,6 +109,8 @@ function BlogPage({ posts }) {
 
     const containerRef = useRef(null);
 
+    const [isLoading, setIsLoading] = useState(false);
+
     const [activePaginationItem, setActovePaginationItem] = useState(0);
     const [activePostList, setActivePostList] = useState(posts);
     const [postsToRender, setPostsToRender] = useState(
@@ -134,10 +136,14 @@ function BlogPage({ posts }) {
     }, [selectedCategory]);
 
     useEffect(() => {
-        setPostsToRender(activePostList);
-        containerRef.current.scrollIntoView({
-            behavior: "smooth",
-        });
+        setIsLoading(true);
+        setTimeout(() => {
+            setPostsToRender(activePostList);
+            containerRef.current.scrollIntoView({
+                behavior: "smooth",
+            });
+            setIsLoading(false);
+        }, 500);
     }, [activePostList]);
 
     return (
