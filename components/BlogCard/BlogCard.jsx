@@ -2,13 +2,18 @@ import PropTypes from 'prop-types'
 import Link from "next/link"
 import Image from "next/image"
 
-const BlogCard = ({ imageSrc, imageAlt, date, author, title, description, slug, category }) => {
+import styles from "./BlogCard.module.scss"
+
+const BlogCard = ({ imageSrc, imageAlt, date, author, title, description, slug, category, loading }) => {
 
     const postDate = new Date(date).toLocaleDateString()
 
+    const classes = ["single-blog-post"]
+    if (loading) classes.push(styles.loading)
+
     return (
         <div className="col-lg-6 col-md-6">
-            <div className="single-blog-post">
+            <div className={classes.join(" ")}>
                 <a href="/#" className="post-image">
                     <Image
                         src={imageSrc}

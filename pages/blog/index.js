@@ -7,6 +7,7 @@ import firebaseLooper from "../../utils/firebaseLooper";
 
 import Banner from "../../components/Banner";
 import BlogCard from "../../components/BlogCard";
+import ItemsContainer from "../../components/ItemsContainer";
 import FilterPosts from "../../components/FilterPosts";
 import Pagination from "../../components/Pagination";
 import { useEffect } from "react/cjs/react.development";
@@ -138,12 +139,12 @@ function BlogPage({ posts }) {
     useEffect(() => {
         setIsLoading(true);
         setTimeout(() => {
+            setIsLoading(false);
             setPostsToRender(activePostList);
             containerRef.current.scrollIntoView({
                 behavior: "smooth",
             });
-            setIsLoading(false);
-        }, 500);
+        }, 600);
     }, [activePostList]);
 
     return (
@@ -176,6 +177,7 @@ function BlogPage({ posts }) {
                                         title={post.title}
                                         date={post.date}
                                         category={post.category}
+                                        loading={isLoading}
                                     />
                                 ))}
 
