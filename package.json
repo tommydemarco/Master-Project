@@ -7,7 +7,11 @@
         "dev": "node server.js -p $PORT",
         "build": "next build",
         "start": "NODE_ENV=production node server.js -p $PORT",
-        "test": "node_modules/.bin/cypress run"
+        "test": "node_modules/.bin/cypress run",
+        "test-chrome": "node_modules/.bin/cypress run --browser chrome",
+        "test-firefox": "node_modules/.bin/cypress run --browser firefox",
+        "test-edge": "node_modules/.bin/cypress run --browser edge",
+        "test-all": "npm run test && npm run test-chrome && npm run test-firefox && npm run test-edge"
     },
     "keywords": [
         "next.js",
