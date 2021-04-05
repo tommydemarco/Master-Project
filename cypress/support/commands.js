@@ -36,8 +36,7 @@ Cypress.Commands.add("writeAndDeleteText", (inputType, inputName) => {
     cy.wait(500);
     cy.get(`${inputType}[name='${inputName}']`)
         .siblings()
+        .as("error-message")
         .should("have.length", 1);
-    cy.get(`${inputType}[name='${inputName}']`)
-        .siblings()
-        .contains("Required field");
+    cy.get(`@error-message`).contains("Required field");
 });
