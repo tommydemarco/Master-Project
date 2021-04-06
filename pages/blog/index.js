@@ -183,15 +183,60 @@ function BlogPage({ posts }) {
                                 ref={containerRef}
                                 style={{ scrollMargin: "130px" }}
                             >
-                                {postsToRender.map((post) => (
+                                {postsToRender[0] && (
                                     <BlogCard
-                                        key={post.title}
-                                        title={post.title}
-                                        date={post.date}
-                                        category={post.category}
+                                        key={postsToRender[0].title}
+                                        title={postsToRender[0].title}
+                                        date={postsToRender[0].date}
+                                        category={postsToRender[0].category}
                                         loading={isLoading}
                                     />
-                                ))}
+                                )}
+                                {postsToRender[1] && (
+                                    <BlogCard
+                                        key={postsToRender[1].title}
+                                        title={postsToRender[1].title}
+                                        date={postsToRender[1].date}
+                                        category={postsToRender[1].category}
+                                        loading={isLoading}
+                                    />
+                                )}
+                                {postsToRender[2] && (
+                                    <BlogCard
+                                        key={postsToRender[2].title}
+                                        title={postsToRender[2].title}
+                                        date={postsToRender[2].date}
+                                        category={postsToRender[2].category}
+                                        loading={isLoading}
+                                    />
+                                )}
+                                {postsToRender[3] && (
+                                    <BlogCard
+                                        key={postsToRender[3].title}
+                                        title={postsToRender[3].title}
+                                        date={postsToRender[3].date}
+                                        category={postsToRender[3].category}
+                                        loading={isLoading}
+                                    />
+                                )}
+                                {postsToRender[4] && (
+                                    <BlogCard
+                                        key={postsToRender[4].title}
+                                        title={postsToRender[4].title}
+                                        date={postsToRender[4].date}
+                                        category={postsToRender[4].category}
+                                        loading={isLoading}
+                                    />
+                                )}
+                                {postsToRender[5] && (
+                                    <BlogCard
+                                        key={postsToRender[5].title}
+                                        title={postsToRender[5].title}
+                                        date={postsToRender[5].date}
+                                        category={postsToRender[5].category}
+                                        loading={isLoading}
+                                    />
+                                )}
 
                                 <div className="col-lg-12 col-md-12">
                                     <Pagination

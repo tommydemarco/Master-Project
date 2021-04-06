@@ -24,13 +24,13 @@ const LayoutBanner = ({ noBanner }) => {
           width="92.168px"
           height="92.168px"
           viewBox="0 0 92.168 92.168"
-          enable-background="new 0 0 92.168 92.168"
+          enableBackground="new 0 0 92.168 92.168"
         >
           <rect
             x="0"
             opacity="0.99"
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             fill="none"
             width="92.168"
             height="92.168"
@@ -58,13 +58,13 @@ const LayoutBanner = ({ noBanner }) => {
           width="92.168px"
           height="92.168px"
           viewBox="0 0 92.168 92.168"
-          enable-background="new 0 0 92.168 92.168"
+          enableBackground="new 0 0 92.168 92.168"
         >
           <rect
             x="0"
             opacity="0.99"
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             fill="none"
             width="92.168"
             height="92.168"
@@ -91,13 +91,13 @@ const LayoutBanner = ({ noBanner }) => {
           width="85px"
           height="85px"
           viewBox="0 0 92.168 92.168"
-          enable-background="new 0 0 92.168 92.168"
+          enableBackground="new 0 0 92.168 92.168"
         >
           <rect
             x="0"
             opacity="0.99"
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             fill="none"
             width="92.168"
             height="92.168"
@@ -125,13 +125,13 @@ const LayoutBanner = ({ noBanner }) => {
           width="92.168px"
           height="92.168px"
           viewBox="0 0 92.168 92.168"
-          enable-background="new 0 0 92.168 92.168"
+          enableBackground="new 0 0 92.168 92.168"
         >
           <rect
             x="0"
             opacity="0.99"
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             fill="none"
             width="92.168"
             height="92.168"
@@ -155,7 +155,7 @@ const LayoutBanner = ({ noBanner }) => {
             r="15"
             stroke="#ecf0f1"
             fill="#e67e22"
-            stroke-width="3"
+            strokeWidth="3"
           />
         </svg>
       </div>

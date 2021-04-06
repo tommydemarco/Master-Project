@@ -1,7 +1,7 @@
 
 <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="92.168px" height="92.168px" viewBox="0 0 92.168 92.168" enable-background="new 0 0 92.168 92.168" xml:space="preserve">
-<rect x="0" opacity="0.99" fill-rule="evenodd" clip-rule="evenodd" fill="none" width="92.168" height="92.168"/>
+	 width="92.168px" height="92.168px" viewBox="0 0 92.168 92.168" enableBackground="new 0 0 92.168 92.168" xml:space="preserve">
+<rect x="0" opacity="0.99" fillRule="evenodd" clipRule="evenodd" fill="none" width="92.168" height="92.168"/>
 <path fill="#3A3E49" d="M46.084,0.142c25.444,0,46.084,20.551,46.084,45.942c0,25.366-20.64,45.942-46.084,45.942S0,71.45,0,46.084
 	C0,20.693,20.641,0.142,46.084,0.142L46.084,0.142z M32.142,55.246c0.312-1.009,1.401-1.579,2.44-1.242
 	c1.013,0.336,1.584,1.423,1.246,2.433c-0.961,3.002-2.363,5.513-4.024,7.298c-5.348,5.695-11.657,2.667-14.928-3.52

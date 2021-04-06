@@ -8,9 +8,10 @@ const Pagination = ({ resultsNumber, itemsPerPage, activePaginationItem, setActi
     const onPaginationArrow = (direction) => {
         if(direction === "prev" && activePaginationItem !== 0) {
             setActivePaginationItem(activePaginationItem - 1)
-        } else if (direction === "next" && activePaginationItem !== paginationItems - 1) {
+        } else if (direction === "next" && activePaginationItem !== paginationItems) {
             setActivePaginationItem(activePaginationItem + 1)
         }
+        console.log(activePaginationItem, paginationItems)
     }
 
     const paginationItems = Math.ceil(resultsNumber / itemsPerPage)
@@ -21,6 +22,7 @@ const Pagination = ({ resultsNumber, itemsPerPage, activePaginationItem, setActi
             paginationItemsList.push(
                 <li 
                     className={activePaginationItem === i ? "page-item active" : "page-item"} 
+                    key={i}
                 >
                     <a
                         className="page-link"
@@ -44,7 +46,7 @@ const Pagination = ({ resultsNumber, itemsPerPage, activePaginationItem, setActi
                 <ul className="pagination justify-content-center">
                     <li className="page-item">
                         <a
-                            className="page-link"
+                            className="page-link page-link--no-focus"
                             href="/#"
                             onClick={(e) => {
                                 e.preventDefault()
@@ -57,7 +59,7 @@ const Pagination = ({ resultsNumber, itemsPerPage, activePaginationItem, setActi
                     {renderPagnationItems()}
                     <li className="page-item">
                         <a
-                            className="page-link"
+                            className="page-link page-link--no-focus"
                             href="/#"
                             onClick={(e) => {
                                 e.preventDefault()
@@ -77,7 +79,7 @@ Pagination.propTypes = {
     resultsNumber: PropTypes.number.isRequired,
     itemsPerPage: PropTypes.number.isRequired,
     activePaginationItem: PropTypes.number.isRequired,
-    setActovePaginationItem: PropTypes.func.isRequired,
+    setActivePaginationItem: PropTypes.func.isRequired,
 }
 
 export default Pagination
