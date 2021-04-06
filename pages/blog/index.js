@@ -353,18 +353,6 @@ function BlogPage({ posts }) {
                                                     />
                                                 </a>
                                             </div>
-
-                                            <div className="recent-post-content">
-                                                <h3>
-                                                    <a href="/#">
-                                                        10 Hot Marketing Trends
-                                                        You Need to Implement
-                                                    </a>
-                                                </h3>
-                                                <span className="date">
-                                                    23 January 2018
-                                                </span>
-                                            </div>
                                         </li>
                                     </ul>
                                 </div>
