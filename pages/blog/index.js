@@ -134,6 +134,7 @@ function BlogPage({ posts }) {
               })
             : posts;
         setActivePostList(updatedActivePostList);
+        setActivePaginationItem(0);
     }, [selectedCategory]);
 
     const getEffectivePagination = (pagination) => {
@@ -145,7 +146,7 @@ function BlogPage({ posts }) {
         const effectivePagination = getEffectivePagination(
             activePaginationItem
         );
-        setIsLoading(true);
+        if (pageLoad) setIsLoading(true);
         setTimeout(() => {
             setIsLoading(false);
             setPostsToRender(

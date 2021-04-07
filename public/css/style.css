@@ -6357,6 +6357,10 @@ Pagination CSS
 /*================================================
 Sidebar CSS
 =================================================*/
+.sidebar-area {
+    height: 100%;
+}
+
 .sidebar-area .widget {
     margin-bottom: 40px;
 }
@@ -6428,6 +6432,11 @@ Sidebar CSS
     animation-iteration-count: infinite;
     -webkit-animation-name: MOVE-BG;
     animation-name: MOVE-BG;
+}
+
+.sidebar-area .widget.widget_product_categories {
+    position: sticky;
+    top: 119px;
 }
 
 .sidebar-area .widget.widget_product_categories ul {

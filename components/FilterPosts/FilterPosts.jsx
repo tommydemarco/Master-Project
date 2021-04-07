@@ -7,7 +7,7 @@ const FilterPosts = ({ categories, selectedCategory, setSelectedCategory }) => {
 
     return (
         <div className="widget widget_product_categories">
-            <h3 className="widget-title">Filter Posts</h3>
+            <h3 className="widget-title">Filter by category</h3>
             <div className="bar"></div>
             <FilterCategories 
                 categories={categories} 
