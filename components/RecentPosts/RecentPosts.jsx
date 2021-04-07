@@ -42,12 +42,12 @@ const RecentPosts = ({ recentPosts }) => {
 }
 
 RecentPosts.defaultProps = {
-    recentPosts: PropTypes.arrayOf(PropTypes.shape{
+    recentPosts: PropTypes.arrayOf(PropTypes.shape({
         title: PropTypes.string.isRequired,
         imageSrc: PropTypes.string.isRequired,
         date: PropTypes.any,
         slug: PropTypes.string.isRequired
-    })
+    }))
 }
 
 export default RecentPosts
