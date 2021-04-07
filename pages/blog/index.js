@@ -110,6 +110,7 @@ function BlogPage({ posts }) {
     const containerRef = useRef(null);
 
     const [isLoading, setIsLoading] = useState(false);
+    const [pageLoad, setPageLoad] = useState(false);
 
     const [activePaginationItem, setActivePaginationItem] = useState(0);
     const [activePostList, setActivePostList] = useState(posts);
@@ -153,9 +154,12 @@ function BlogPage({ posts }) {
                     effectivePagination + 6
                 )
             );
-            containerRef.current.scrollIntoView({
-                behavior: "smooth",
-            });
+            if (pageLoad) {
+                containerRef.current.scrollIntoView({
+                    behavior: "smooth",
+                });
+            }
+            if (!pageLoad) setPageLoad(true);
         }, 600);
     }, [activePostList, activePaginationItem]);
 

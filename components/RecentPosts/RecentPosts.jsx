@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from "prop-types"
+import Link from "next/link"
 
 const RecentPosts = ({ recentPosts }) => {
     return (
@@ -10,85 +11,31 @@ const RecentPosts = ({ recentPosts }) => {
             <div className="bar"></div>
 
             <ul>
-                <li>
-                    <div className="recent-post-thumb">
-                        <a href="/#">
-                            <img
-                                src="/images/blog-img1.jpg"
-                                alt="blog-image"
-                            />
-                        </a>
-                    </div>
+                {recentPosts.map(post => {
+                    return (<li>
+                        <div className="recent-post-thumb">
+                            <Link href={`/blog/${post.slug}`}>
+                                <a>
+                                    <img
+                                        src={post.imageSrc}
+                                        alt={post.title}
+                                    />
+                                </a>
+                            </Link>
+                        </div>
 
-                    <div className="recent-post-content">
-                        <h3>
-                            <a href="/#">
-                                10 Hot Marketing Trends
-                                You Need to Implement
-                            </a>
-                        </h3>
-                        <span className="date">
-                            23 January 2018
-                        </span>
-                    </div>
-                </li>
-
-                <li>
-                    <div className="recent-post-thumb">
-                        <a href="/#">
-                            <img
-                                src="/images/blog-img3.jpg"
-                                alt="blog-image"
-                            />
-                        </a>
-                    </div>
-
-                    <div className="recent-post-content">
-                        <h3>
-                            <a href="/#">
-                                10 Hot Marketing Trends
-                                You Need to Implement
-                            </a>
-                        </h3>
-                        <span className="date">
-                            23 January 2018
-                        </span>
-                    </div>
-                </li>
-
-                <li>
-                    <div className="recent-post-thumb">
-                        <a href="/#">
-                            <img
-                                src="/images/blog-img2.jpg"
-                                alt="blog-image"
-                            />
-                        </a>
-                    </div>
-
-                    <div className="recent-post-content">
-                        <h3>
-                            <a href="/#">
-                                10 Hot Marketing Trends
-                                You Need to Implement
-                            </a>
-                        </h3>
-                        <span className="date">
-                            23 January 2018
-                        </span>
-                    </div>
-                </li>
-
-                <li>
-                    <div className="recent-post-thumb">
-                        <a href="/#">
-                            <img
-                                src="/images/blog-img4.jpg"
-                                alt="blog-image"
-                            />
-                        </a>
-                    </div>
-                </li>
+                        <div className="recent-post-content">
+                            <h3>
+                                <Link href={`/blog/${post.slug}`}>
+                                    <a>{post.title}</a>
+                                </Link>
+                            </h3>
+                            <span className="date">
+                                {post.date}
+                            </span>
+                        </div>
+                    </li>)}
+                )}
             </ul>
         </div>
     )
@@ -96,7 +43,10 @@ const RecentPosts = ({ recentPosts }) => {
 
 RecentPosts.defaultProps = {
     recentPosts: PropTypes.arrayOf(PropTypes.shape{
-        
+        title: PropTypes.string.isRequired,
+        imageSrc: PropTypes.string.isRequired,
+        date: PropTypes.any,
+        slug: PropTypes.string.isRequired
     })
 }
 
