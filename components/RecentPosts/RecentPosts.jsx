@@ -12,7 +12,7 @@ const RecentPosts = ({ recentPosts }) => {
 
             <ul>
                 {recentPosts.map(post => {
-                    return (<li>
+                    return (<li key={post.title}>
                         <div className="recent-post-thumb">
                             <Link href={`/blog/${post.slug}`}>
                                 <a>

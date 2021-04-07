@@ -5,20 +5,19 @@ const Pagination = ({ resultsNumber, itemsPerPage, activePaginationItem, setActi
 
     if(resultsNumber <= itemsPerPage) return <Fragment></Fragment>
 
+    const paginationItems = Math.floor(resultsNumber / itemsPerPage)
+
     const onPaginationArrow = (direction) => {
         if(direction === "prev" && activePaginationItem !== 0) {
             setActivePaginationItem(activePaginationItem - 1)
         } else if (direction === "next" && activePaginationItem !== paginationItems) {
             setActivePaginationItem(activePaginationItem + 1)
         }
-        console.log(activePaginationItem, paginationItems)
     }
-
-    const paginationItems = Math.ceil(resultsNumber / itemsPerPage)
 
     const renderPagnationItems = () => {
         let paginationItemsList = []
-        for (let i = 0; i < paginationItems - 1; i++) {
+        for (let i = 0; i < paginationItems; i++) {
             paginationItemsList.push(
                 <li 
                     className={activePaginationItem === i ? "page-item active" : "page-item"} 
@@ -40,6 +39,8 @@ const Pagination = ({ resultsNumber, itemsPerPage, activePaginationItem, setActi
         return paginationItemsList
     }
 
+    const disabledStyles = { opacity: "0.5", pointerEvents: "none"}
+
     return (
         <div className="pagination-area">
             <nav aria-label="Page navigation example">
@@ -47,6 +48,7 @@ const Pagination = ({ resultsNumber, itemsPerPage, activePaginationItem, setActi
                     <li className="page-item">
                         <a
                             className="page-link page-link--no-focus"
+                            style={activePaginationItem === 0 ? disabledStyles : {}}
                             href="/#"
                             onClick={(e) => {
                                 e.preventDefault()
@@ -60,6 +62,7 @@ const Pagination = ({ resultsNumber, itemsPerPage, activePaginationItem, setActi
                     <li className="page-item">
                         <a
                             className="page-link page-link--no-focus"
+                            style={activePaginationItem === paginationItems - 1 ? disabledStyles : {}}
                             href="/#"
                             onClick={(e) => {
                                 e.preventDefault()

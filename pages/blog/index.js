@@ -1,4 +1,4 @@
-import { useContext, useState, useRef } from "react";
+import { useContext, useState, useRef, useEffect } from "react";
 import Head from "next/head";
 
 import { bannerContext } from "../../context";
@@ -9,7 +9,7 @@ import Banner from "../../components/Banner";
 import BlogCard from "../../components/BlogCard";
 import FilterPosts from "../../components/FilterPosts";
 import Pagination from "../../components/Pagination";
-import { useEffect } from "react/cjs/react.development";
+import RecentPosts from "../../components/RecentPosts";
 
 //import { blog } from "../../config/firebase";
 
@@ -271,6 +271,8 @@ function BlogPage({ posts }) {
                                         </button>
                                     </form>
                                 </div>
+
+                                <RecentPosts recentPosts={posts.slice(0, 3)} />
 
                                 <FilterPosts
                                     categories={categories}
